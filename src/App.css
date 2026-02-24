@@ -923,36 +923,35 @@ body {
 @media (max-width: 768px) {
   /* Móvil: Ajustar navbar - pequeña pero con todos los apartados */
   .navbar {
-    padding: 0.25rem 0.5rem !important; /* Móvil: Padding pequeño */
-    display: flex !important;
-    justify-content: center !important;
-    align-items: center !important;
+    padding: 0.125rem 0.25rem !important; /* Móvil: Padding mínimo */
+    height: auto !important; /* Móvil: Altura automática */
   }
   
   /* Móvil: Ajustar contenedor de navbar - layout horizontal compacto */
   .nav-container {
-    padding: 0.25rem 0.5rem !important; /* Móvil: Padding pequeño */
-    flex-direction: row !important; /* Móvil: Mantener horizontal */
-    gap: 0.5rem !important; /* Móvil: Espaciado pequeño */
-    justify-content: space-between !important;
+    padding: 0.125rem 0.25rem !important; /* Móvil: Padding mínimo */
+    flex-direction: column !important; /* Móvil: Layout vertical para apilar */
+    gap: 0.25rem !important; /* Móvil: Espaciado mínimo */
+    justify-content: center !important;
     align-items: center !important;
     width: 100% !important;
-    flex-wrap: wrap !important; /* Móvil: Permitir múltiples líneas si es necesario */
   }
   
-  /* Móvil: Mostrar enlaces de navegación - hacerlos pequeños */
+  /* Móvil: Mostrar enlaces de navegación - hacerlos diminutos */
   .nav-links {
     display: flex !important; /* Móvil: Mostrar navegación */
-    gap: 0.25rem !important; /* Móvil: Espaciado mínimo */
+    gap: 0.125rem !important; /* Móvil: Espaciado mínimo */
     flex-wrap: wrap !important; /* Móvil: Permitir múltiples líneas */
     justify-content: center !important;
+    max-width: 100% !important;
   }
   
-  /* Móvil: Ajustar enlaces de navegación - diminutos */
+  /* Móvil: Ajustar enlaces de navegación - súper diminutos */
   .nav-link {
-    font-size: 0.6rem !important; /* Móvil: Texto diminuto */
-    padding: 0.125rem 0.25rem !important; /* Móvil: Padding mínimo */
+    font-size: 0.5rem !important; /* Móvil: Texto súper diminuto */
+    padding: 0.0625rem 0.125rem !important; /* Móvil: Padding mínimo */
     margin: 0 !important; /* Móvil: Sin márgenes */
+    line-height: 1.0 !important; /* Móvil: Líneas juntas */
   }
   
   /* Móvil: Ajustar selector de idioma - pequeño y centrado */
@@ -961,13 +960,15 @@ body {
     display: flex !important;
     justify-content: center !important;
     align-items: center !important;
+    margin-top: 0.125rem !important; /* Móvil: Pequeño espacio arriba */
   }
   
-  /* Móvil: Ajustar botones de idioma - diminutos */
+  /* Móvil: Ajustar botones de idioma - súper diminutos */
   .lang-btn {
-    padding: 0.0625rem 0.25rem !important; /* Móvil: Botones mínimos */
-    font-size: 0.5rem !important; /* Móvil: Texto diminuto */
+    padding: 0.0625rem 0.125rem !important; /* Móvil: Botones mínimos */
+    font-size: 0.4rem !important; /* Móvil: Texto súper diminuto */
     margin: 0 !important; /* Móvil: Sin márgenes */
+    line-height: 1.0 !important; /* Móvil: Líneas juntas */
   }
 }
 

@@ -45,6 +45,64 @@ body {
   z-index: 1;
 }
 
+/* Navbar Styles - Estilos base mínimos */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-link {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: var(--primary-color);
+}
+
+.language-selector {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.lang-btn {
+  padding: 0.5rem 1rem;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.lang-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.lang-btn.active {
+  background: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
 /* Hero Section */
 .hero-section {
   min-height: 100vh;
@@ -921,54 +979,75 @@ body {
 
 /* Estilos móviles específicos para Navbar */
 @media (max-width: 768px) {
-  /* Móvil: Ajustar navbar - pequeña pero con todos los apartados */
+  /* Móvil: Ajustar navbar - asegurar que se vea completa */
   .navbar {
-    padding: 0.125rem 0.25rem !important; /* Móvil: Padding mínimo */
+    padding: 0.25rem 0.5rem !important; /* Móvil: Padding pequeño */
     height: auto !important; /* Móvil: Altura automática */
+    background: rgba(0, 0, 0, 0.9) !important; /* Móvil: Background visible */
+    backdrop-filter: blur(10px) !important; /* Móvil: Efecto glass */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2) !important; /* Móvil: Borde visible */
   }
   
-  /* Móvil: Ajustar contenedor de navbar - layout horizontal compacto */
+  /* Móvil: Ajustar contenedor de navbar - layout vertical compacto */
   .nav-container {
-    padding: 0.125rem 0.25rem !important; /* Móvil: Padding mínimo */
-    flex-direction: column !important; /* Móvil: Layout vertical para apilar */
-    gap: 0.25rem !important; /* Móvil: Espaciado mínimo */
+    padding: 0.25rem 0.5rem !important; /* Móvil: Padding pequeño */
+    flex-direction: column !important; /* Móvil: Layout vertical */
+    gap: 0.5rem !important; /* Móvil: Espaciado pequeño */
     justify-content: center !important;
     align-items: center !important;
     width: 100% !important;
-  }
-  
-  /* Móvil: Mostrar enlaces de navegación - hacerlos diminutos */
-  .nav-links {
-    display: flex !important; /* Móvil: Mostrar navegación */
-    gap: 0.125rem !important; /* Móvil: Espaciado mínimo */
-    flex-wrap: wrap !important; /* Móvil: Permitir múltiples líneas */
-    justify-content: center !important;
     max-width: 100% !important;
   }
   
-  /* Móvil: Ajustar enlaces de navegación - súper diminutos */
-  .nav-link {
-    font-size: 0.5rem !important; /* Móvil: Texto súper diminuto */
-    padding: 0.0625rem 0.125rem !important; /* Móvil: Padding mínimo */
-    margin: 0 !important; /* Móvil: Sin márgenes */
-    line-height: 1.0 !important; /* Móvil: Líneas juntas */
+  /* Móvil: Mostrar enlaces de navegación - asegurar visibilidad */
+  .nav-links {
+    display: flex !important; /* Móvil: Mostrar navegación */
+    gap: 0.25rem !important; /* Móvil: Espaciado mínimo */
+    flex-wrap: wrap !important; /* Móvil: Permitir múltiples líneas */
+    justify-content: center !important;
+    align-items: center !important;
+    width: 100% !important;
+    max-width: 100% !important;
   }
   
-  /* Móvil: Ajustar selector de idioma - pequeño y centrado */
+  /* Móvil: Ajustar enlaces de navegación - visibles y pequeños */
+  .nav-link {
+    font-size: 0.6rem !important; /* Móvil: Texto pequeño pero legible */
+    padding: 0.125rem 0.25rem !important; /* Móvil: Padding pequeño */
+    margin: 0 !important; /* Móvil: Sin márgenes */
+    line-height: 1.2 !important; /* Móvil: Líneas legibles */
+    color: white !important; /* Móvil: Color visible */
+    text-decoration: none !important; /* Móvil: Sin subrayado */
+    background: rgba(255, 255, 255, 0.1) !important; /* Móvil: Fondo visible */
+    border-radius: 4px !important; /* Móvil: Bordes redondeados */
+    border: 1px solid rgba(255, 255, 255, 0.2) !important; /* Móvil: Borde visible */
+  }
+  
+  /* Móvil: Ajustar selector de idioma - visible y centrado */
   .language-selector {
-    gap: 0.0625rem !important; /* Móvil: Espacio mínimo entre botones */
+    gap: 0.25rem !important; /* Móvil: Espacio entre botones */
     display: flex !important;
     justify-content: center !important;
     align-items: center !important;
-    margin-top: 0.125rem !important; /* Móvil: Pequeño espacio arriba */
+    margin-top: 0.25rem !important; /* Móvil: Pequeño espacio arriba */
   }
   
-  /* Móvil: Ajustar botones de idioma - súper diminutos */
+  /* Móvil: Ajustar botones de idioma - visibles y pequeños */
   .lang-btn {
-    padding: 0.0625rem 0.125rem !important; /* Móvil: Botones mínimos */
-    font-size: 0.4rem !important; /* Móvil: Texto súper diminuto */
+    padding: 0.125rem 0.375rem !important; /* Móvil: Botones pequeños */
+    font-size: 0.5rem !important; /* Móvil: Texto pequeño */
     margin: 0 !important; /* Móvil: Sin márgenes */
-    line-height: 1.0 !important; /* Móvil: Líneas juntas */
+    line-height: 1.2 !important; /* Móvil: Líneas legibles */
+    background: rgba(255, 255, 255, 0.2) !important; /* Móvil: Fondo visible */
+    color: white !important; /* Móvil: Texto visible */
+    border: 1px solid rgba(255, 255, 255, 0.3) !important; /* Móvil: Borde visible */
+    border-radius: 4px !important; /* Móvil: Bordes redondeados */
+  }
+  
+  /* Móvil: Botón activo de idioma */
+  .lang-btn.active {
+    background: var(--primary-color) !important; /* Móvil: Color activo visible */
+    border-color: var(--primary-color) !important; /* Móvil: Borde activo */
   }
 }
 

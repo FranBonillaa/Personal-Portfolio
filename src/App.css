@@ -921,16 +921,22 @@ body {
 
 /* Estilos móviles específicos para Navbar */
 @media (max-width: 768px) {
-  /* Móvil: Ajustar navbar - mucho más pequeña */
+  /* Móvil: Ajustar navbar - diminuta y centrada */
   .navbar {
-    padding: 0.25rem 0.5rem !important; /* Móvil: Padding mínimo */
+    padding: 0.125rem 0.25rem !important; /* Móvil: Padding mínimo */
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
   }
   
-  /* Móvil: Ajustar contenedor de navbar - más compacto */
+  /* Móvil: Ajustar contenedor de navbar - centrado y diminuto */
   .nav-container {
-    padding: 0.25rem 0.5rem !important; /* Móvil: Padding mínimo */
+    padding: 0.125rem 0.25rem !important; /* Móvil: Padding mínimo */
     flex-direction: column !important; /* Móvil: Layout vertical */
-    gap: 0.5rem !important; /* Móvil: Mínimo espacio entre elementos */
+    gap: 0.25rem !important; /* Móvil: Espaciado mínimo */
+    justify-content: center !important;
+    align-items: center !important;
+    width: 100% !important;
   }
   
   /* Móvil: Ocultar enlaces de navegación en móvil */
@@ -938,60 +944,81 @@ body {
     display: none !important; /* Móvil: Ocultar navegación principal */
   }
   
-  /* Móvil: Ajustar selector de idioma - más pequeño */
+  /* Móvil: Ajustar selector de idioma - centrado y diminuto */
   .language-selector {
-    gap: 0.125rem !important; /* Móvil: Espacio mínimo entre botones */
+    gap: 0.0625rem !important; /* Móvil: Espacio mínimo entre botones */
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
   }
   
-  /* Móvil: Ajustar botones de idioma - mucho más pequeños */
+  /* Móvil: Ajustar botones de idioma - diminutos */
   .lang-btn {
-    padding: 0.125rem 0.5rem !important; /* Móvil: Botones mínimos */
-    font-size: 0.65rem !important; /* Móvil: Texto muy pequeño */
+    padding: 0.0625rem 0.25rem !important; /* Móvil: Botones mínimos */
+    font-size: 0.5rem !important; /* Móvil: Texto diminuto */
+    margin: 0 !important; /* Móvil: Sin márgenes */
   }
 }
 
 /* Estilos móviles específicos para Hero Section */
 @media (max-width: 768px) {
-  /* Móvil: Ajustar sección hero */
+  /* Móvil: Ajustar sección hero - extremadamente pequeña */
   .hero-section {
-    min-height: 60vh !important; /* Móvil: Reducir altura aún más */
-    padding-top: 3rem !important; /* Móvil: Menos espacio para navbar */
+    min-height: 50vh !important; /* Móvil: Altura mínima */
+    padding-top: 2rem !important; /* Móvil: Mínimo espacio para navbar */
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
   }
   
-  /* Móvil: Ajustar contenedor del hero */
+  /* Móvil: Ajustar contenedor del hero - centrado y diminuto */
   .hero-content {
     flex-direction: column !important; /* Móvil: Layout vertical */
-    gap: 1rem !important; /* Móvil: Mucho menos espacio entre elementos */
-    padding: 0 0.5rem !important; /* Móvil: Padding mínimo */
-    text-align: center !important; /* Móvil: Centrar todo el contenido */
+    gap: 0.5rem !important; /* Móvil: Espaciado mínimo */
+    padding: 0 !important; /* Móvil: Sin padding */
+    text-align: center !important; /* Móvil: Centrar todo */
+    justify-content: center !important;
+    align-items: center !important;
+    width: 100% !important;
   }
   
-  /* Móvil: Ajustar contenedor interno del hero */
+  /* Móvil: Ajustar contenedor interno del hero - centrado */
   .hero-content > div {
-    width: 100% !important; /* Móvil: Usar todo el ancho */
-    padding: 0 0.5rem !important; /* Móvil: Padding mínimo */
+    width: 100% !important; /* Móvil: Todo el ancho */
+    padding: 0 !important; /* Móvil: Sin padding */
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
   }
   
-  /* Móvil: Ajustar nombre (h1) - mucho más pequeño */
+  /* Móvil: Ajustar nombre (h1) - diminuto y centrado */
   .hero-text h1 {
-    font-size: 1.8rem !important; /* Móvil: Nombre mucho más pequeño */
-    line-height: 1.1 !important; /* Móvil: Líneas más juntas */
+    font-size: 1.2rem !important; /* Móvil: Nombre diminuto */
+    line-height: 1.0 !important; /* Móvil: Líneas muy juntas */
     white-space: normal !important; /* Móvil: Permitir múltiples líneas */
     text-align: center !important; /* Móvil: Centrar texto */
-    margin-bottom: 0.5rem !important; /* Móvil: Menos margen */
+    margin: 0 !important; /* Móvil: Sin márgenes */
+    padding: 0 !important; /* Móvil: Sin padding */
   }
   
-  /* Móvil: Ajustar subtítulo - mucho más pequeño */
+  /* Móvil: Ajustar subtítulo - diminuto y centrado */
   .hero-subtitle {
-    font-size: 0.9rem !important; /* Móvil: Subtítulo mucho más pequeño */
-    line-height: 1.2 !important; /* Móvil: Líneas más juntas */
+    font-size: 0.7rem !important; /* Móvil: Subtítulo diminuto */
+    line-height: 1.0 !important; /* Móvil: Líneas muy juntas */
     text-align: center !important; /* Móvil: Centrar texto */
-    margin-bottom: 0.5rem !important; /* Móvil: Menos margen */
+    margin: 0 !important; /* Móvil: Sin márgenes */
+    padding: 0 !important; /* Móvil: Sin padding */
   }
   
-  /* Móvil: Ajustar imagen - más pequeña */
+  /* Móvil: Ajustar imagen - diminuta y centrada */
   .hero-image {
-    width: 100% !important; /* Móvil: Imagen más pequeña */
-    max-width: 180px !important; /* Móvil: Reducir tamaño máximo */
+    width: 120px !important; /* Móvil: Imagen diminuta */
+    height: 120px !important; /* Móvil: Imagen cuadrada pequeña */
+    max-width: 120px !important; /* Móvil: Forzar tamaño pequeño */
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
   }
 }

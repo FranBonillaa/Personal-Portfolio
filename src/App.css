@@ -842,95 +842,95 @@ body {
 
 /* Estilos móviles específicos para Contact Section */
 @media (max-width: 768px) {
-  /* Móvil: Ajustar contenedor principal de Contact */
+  /* Móvil: Ajustar contenedor principal de Contact - mucho más pequeño */
   .contact-section {
-    min-height: 60vh; /* Móvil: Reducir altura para mejor visualización */
-    padding: 3rem 0; /* Móvil: Reducir padding superior e inferior */
+    min-height: 40vh !important; /* Móvil: Altura mínima */
+    padding: 1.5rem 0 !important; /* Móvil: Padding mínimo */
   }
   
-  /* Móvil: Ajustar contenedor interno */
+  /* Móvil: Ajustar contenedor interno - más compacto */
   .contact-section > div {
     width: 95% !important; /* Móvil: Usar casi todo el ancho */
-    padding: 0 1rem !important; /* Móvil: Reducir padding lateral */
+    padding: 0 0.5rem !important; /* Móvil: Padding mínimo */
   }
   
-  /* Móvil: Ajustar título */
+  /* Móvil: Ajustar título - mucho más pequeño */
   .contact-section h2 {
-    font-size: 2rem !important; /* Móvil: Título más pequeño */
-    margin-bottom: 1.5rem !important; /* Móvil: Reducir margen inferior */
+    font-size: 1.5rem !important; /* Móvil: Título mucho más pequeño */
+    margin-bottom: 0.75rem !important; /* Móvil: Margen mínimo */
   }
   
-  /* Móvil: Ajustar párrafo descriptivo */
+  /* Móvil: Ajustar párrafo descriptivo - más pequeño */
   .contact-section p {
-    font-size: 1rem !important; /* Móvil: Texto más pequeño */
-    margin-bottom: 2rem !important; /* Móvil: Reducir margen inferior */
+    font-size: 0.8rem !important; /* Móvil: Texto muy pequeño */
+    margin-bottom: 1rem !important; /* Móvil: Margen mínimo */
   }
   
-  /* Móvil: Layout de información de contacto en una columna */
+  /* Móvil: Layout de información de contacto en una columna - más compacto */
   .contact-info {
     flex-direction: column !important; /* Móvil: Una columna */
-    gap: 2rem !important; /* Móvil: Espaciado entre elementos */
+    gap: 1rem !important; /* Móvil: Espaciado mínimo */
     align-items: center !important; /* Móvil: Centrar elementos */
   }
   
-  /* Móvil: Ajustar items de contacto */
+  /* Móvil: Ajustar items de contacto - más pequeños */
   .contact-item {
     text-align: center !important; /* Móvil: Centrar texto */
     width: 100% !important; /* Móvil: Usar todo el ancho disponible */
   }
   
-  /* Móvil: Ajustar subtítulos (Email, Redes Sociales) */
+  /* Móvil: Ajustar subtítulos (Email, Redes Sociales) - mucho más pequeños */
   .contact-item h3 {
-    font-size: 1.5rem !important; /* Móvil: Subtítulos más pequeños */
-    margin-bottom: 1rem !important; /* Móvil: Reducir margen inferior */
+    font-size: 1.1rem !important; /* Móvil: Subtítulos muy pequeños */
+    margin-bottom: 0.5rem !important; /* Móvil: Margen mínimo */
   }
   
-  /* Móvil: Ajustar email */
+  /* Móvil: Ajustar email - más pequeño */
   .contact-item p {
-    font-size: 1rem !important; /* Móvil: Texto de email más pequeño */
+    font-size: 0.8rem !important; /* Móvil: Texto muy pequeño */
   }
   
-  /* Móvil: Ajustar contenedor de redes sociales */
+  /* Móvil: Ajustar contenedor de redes sociales - más compacto */
   .social-links {
     flex-direction: column !important; /* Móvil: Una columna */
-    gap: 1rem !important; /* Móvil: Espaciado vertical entre enlaces */
+    gap: 0.5rem !important; /* Móvil: Espaciado mínimo */
     align-items: center !important; /* Móvil: Centrar enlaces */
   }
   
-  /* Móvil: Ajustar enlaces de redes sociales */
+  /* Móvil: Ajustar enlaces de redes sociales - más pequeños */
   .social-link {
-    font-size: 1rem !important; /* Móvil: Texto más pequeño */
-    padding: 0.75rem 1.5rem !important; /* Móvil: Padding más pequeño */
+    font-size: 0.8rem !important; /* Móvil: Texto muy pequeño */
+    padding: 0.5rem 1rem !important; /* Móvil: Padding mínimo */
     width: 100% !important; /* Móvil: Ocupar todo el ancho */
     text-align: center !important; /* Móvil: Centrar texto */
   }
   
-  /* Móvil: Ajustar contenedor del botón */
+  /* Móvil: Ajustar contenedor del botón - más compacto */
   .cta-button {
-    margin-top: 2rem !important; /* Móvil: Reducir margen superior */
+    margin-top: 1rem !important; /* Móvil: Margen mínimo */
   }
   
-  /* Móvil: Ajustar botón de contacto */
+  /* Móvil: Ajustar botón de contacto - mucho más pequeño */
   .contact-btn {
-    font-size: 1rem !important; /* Móvil: Texto más pequeño */
-    padding: 0.75rem 2rem !important; /* Móvil: Padding más pequeño */
+    font-size: 0.8rem !important; /* Móvil: Texto muy pequeño */
+    padding: 0.5rem 1.5rem !important; /* Móvil: Padding mínimo */
     width: 100% !important; /* Móvil: Botón más ancho */
-    max-width: 300px !important; /* Móvil: Limitar ancho máximo */
+    max-width: 200px !important; /* Móvil: Limitar ancho máximo */
   }
 }
 
 /* Estilos móviles específicos para Navbar */
 @media (max-width: 768px) {
-  /* Móvil: Ajustar navbar */
+  /* Móvil: Ajustar navbar - mucho más pequeña */
   .navbar {
-    padding: 0.5rem 1rem !important; /* Móvil: Reducir padding */
+    padding: 0.25rem 0.5rem !important; /* Móvil: Padding mínimo */
   }
   
-  /* Móvil: Ajustar contenedor de navbar */
+  /* Móvil: Ajustar contenedor de navbar - más compacto */
   .nav-container {
-    padding: 0.5rem 1rem !important; /* Móvil: Padding más pequeño */
+    padding: 0.25rem 0.5rem !important; /* Móvil: Padding mínimo */
     flex-direction: column !important; /* Móvil: Layout vertical */
-    gap: 1rem !important; /* Móvil: Espaciado entre elementos */
+    gap: 0.5rem !important; /* Móvil: Mínimo espacio entre elementos */
   }
   
   /* Móvil: Ocultar enlaces de navegación en móvil */
@@ -938,15 +938,15 @@ body {
     display: none !important; /* Móvil: Ocultar navegación principal */
   }
   
-  /* Móvil: Ajustar selector de idioma */
+  /* Móvil: Ajustar selector de idioma - más pequeño */
   .language-selector {
-    gap: 0.25rem !important; /* Móvil: Reducir espacio entre botones */
+    gap: 0.125rem !important; /* Móvil: Espacio mínimo entre botones */
   }
   
-  /* Móvil: Ajustar botones de idioma */
+  /* Móvil: Ajustar botones de idioma - mucho más pequeños */
   .lang-btn {
-    padding: 0.25rem 0.75rem !important; /* Móvil: Botones más pequeños */
-    font-size: 0.75rem !important; /* Móvil: Texto más pequeño */
+    padding: 0.125rem 0.5rem !important; /* Móvil: Botones mínimos */
+    font-size: 0.65rem !important; /* Móvil: Texto muy pequeño */
   }
 }
 
@@ -954,42 +954,44 @@ body {
 @media (max-width: 768px) {
   /* Móvil: Ajustar sección hero */
   .hero-section {
-    min-height: 80vh !important; /* Móvil: Reducir altura */
-    padding-top: 4rem !important; /* Móvil: Espacio para navbar */
+    min-height: 60vh !important; /* Móvil: Reducir altura aún más */
+    padding-top: 3rem !important; /* Móvil: Menos espacio para navbar */
   }
   
   /* Móvil: Ajustar contenedor del hero */
   .hero-content {
     flex-direction: column !important; /* Móvil: Layout vertical */
-    gap: 2rem !important; /* Móvil: Reducir espacio entre elementos */
-    padding: 0 1rem !important; /* Móvil: Reducir padding lateral */
+    gap: 1rem !important; /* Móvil: Mucho menos espacio entre elementos */
+    padding: 0 0.5rem !important; /* Móvil: Padding mínimo */
     text-align: center !important; /* Móvil: Centrar todo el contenido */
   }
   
   /* Móvil: Ajustar contenedor interno del hero */
   .hero-content > div {
     width: 100% !important; /* Móvil: Usar todo el ancho */
-    padding: 0 1rem !important; /* Móvil: Padding lateral */
+    padding: 0 0.5rem !important; /* Móvil: Padding mínimo */
   }
   
-  /* Móvil: Ajustar nombre (h1) */
+  /* Móvil: Ajustar nombre (h1) - mucho más pequeño */
   .hero-text h1 {
-    font-size: 2.5rem !important; /* Móvil: Nombre más pequeño */
-    line-height: 1.2 !important; /* Móvil: Mejorar legibilidad */
+    font-size: 1.8rem !important; /* Móvil: Nombre mucho más pequeño */
+    line-height: 1.1 !important; /* Móvil: Líneas más juntas */
     white-space: normal !important; /* Móvil: Permitir múltiples líneas */
     text-align: center !important; /* Móvil: Centrar texto */
+    margin-bottom: 0.5rem !important; /* Móvil: Menos margen */
   }
   
-  /* Móvil: Ajustar subtítulo */
+  /* Móvil: Ajustar subtítulo - mucho más pequeño */
   .hero-subtitle {
-    font-size: 1.25rem !important; /* Móvil: Subtítulo más pequeño */
-    line-height: 1.3 !important; /* Móvil: Mejorar legibilidad */
+    font-size: 0.9rem !important; /* Móvil: Subtítulo mucho más pequeño */
+    line-height: 1.2 !important; /* Móvil: Líneas más juntas */
     text-align: center !important; /* Móvil: Centrar texto */
+    margin-bottom: 0.5rem !important; /* Móvil: Menos margen */
   }
   
-  /* Móvil: Ajustar imagen */
+  /* Móvil: Ajustar imagen - más pequeña */
   .hero-image {
-    width: 100% !important; /* Móvil: Imagen más grande */
-    max-width: 250px !important; /* Móvil: Limitar tamaño máximo */
+    width: 100% !important; /* Móvil: Imagen más pequeña */
+    max-width: 180px !important; /* Móvil: Reducir tamaño máximo */
   }
 }

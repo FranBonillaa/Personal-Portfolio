@@ -979,156 +979,300 @@ body {
 
 /* Estilos móviles específicos para Navbar */
 @media (max-width: 768px) {
-  /* Móvil: Ajustar navbar - asegurar que se vea completa */
+  /* Móvil: Navbar compacta y centrada */
   .navbar {
-    padding: 0.25rem 0.5rem !important; /* Móvil: Padding pequeño */
-    height: auto !important; /* Móvil: Altura automática */
-    background: rgba(0, 0, 0, 0.9) !important; /* Móvil: Background visible */
-    backdrop-filter: blur(10px) !important; /* Móvil: Efecto glass */
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2) !important; /* Móvil: Borde visible */
+    padding: 0.125rem 0.25rem !important;
+    height: auto !important;
+    background: rgba(0, 0, 0, 0.9) !important;
   }
   
-  /* Móvil: Ajustar contenedor de navbar - layout vertical compacto */
   .nav-container {
-    padding: 0.25rem 0.5rem !important; /* Móvil: Padding pequeño */
-    flex-direction: column !important; /* Móvil: Layout vertical */
-    gap: 0.5rem !important; /* Móvil: Espaciado pequeño */
+    padding: 0.125rem 0.25rem !important;
+    flex-direction: column !important;
+    gap: 0.25rem !important;
     justify-content: center !important;
     align-items: center !important;
     width: 100% !important;
-    max-width: 100% !important;
   }
   
-  /* Móvil: Mostrar enlaces de navegación - asegurar visibilidad */
   .nav-links {
-    display: flex !important; /* Móvil: Mostrar navegación */
-    gap: 0.25rem !important; /* Móvil: Espaciado mínimo */
-    flex-wrap: wrap !important; /* Móvil: Permitir múltiples líneas */
+    display: flex !important;
+    gap: 0.125rem !important;
+    flex-wrap: wrap !important;
     justify-content: center !important;
     align-items: center !important;
     width: 100% !important;
-    max-width: 100% !important;
   }
   
-  /* Móvil: Ajustar enlaces de navegación - visibles y pequeños */
   .nav-link {
-    font-size: 0.6rem !important; /* Móvil: Texto pequeño pero legible */
-    padding: 0.125rem 0.25rem !important; /* Móvil: Padding pequeño */
-    margin: 0 !important; /* Móvil: Sin márgenes */
-    line-height: 1.2 !important; /* Móvil: Líneas legibles */
-    color: white !important; /* Móvil: Color visible */
-    text-decoration: none !important; /* Móvil: Sin subrayado */
-    background: rgba(255, 255, 255, 0.1) !important; /* Móvil: Fondo visible */
-    border-radius: 4px !important; /* Móvil: Bordes redondeados */
-    border: 1px solid rgba(255, 255, 255, 0.2) !important; /* Móvil: Borde visible */
+    font-size: 0.5rem !important;
+    padding: 0.0625rem 0.125rem !important;
+    margin: 0 !important;
+    line-height: 1.0 !important;
+    color: white !important;
+    text-decoration: none !important;
+    background: rgba(255, 255, 255, 0.1) !important;
+    border-radius: 2px !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
   }
   
-  /* Móvil: Ajustar selector de idioma - visible y centrado */
   .language-selector {
-    gap: 0.25rem !important; /* Móvil: Espacio entre botones */
+    gap: 0.125rem !important;
     display: flex !important;
     justify-content: center !important;
     align-items: center !important;
-    margin-top: 0.25rem !important; /* Móvil: Pequeño espacio arriba */
+    margin-top: 0.125rem !important;
   }
   
-  /* Móvil: Ajustar botones de idioma - visibles y pequeños */
   .lang-btn {
-    padding: 0.125rem 0.375rem !important; /* Móvil: Botones pequeños */
-    font-size: 0.5rem !important; /* Móvil: Texto pequeño */
-    margin: 0 !important; /* Móvil: Sin márgenes */
-    line-height: 1.2 !important; /* Móvil: Líneas legibles */
-    background: rgba(255, 255, 255, 0.2) !important; /* Móvil: Fondo visible */
-    color: white !important; /* Móvil: Texto visible */
-    border: 1px solid rgba(255, 255, 255, 0.3) !important; /* Móvil: Borde visible */
-    border-radius: 4px !important; /* Móvil: Bordes redondeados */
+    padding: 0.0625rem 0.125rem !important;
+    font-size: 0.4rem !important;
+    margin: 0 !important;
+    line-height: 1.0 !important;
+    background: rgba(255, 255, 255, 0.2) !important;
+    color: white !important;
+    border: 1px solid rgba(255, 255, 255, 0.3) !important;
+    border-radius: 2px !important;
   }
   
-  /* Móvil: Botón activo de idioma */
   .lang-btn.active {
-    background: var(--primary-color) !important; /* Móvil: Color activo visible */
-    border-color: var(--primary-color) !important; /* Móvil: Borde activo */
+    background: var(--primary-color) !important;
+    border-color: var(--primary-color) !important;
   }
 }
 
 /* Estilos móviles específicos para Hero Section */
 @media (max-width: 768px) {
-  /* Móvil: Ajustar sección hero - más compacta */
+  /* Móvil: Hero súper compacto y centrado */
   .hero-section {
-    min-height: 40vh !important; /* Móvil: Altura más pequeña */
-    padding-top: 1rem !important; /* Móvil: Mínimo espacio para navbar */
+    min-height: 35vh !important;
+    padding: 0.5rem 0.25rem !important;
     display: flex !important;
     flex-direction: column !important;
-    justify-content: flex-start !important; /* Móvil: Empezar desde arriba */
+    justify-content: center !important;
     align-items: center !important;
+    margin: 0 !important;
   }
   
-  /* Móvil: Ajustar contenedor del hero - foto más arriba */
   .hero-content {
-    flex-direction: column !important; /* Móvil: Layout vertical */
-    gap: 0.25rem !important; /* Móvil: Espaciado mínimo */
-    padding: 0 !important; /* Móvil: Sin padding */
-    text-align: center !important; /* Móvil: Centrar todo */
-    justify-content: flex-start !important; /* Móvil: Empezar desde arriba */
+    flex-direction: column !important;
+    gap: 0.5rem !important;
+    padding: 0 !important;
+    text-align: center !important;
+    justify-content: center !important;
     align-items: center !important;
     width: 100% !important;
+    margin: 0 !important;
   }
   
-  /* Móvil: Ajustar contenedor interno del hero - foto primero */
   .hero-content > div {
-    width: 100% !important; /* Móvil: Todo el ancho */
-    padding: 0 !important; /* Móvil: Sin padding */
+    width: 100% !important;
+    padding: 0 !important;
     display: flex !important;
     flex-direction: column !important;
     justify-content: center !important;
     align-items: center !important;
+    margin: 0 !important;
   }
   
-  /* Móvil: Ajustar imagen - más arriba y pequeña */
+  /* Móvil: Imagen cuadrada completa y centrada */
   .hero-image {
-    width: 100px !important; /* Móvil: Imagen más pequeña */
-    height: 100px !important; /* Móvil: Imagen cuadrada pequeña */
-    max-width: 100px !important; /* Móvil: Forzar tamaño pequeño */
+    width: 80px !important;
+    height: 80px !important;
+    max-width: 80px !important;
     display: flex !important;
     justify-content: center !important;
     align-items: center !important;
-    order: -1 !important; /* Móvil: Poner imagen primero */
-    margin-bottom: 0.25rem !important; /* Móvil: Espacio mínimo debajo */
+    order: -1 !important;
+    margin: 0 auto !important;
+    border-radius: 4px !important;
+    object-fit: contain !important; /* Móvil: Mostrar imagen completa */
+    object-position: center !important; /* Móvil: Centrar imagen */
+    overflow: visible !important; /* Móvil: No cortar imagen */
   }
   
-  /* Móvil: Ajustar nombre (h1) - diminuto y centrado */
+  /* Móvil: Asegurar que el contenedor de la imagen no corte */
+  .hero-image img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain !important;
+    object-position: center !important;
+    border-radius: 4px !important;
+  }
+  
+  /* Móvil: Nombre súper pequeño y centrado */
   .hero-text h1 {
-    font-size: 1.2rem !important; /* Móvil: Nombre diminuto */
-    line-height: 1.0 !important; /* Móvil: Líneas muy juntas */
-    white-space: normal !important; /* Móvil: Permitir múltiples líneas */
-    text-align: center !important; /* Móvil: Centrar texto */
-    margin: 0 !important; /* Móvil: Sin márgenes */
-    padding: 0 !important; /* Móvil: Sin padding */
+    font-size: 1rem !important;
+    line-height: 1.0 !important;
+    white-space: normal !important;
+    text-align: center !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
   }
   
-  /* Móvil: Ajustar subtítulo - diminuto y centrado */
+  /* Móvil: Subtítulo súper pequeño y centrado */
   .hero-subtitle {
-    font-size: 0.7rem !important; /* Móvil: Subtítulo diminuto */
-    line-height: 1.0 !important; /* Móvil: Líneas muy juntas */
-    text-align: center !important; /* Móvil: Centrar texto */
-    margin: 0 !important; /* Móvil: Sin márgenes */
-    padding: 0 !important; /* Móvil: Sin padding */
+    font-size: 0.6rem !important;
+    line-height: 1.0 !important;
+    text-align: center !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
   }
 }
 
 /* Estilos móviles específicos para About Me Section */
 @media (max-width: 768px) {
-  /* Móvil: Bajar sección About Me y añadir espacio */
+  /* Móvil: About Me súper compacto y centrado */
   .about-me-section {
-    margin-top: 3rem !important; /* Móvil: Añadir espacio superior */
-    padding-top: 2rem !important; /* Móvil: Más espacio interno */
-    height: auto !important; /* Móvil: Altura automática */
-    min-height: 80vh !important; /* Móvil: Altura mínima */
+    margin-top: 1rem !important;
+    padding: 1rem 0.5rem !important;
+    height: auto !important;
+    min-height: 60vh !important;
   }
   
-  /* Móvil: Ajustar contenedor de About Me */
   .about-content {
-    padding: 0 1rem !important; /* Móvil: Padding lateral */
-    margin-top: 2rem !important; /* Móvil: Espacio superior */
+    padding: 0.25rem !important;
+    margin: 0 !important;
+    text-align: center !important;
+  }
+  
+  .about-text {
+    font-size: 0.7rem !important;
+    line-height: 1.0 !important;
+    margin: 0.25rem 0 !important;
+    padding: 0 !important;
+  }
+  
+  .about-title {
+    font-size: 1rem !important;
+    margin: 0.25rem 0 !important;
+    padding: 0 !important;
+  }
+  
+  .skills {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0.125rem !important;
+    margin: 0.25rem 0 !important;
+    padding: 0 !important;
+  }
+  
+  .skill {
+    font-size: 0.6rem !important;
+    padding: 0.125rem 0.25rem !important;
+    margin: 0.0625rem !important;
+    background: rgba(255, 255, 255, 0.1) !important;
+    border-radius: 2px !important;
+  }
+}
+
+/* Estilos móviles específicos para Technologies Section */
+@media (max-width: 768px) {
+  /* Móvil: Technologies súper compacto y centrado */
+  .technologies-section {
+    padding: 1rem 0.5rem !important;
+    margin: 0.5rem 0 !important;
+    min-height: 50vh !important;
+  }
+  
+  .technologies-content {
+    padding: 0.25rem !important;
+    margin: 0 !important;
+  }
+  
+  .tech-category {
+    margin-bottom: 0.5rem !important;
+  }
+  
+  .tech-title {
+    font-size: 0.8rem !important;
+    margin: 0.25rem 0 !important;
+    padding: 0 !important;
+  }
+  
+  .tech-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 0.125rem !important;
+    margin: 0.25rem 0 !important;
+  }
+  
+  .tech-item {
+    font-size: 0.5rem !important;
+    padding: 0.125rem 0.25rem !important;
+    margin: 0 !important;
+    background: rgba(255, 255, 255, 0.1) !important;
+    border-radius: 2px !important;
+    text-align: center !important;
+  }
+}
+
+/* Estilos móviles específicos para Projects Section */
+@media (max-width: 768px) {
+  /* Móvil: Projects súper compacto y centrado */
+  .projects-section {
+    padding: 1rem 0.5rem !important;
+    margin: 0.5rem 0 !important;
+    min-height: 50vh !important;
+  }
+  
+  .projects {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 0.25rem !important;
+    margin: 0.25rem 0 !important;
+  }
+  
+  .project-card {
+    padding: 0.5rem !important;
+    margin: 0 !important;
+    background: rgba(255, 255, 255, 0.05) !important;
+    border-radius: 4px !important;
+  }
+  
+  .project-title {
+    font-size: 0.8rem !important;
+    margin: 0.125rem 0 !important;
+    padding: 0 !important;
+  }
+  
+  .project-description {
+    font-size: 0.6rem !important;
+    margin: 0.125rem 0 !important;
+    padding: 0 !important;
+  }
+}
+
+/* Estilos móviles específicos para Experience Section */
+@media (max-width: 768px) {
+  /* Móvil: Experience súper compacto y centrado */
+  .experience-section {
+    padding: 1rem 0.5rem !important;
+    margin: 0.5rem 0 !important;
+    min-height: 50vh !important;
+  }
+  
+  .experience-content {
+    padding: 0.25rem !important;
+    margin: 0 !important;
+  }
+  
+  .experience-item {
+    margin-bottom: 0.5rem !important;
+    padding: 0.25rem !important;
+    background: rgba(255, 255, 255, 0.05) !important;
+    border-radius: 4px !important;
+  }
+  
+  .experience-title {
+    font-size: 0.7rem !important;
+    margin: 0.125rem 0 !important;
+    padding: 0 !important;
+  }
+  
+  .experience-description {
+    font-size: 0.5rem !important;
+    margin: 0.125rem 0 !important;
+    padding: 0 !important;
   }
 }

@@ -519,14 +519,82 @@ body {
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.1);
   transition: transform 0.3s ease;
-  max-width: 1400px;
-  margin: 0 auto;
+  max-width: 70vw;
+  width: 70vw;
+  margin: 0;
   position: relative;
-  z-index: 10;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  padding-top: 3rem;
+}
+
+/* Experience Content Alignment - Solo Web */
+.experience-title {
+  text-align: center !important;
+  margin: 0 auto 2rem auto !important;
+}
+
+.experience-period {
+  text-align: center !important;
+  margin: 0 auto !important;
+}
+
+/* Estilos móviles específicos para Experience Section */
+@media (max-width: 768px) {
+  /* Móvil: Experience súper compacto y centrado - fecha al lado del título */
+  .experience-section {
+    padding: 1rem 0.5rem !important;
+    margin: 0.5rem 0 !important;
+    min-height: 50vh !important;
+  }
+  
+  .experience-content {
+    padding: 0.25rem !important;
+    margin: 0 !important;
+  }
+  
+  /* Móvil: Restaurar layout original con fecha al lado */
+  .experience-card > div:first-child {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: flex-start !important;
+    margin-bottom: 0.5rem !important;
+  }
+  
+  .experience-card > div:last-child {
+    display: none !important; /* Ocultar la fecha duplicada al final */
+  }
+  
+  .experience-item {
+    margin-bottom: 0.5rem !important;
+    padding: 0.25rem !important;
+    background: rgba(255, 255, 255, 0.05) !important;
+    border-radius: 4px !important;
+  }
+  
+  .experience-title {
+    font-size: 0.7rem !important;
+    margin: 0.125rem 0 !important;
+    padding: 0 !important;
+    text-align: left !important;
+  }
+  
+  .experience-description {
+    font-size: 0.5rem !important;
+    margin: 0.125rem 0 !important;
+    padding: 0 !important;
+  }
 }
 
 .experience-card:hover {
-  transform: translateX(5px);
+  transform: translateX(-50%) scale(1.02);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
 /* Projects Section */
@@ -1091,12 +1159,14 @@ body {
     padding: 0 !important;
   }
   
+  /* Móvil: Skills en dos columnas si caben, si no pasan abajo */
   .skills {
-    display: flex !important;
-    flex-direction: column !important;
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important; /* Móvil: Dos columnas */
     gap: 0.25rem !important; /* Móvil: Más espacio entre skills */
-    margin: 0.5rem 0 !important;
+    margin: 0.5rem auto !important;
     padding: 0 !important;
+    max-width: 300px !important; /* Móvil: Limitar ancho para que quepan */
   }
   
   .skill {
@@ -1105,12 +1175,13 @@ body {
     margin: 0.0625rem !important;
     background: rgba(255, 255, 255, 0.1) !important;
     border-radius: 2px !important;
+    text-align: center !important;
   }
 }
 
 /* Estilos móviles específicos para Technologies Section */
 @media (max-width: 768px) {
-  /* Móvil: Technologies súper compacto y centrado */
+  /* Móvil: Technologies en una columna por categoría */
   .technologies-section {
     padding: 1rem 0.5rem !important;
     margin: 0.5rem 0 !important;
@@ -1123,20 +1194,23 @@ body {
   }
   
   .tech-category {
-    margin-bottom: 0.5rem !important;
+    margin-bottom: 1rem !important; /* Móvil: Más espacio entre categorías */
   }
   
   .tech-title {
     font-size: 0.8rem !important;
-    margin: 0.25rem 0 !important;
+    margin: 0.5rem 0 !important; /* Móvil: Más espacio */
     padding: 0 !important;
+    text-align: center !important;
   }
   
+  /* Móvil: Cada categoría en una columna */
   .tech-grid {
     display: grid !important;
-    grid-template-columns: repeat(2, 1fr) !important;
+    grid-template-columns: 1fr !important; /* Móvil: Una sola columna */
     gap: 0.125rem !important;
-    margin: 0.25rem 0 !important;
+    margin: 0.25rem auto !important;
+    max-width: 200px !important; /* Móvil: Limitar ancho */
   }
   
   .tech-item {

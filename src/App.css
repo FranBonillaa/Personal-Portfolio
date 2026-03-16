@@ -626,16 +626,67 @@ body {
   margin-top: 2rem;
 }
 
-/* Solo aplicar 3 posiciones en pantalla completa */
-@media (min-width: 769px) {
+/* Solo aplicar cambios en resolución máxima (1280px+) */
+@media (min-width: 1280px) {
+  /* Contenedor principal MÁS GORDO hacia los lados */
+  .projects-section .max-w-6xl {
+    width: 100% !important;
+    max-width: 1500px !important;
+    margin: 0 auto !important;
+    padding: 0 0.5rem !important;
+  }
+  
+  /* Grid simplificado - 3 partes iguales (BASE INTACTABLE) */
   .projects {
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 150rem;
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 4rem !important;
+    margin: 2rem 0 !important;
+    width: 100% !important;
+  }
+  
+  /* Cards limpias - altura controlada y SOBREPASANDO CAPAS */
+  .project-card {
+    position: relative !important;
+    width: 105% !important;
+    height: auto !important;
+    padding: 0.5rem !important;
+    box-sizing: border-box !important;
+    margin: 0 auto !important;
+    /* Eliminar cualquier transformación, márgenes negativos o posición absoluta */
+    transform: none !important;
+    left: auto !important;
+    right: auto !important;
+    top: auto !important;
+    bottom: auto !important;
+  }
+  
+  /* Formato panorámico para imágenes */
+  .project-card img {
+    width: 120% !important;
+    height: 120px !important;
+    object-fit: cover !important;
+    aspect-ratio: 16/9 !important;
+  }
+  
+  /* Texto simple */
+  .project-card h3,
+  .project-card p {
+    width: 100% !important;
+    margin: 0.5rem 0 !important;
+    padding: 0 !important;
+  }
+  
+  .tech-stack {
+    width: 100% !important;
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 0.25rem !important;
   }
 }
 
 /* Mantener layout móvil normal */
-@media (max-width: 768px) {
+@media (max-width: 1200px) {
   .projects {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));

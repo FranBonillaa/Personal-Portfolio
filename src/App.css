@@ -1113,7 +1113,7 @@ body {
 @media (max-width: 768px) {
   .hero-section {
     min-height: auto;
-    padding: 6rem 0 2rem;  /* sin padding lateral — el hero-content lo gestiona */
+    padding: 140px 0 2rem;  /* 140px cubre la navbar en 3 filas (logo + links + idiomas) */
     width: 100%;
     margin: 0;
   }

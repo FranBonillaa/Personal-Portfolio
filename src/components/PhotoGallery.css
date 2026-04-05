@@ -32,12 +32,23 @@
   .gallery-title {
     font-size: 2rem;
   }
-  
+
   .photo-gallery-section {
-    padding: 60px 0;
+    padding: 60px 16px;   /* 16px lateral para separar del borde de pantalla */
+    box-sizing: border-box;
+    width: 100%;
+    overflow-x: hidden;
   }
 
   .dome-gallery-container {
     height: 400px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+}
+
+@media (max-width: 360px) {
+  .photo-gallery-section {
+    padding: 60px 12px;   /* ligeramente menor en pantallas muy pequeñas */
   }
 }

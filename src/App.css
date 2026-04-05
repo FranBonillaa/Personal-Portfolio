@@ -1217,45 +1217,99 @@ body {
 
 /* Estilos móviles específicos para Technologies Section */
 @media (max-width: 768px) {
-  /* Móvil: Technologies en una columna por categoría */
   .technologies-section {
-    padding: 1rem 0.5rem !important;
-    margin: 0.5rem 0 !important;
-    min-height: 50vh !important;
+    padding: 1rem 0 !important;
+    min-height: auto !important;
   }
-  
-  .technologies-content {
-    padding: 0.25rem !important;
-    margin: 0 !important;
+
+  .tech-container {
+    padding: 0 16px !important;
+    box-sizing: border-box !important;
   }
-  
-  .tech-category {
-    margin-bottom: 1rem !important; /* Móvil: Más espacio entre categorías */
+
+  .tech-title-text {
+    font-size: 2rem !important;
   }
-  
-  .tech-title {
-    font-size: 0.8rem !important;
-    margin: 0.5rem 0 !important; /* Móvil: Más espacio */
-    padding: 0 !important;
+
+  /* Tarjetas apiladas en columna, sin el gap enorme de 10rem */
+  .tech-two-columns {
+    flex-direction: column !important;
+    gap: 1.25rem !important;
+    margin-top: 1.5rem !important; /* sobreescribe el marginTop: 15rem del JSX */
+  }
+
+  /* Cada tarjeta ocupa el ancho completo */
+  .tech-column {
+    width: 100% !important;
+    flex: none !important;
+    padding: 1rem 0.75rem !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Título de categoría */
+  .column-title {
+    font-size: 1.1rem !important;
+    margin-bottom: 1rem !important;
     text-align: center !important;
   }
-  
-  /* Móvil: Cada categoría en una columna */
-  .tech-grid {
-    display: grid !important;
-    grid-template-columns: 1fr !important; /* Móvil: Una sola columna */
-    gap: 0.125rem !important;
-    margin: 0.25rem auto !important;
-    max-width: 200px !important; /* Móvil: Limitar ancho */
+
+  /* Grid de iconos: 3 columnas en mobile */
+  .tech-items-grid {
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 0.75rem 0.5rem !important;
   }
-  
+
+  /* Cada ítem: icono + nombre centrados */
   .tech-item {
-    font-size: 0.5rem !important;
-    padding: 0.125rem 0.25rem !important;
-    margin: 0 !important;
-    background: rgba(255, 255, 255, 0.1) !important;
-    border-radius: 2px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    gap: 0.35rem !important;
+    padding: 0 !important;
+    background: transparent !important;
+    border-radius: 0 !important;
+    font-size: unset !important;
+  }
+
+  /* Caja de color con el icono */
+  .tech-icon {
+    width: 42px !important;
+    height: 42px !important;
+    border-radius: 10px !important;
+  }
+
+  /* El icono SVG dentro de la caja */
+  .tech-real-icon {
+    width: 22px !important;
+    height: 22px !important;
+  }
+
+  /* Nombre de la tecnología */
+  .tech-name {
+    font-size: 0.62rem !important;
     text-align: center !important;
+    line-height: 1.2 !important;
+    word-break: break-word !important;
+    margin: 0 !important;
+  }
+}
+
+/* Pantallas muy pequeñas: 2 columnas */
+@media (max-width: 360px) {
+  .tech-items-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 0.6rem 0.4rem !important;
+  }
+
+  .tech-icon {
+    width: 36px !important;
+    height: 36px !important;
+  }
+
+  .tech-real-icon {
+    width: 18px !important;
+    height: 18px !important;
   }
 }
 

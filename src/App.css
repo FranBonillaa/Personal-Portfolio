@@ -547,50 +547,119 @@ body {
   margin: 0 auto !important;
 }
 
-/* Estilos móviles específicos para Experience Section */
+/* Estilos móviles — Experience Section: Timeline vertical */
 @media (max-width: 768px) {
-  /* Móvil: Experience súper compacto y centrado - fecha al lado del título */
   .experience-section {
-    padding: 1rem 0.5rem !important;
-    margin: 0.5rem 0 !important;
-    min-height: 50vh !important;
+    padding: 2rem 0 !important;
+    min-height: auto !important;
   }
-  
-  .experience-content {
-    padding: 0.25rem !important;
-    margin: 0 !important;
+
+  /* Override inline style padding del wrapper JSX */
+  .experience-section > div {
+    padding: 0 16px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
   }
-  
-  /* Móvil: Restaurar layout original con fecha al lado */
+
+  /* Título de sección */
+  .experience-section h2 {
+    font-size: 2rem !important;
+    margin-bottom: 2rem !important;
+  }
+
+  /* Contenedor de tarjetas — ancla del timeline */
+  .experience-section .space-y-8 {
+    position: relative !important;
+    padding-left: 20px !important;
+  }
+
+  /* Línea vertical del timeline */
+  .experience-section .space-y-8::before {
+    content: '' !important;
+    position: absolute !important;
+    left: 4px !important;
+    top: 0 !important;
+    bottom: 0 !important;
+    width: 2px !important;
+    background: linear-gradient(to bottom, #22c55e, transparent) !important;
+  }
+
+  /* Tarjeta: cancelar el hack left/translateX del desktop */
+  .experience-card {
+    left: auto !important;
+    transform: none !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 1.25rem 1rem !important;
+    padding-top: 1.25rem !important;
+    margin: 0 0 1.5rem 0 !important;
+    align-items: flex-start !important;
+    gap: 0.75rem !important;
+    box-sizing: border-box !important;
+    position: relative !important;
+  }
+
+  /* Punto del timeline */
+  .experience-card::before {
+    content: '' !important;
+    position: absolute !important;
+    left: -24px !important;
+    top: 1.25rem !important;
+    width: 10px !important;
+    height: 10px !important;
+    border-radius: 50% !important;
+    background-color: #22c55e !important;
+    border: 2px solid white !important;
+    z-index: 1 !important;
+  }
+
+  /* Sin translateX en hover mobile */
+  .experience-card:hover {
+    transform: scale(1.01) !important;
+  }
+
+  /* Bloque título + empresa: columna alineada a la izquierda */
   .experience-card > div:first-child {
     display: flex !important;
-    justify-content: space-between !important;
+    flex-direction: column !important;
     align-items: flex-start !important;
-    margin-bottom: 0.5rem !important;
+    text-align: left !important;
+    margin-bottom: 0 !important;
   }
-  
-  .experience-card > div:last-child {
-    display: none !important; /* Ocultar la fecha duplicada al final */
+
+  /* Título del puesto */
+  .experience-card h3 {
+    font-size: clamp(0.95rem, 4vw, 1.2rem) !important;
+    line-height: 1.35 !important;
+    text-align: left !important;
+    word-break: break-word !important;
   }
-  
-  .experience-item {
-    margin-bottom: 0.5rem !important;
-    padding: 0.25rem !important;
-    background: rgba(255, 255, 255, 0.05) !important;
-    border-radius: 4px !important;
-  }
-  
-  .experience-title {
-    font-size: 0.7rem !important;
-    margin: 0.125rem 0 !important;
-    padding: 0 !important;
+
+  /* Empresa (text-blue-400) */
+  .experience-card .text-blue-400 {
+    font-size: clamp(0.8rem, 3.5vw, 0.95rem) !important;
     text-align: left !important;
   }
-  
-  .experience-description {
-    font-size: 0.5rem !important;
-    margin: 0.125rem 0 !important;
-    padding: 0 !important;
+
+  /* Descripción */
+  .experience-card > p {
+    font-size: 0.875rem !important;
+    line-height: 1.6 !important;
+    text-align: left !important;
+  }
+
+  /* Fechas: visible y alineada a la izquierda */
+  .experience-card > div:last-child {
+    display: flex !important;
+    justify-content: flex-start !important;
+    text-align: left !important;
+    width: 100% !important;
+    padding-top: 0.5rem !important;
+    margin-top: 0 !important;
+  }
+
+  .experience-card > div:last-child span {
+    font-size: 0.8rem !important;
   }
 }
 
@@ -1238,12 +1307,15 @@ body {
     margin-top: 1.5rem !important; /* sobreescribe el marginTop: 15rem del JSX */
   }
 
-  /* Cada tarjeta ocupa el ancho completo */
+  /* Cada tarjeta ocupa el ancho completo y se expande al contenido */
   .tech-column {
     width: 100% !important;
     flex: none !important;
     padding: 1rem 0.75rem !important;
     box-sizing: border-box !important;
+    aspect-ratio: unset !important;   /* elimina el ratio fijo que recortaba iconos */
+    min-height: unset !important;     /* la tarjeta crece según el contenido */
+    height: auto !important;
   }
 
   /* Título de categoría */
@@ -1253,10 +1325,15 @@ body {
     text-align: center !important;
   }
 
-  /* Grid de iconos: 3 columnas en mobile */
+  /* Quita el margin-bottom enorme del contenedor de icono */
+  .tech-icon-container {
+    margin-bottom: 0.25rem !important;
+  }
+
+  /* Grid de iconos: 3 columnas en mobile con más espacio entre filas */
   .tech-items-grid {
     grid-template-columns: repeat(3, 1fr) !important;
-    gap: 0.75rem 0.5rem !important;
+    gap: 1.25rem 0.5rem !important;   /* más espacio vertical para nombres largos */
   }
 
   /* Cada ítem: icono + nombre centrados */
@@ -1349,36 +1426,4 @@ body {
   }
 }
 
-/* Estilos móviles específicos para Experience Section */
-@media (max-width: 768px) {
-  /* Móvil: Experience súper compacto y centrado */
-  .experience-section {
-    padding: 1rem 0.5rem !important;
-    margin: 0.5rem 0 !important;
-    min-height: 50vh !important;
-  }
-  
-  .experience-content {
-    padding: 0.25rem !important;
-    margin: 0 !important;
-  }
-  
-  .experience-item {
-    margin-bottom: 0.5rem !important;
-    padding: 0.25rem !important;
-    background: rgba(255, 255, 255, 0.05) !important;
-    border-radius: 4px !important;
-  }
-  
-  .experience-title {
-    font-size: 0.7rem !important;
-    margin: 0.125rem 0 !important;
-    padding: 0 !important;
-  }
-  
-  .experience-description {
-    font-size: 0.5rem !important;
-    margin: 0.125rem 0 !important;
-    padding: 0 !important;
-  }
-}
+/* Experience mobile — ver bloque principal arriba */

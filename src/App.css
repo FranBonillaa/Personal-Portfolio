@@ -1055,144 +1055,99 @@ body {
 
 /* Estilos móviles específicos para Navbar */
 @media (max-width: 768px) {
-  /* Móvil: Navbar compacta y centrada */
+  /* Acercar la pill al borde superior para ahorrar espacio vertical */
   .navbar {
-    padding: 0.125rem 0.25rem !important;
-    height: auto !important;
-    background: rgba(0, 0, 0, 0.9) !important;
+    top: 0.4rem;
+    left: 0.75rem;
+    right: 0.75rem;
   }
-  
+
+  /* Dos filas: links arriba, idiomas abajo */
   .nav-container {
-    padding: 0.125rem 0.25rem !important;
-    flex-direction: column !important;
-    gap: 0.25rem !important;
-    justify-content: center !important;
-    align-items: center !important;
-    width: 100% !important;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.5rem 0.75rem;
+    border-radius: 16px;
   }
-  
+
   .nav-links {
-    display: flex !important;
-    gap: 0.125rem !important;
-    flex-wrap: wrap !important;
-    justify-content: center !important;
-    align-items: center !important;
-    width: 100% !important;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.2rem;
+    width: 100%;
   }
-  
+
   .nav-link {
-    font-size: 0.5rem !important;
-    padding: 0.0625rem 0.125rem !important;
-    margin: 0 !important;
-    line-height: 1.0 !important;
-    color: white !important;
-    text-decoration: none !important;
-    background: rgba(255, 255, 255, 0.1) !important;
-    border-radius: 2px !important;
-    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    font-size: 0.7rem;
+    padding: 0.25rem 0.45rem;
   }
-  
+
+  /* Idiomas en fila separada con divisor sutil */
   .language-selector {
-    gap: 0.125rem !important;
-    display: flex !important;
-    justify-content: center !important;
-    align-items: center !important;
-    margin-top: 0.125rem !important;
+    width: 100%;
+    justify-content: center;
+    gap: 0.35rem;
+    padding-top: 0.3rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
   }
-  
+
   .lang-btn {
-    padding: 0.0625rem 0.125rem !important;
-    font-size: 0.4rem !important;
-    margin: 0 !important;
-    line-height: 1.0 !important;
-    background: rgba(255, 255, 255, 0.2) !important;
-    color: white !important;
-    border: 1px solid rgba(255, 255, 255, 0.3) !important;
-    border-radius: 2px !important;
-  }
-  
-  .lang-btn.active {
-    background: var(--primary-color) !important;
-    border-color: var(--primary-color) !important;
+    padding: 0.25rem 0.75rem;
+    font-size: 0.7rem;
   }
 }
 
 /* Estilos móviles específicos para Hero Section */
 @media (max-width: 768px) {
-  /* Móvil: Hero con espacio adecuado para móviles pequeños */
   .hero-section {
-    min-height: 40vh !important;
-    padding: 1rem 0.25rem 2rem 0.25rem !important; /* Móvil: Más espacio abajo */
-    display: flex !important;
-    flex-direction: column !important;
-    justify-content: center !important;
-    align-items: center !important;
-    margin: 0 !important;
+    min-height: auto;
+    /* padding-top alto para dejar pasar la navbar de dos filas (~110px) + margen */
+    padding: 8.5rem 1rem 2.5rem;
   }
-  
+
   .hero-content {
     flex-direction: column !important;
-    gap: 0.75rem !important; /* Móvil: Más espacio entre foto y nombre */
-    padding: 0 !important;
-    text-align: center !important;
-    justify-content: center !important;
     align-items: center !important;
-    width: 100% !important;
-    margin: 0 !important;
+    text-align: center;
+    gap: 1.5rem !important;
+    padding: 0 1rem;
+    min-height: auto;
   }
-  
-  .hero-content > div {
-    width: 100% !important;
-    padding: 0 !important;
-    display: flex !important;
-    flex-direction: column !important;
-    justify-content: center !important;
-    align-items: center !important;
-    margin: 0 !important;
+
+  .hero-text {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
-  
-  /* Móvil: Imagen pequeña pero visible */
-  .hero-image {
-    width: 70px !important; /* Móvil: Más pequeña para móviles pequeños */
-    height: 70px !important;
-    max-width: 70px !important;
-    display: flex !important;
-    justify-content: center !important;
-    align-items: center !important;
-    order: -1 !important;
-    margin: 0 auto 1rem auto !important; /* Móvil: Más espacio debajo */
-    border-radius: 4px !important;
-    object-fit: contain !important;
-    object-position: center !important;
-    overflow: visible !important;
-  }
-  
-  /* Móvil: Asegurar que el contenedor de la imagen no corte */
-  .hero-image img {
-    width: 100% !important;
-    height: 100% !important;
-    object-fit: contain !important;
-    object-position: center !important;
-    border-radius: 4px !important;
-  }
-  
-  /* Móvil: Nombre pequeño pero legible */
+
+  /* !important necesario para sobreescribir el style inline del JSX */
   .hero-text h1 {
-    font-size: 0.9rem !important; /* Móvil: Más pequeño */
-    line-height: 1.1 !important;
+    font-size: 2rem !important;
     white-space: normal !important;
-    text-align: center !important;
-    margin: 0 auto 0.5rem auto !important; /* Móvil: Espacio debajo */
-    padding: 0 !important;
+    line-height: 1.2;
+    text-align: center;
+    margin-bottom: 0.75rem;
   }
-  
-  /* Móvil: Subtítulo pequeño */
+
   .hero-subtitle {
-    font-size: 0.5rem !important; /* Móvil: Más pequeño */
-    line-height: 1.1 !important;
-    text-align: center !important;
-    margin: 0 auto !important;
-    padding: 0 !important;
+    font-size: 1rem !important;
+    text-align: center;
+    line-height: 1.4;
+  }
+
+  .hero-image {
+    width: 220px;
+    height: 220px;
+    max-width: 220px;
+    order: 1;
+    overflow: hidden;
+  }
+
+  .pixel-to-photo-container {
+    width: 220px !important;
+    height: 220px !important;
   }
 }
 

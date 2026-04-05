@@ -16,6 +16,8 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
+  max-width: 100vw;
 }
 
 body {
@@ -1055,7 +1057,6 @@ body {
 
 /* Estilos móviles específicos para Navbar */
 @media (max-width: 768px) {
-  /* Acercar la pill al borde superior para ahorrar espacio vertical */
   .navbar {
     top: 0.4rem;
     left: 0.75rem;
@@ -1064,37 +1065,38 @@ body {
 
   /* Dos filas: links arriba, idiomas abajo */
   .nav-container {
-    flex-direction: column;
-    align-items: center;
-    gap: 0.35rem;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 0.3rem;
     padding: 0.5rem 0.75rem;
     border-radius: 16px;
   }
 
+  /* !important para garantizar visibilidad aunque haya conflictos de herencia */
   .nav-links {
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 0.2rem;
-    width: 100%;
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    gap: 0.2rem !important;
+    width: 100% !important;
   }
 
   .nav-link {
-    font-size: 0.7rem;
-    padding: 0.25rem 0.45rem;
+    font-size: 0.7rem !important;
+    padding: 0.25rem 0.45rem !important;
   }
 
-  /* Idiomas en fila separada con divisor sutil */
   .language-selector {
-    width: 100%;
-    justify-content: center;
-    gap: 0.35rem;
-    padding-top: 0.3rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.12);
+    display: flex !important;
+    width: 100% !important;
+    justify-content: center !important;
+    gap: 0.35rem !important;
+    padding-top: 0.3rem !important;
   }
 
   .lang-btn {
-    padding: 0.25rem 0.75rem;
-    font-size: 0.7rem;
+    padding: 0.25rem 0.75rem !important;
+    font-size: 0.7rem !important;
   }
 }
 
@@ -1102,101 +1104,98 @@ body {
 @media (max-width: 768px) {
   .hero-section {
     min-height: auto;
-    /* padding-top alto para dejar pasar la navbar de dos filas (~110px) + margen */
-    padding: 8.5rem 1rem 2.5rem;
+    /* navbar compacta ~90px + top 0.4rem + margen cómodo */
+    padding: 6rem 1rem 2rem;
   }
 
   .hero-content {
     flex-direction: column !important;
     align-items: center !important;
-    text-align: center;
+    justify-content: center !important;
+    text-align: center !important;
     gap: 1.5rem !important;
-    padding: 0 1rem;
-    min-height: auto;
+    padding: 0 1rem !important;
+    min-height: auto !important;
   }
 
   .hero-text {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    width: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    order: 0 !important;
   }
 
-  /* !important necesario para sobreescribir el style inline del JSX */
+  /* !important necesario: h1 y p tienen font-size y white-space como inline styles en JSX */
   .hero-text h1 {
     font-size: 2rem !important;
     white-space: normal !important;
-    line-height: 1.2;
-    text-align: center;
-    margin-bottom: 0.75rem;
+    line-height: 1.2 !important;
+    text-align: center !important;
+    margin-bottom: 0.5rem !important;
   }
 
   .hero-subtitle {
     font-size: 1rem !important;
-    text-align: center;
-    line-height: 1.4;
+    text-align: center !important;
+    line-height: 1.4 !important;
+    margin-bottom: 0 !important;
   }
 
   .hero-image {
-    width: 220px;
-    height: 220px;
-    max-width: 220px;
-    order: 1;
-    overflow: hidden;
+    width: 200px !important;
+    height: 200px !important;
+    max-width: 200px !important;
+    order: 1 !important;
+    overflow: hidden !important;
+    flex: 0 0 auto !important;
   }
 
+  /* El contenedor de PixelToPhoto tiene width/height inline — !important necesario */
   .pixel-to-photo-container {
-    width: 220px !important;
-    height: 220px !important;
+    width: 200px !important;
+    height: 200px !important;
   }
 }
 
 /* Estilos móviles específicos para About Me Section */
 @media (max-width: 768px) {
-  /* Móvil: About Me con buena separación del hero */
+  /* Sobrescribir paddingTop/minHeight inline del JSX */
   .about-me-section {
-    margin-top: 2rem !important; /* Móvil: Más espacio para separar del hero */
-    padding: 1.5rem 0.5rem !important; /* Móvil: Más padding */
+    padding-top: 2rem !important;
+    padding-bottom: 2rem !important;
+    min-height: auto !important;
     height: auto !important;
-    min-height: 60vh !important;
   }
-  
-  .about-content {
-    padding: 0.5rem !important; /* Móvil: Más padding interno */
-    margin: 0 !important;
-    text-align: center !important;
+
+  /* Contenedor principal: de flex-row a flex-column */
+  .about-main-flex {
+    flex-direction: column !important;
+    gap: 2rem !important;
+    width: 100% !important;
+    margin-bottom: 2rem !important;
   }
-  
-  .about-text {
-    font-size: 0.7rem !important;
-    line-height: 1.1 !important;
-    margin: 0.5rem 0 !important; /* Móvil: Más espacio entre párrafos */
-    padding: 0 !important;
+
+  /* Ambas columnas ocupan todo el ancho */
+  .about-col-left,
+  .about-col-right {
+    width: 100% !important;
   }
-  
-  .about-title {
-    font-size: 1rem !important;
-    margin: 0.5rem 0 !important; /* Móvil: Más espacio */
-    padding: 0 !important;
+
+  .about-text p {
+    font-size: 0.95rem !important;
+    line-height: 1.6 !important;
+    margin-bottom: 1rem !important;
   }
-  
-  /* Móvil: Skills en dos columnas si caben, si no pasan abajo */
-  .skills {
-    display: grid !important;
-    grid-template-columns: 1fr 1fr !important; /* Móvil: Dos columnas */
-    gap: 0.25rem !important; /* Móvil: Más espacio entre skills */
-    margin: 0.5rem auto !important;
-    padding: 0 !important;
-    max-width: 300px !important; /* Móvil: Limitar ancho para que quepan */
+
+  .about-text h3 {
+    font-size: 1.1rem !important;
+    margin-bottom: 0.75rem !important;
   }
-  
-  .skill {
-    font-size: 0.6rem !important;
-    padding: 0.125rem 0.25rem !important;
-    margin: 0.0625rem !important;
-    background: rgba(255, 255, 255, 0.1) !important;
-    border-radius: 2px !important;
-    text-align: center !important;
+
+  /* Skill bars: reducir ancho fijo para que quepan */
+  .skill-bar {
+    width: 80px !important;
   }
 }
 

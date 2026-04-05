@@ -28,19 +28,19 @@ const AboutMe = () => {
           Sobre Mí
         </h2>
         
-        <div style={{ 
-          display: 'flex', 
-          justifyContent: 'space-between', 
+        <div className="about-main-flex" style={{
+          display: 'flex',
+          justifyContent: 'space-between',
           gap: '10rem',
           width: '100%',
           marginBottom: '100px'
         }}>
           {/* Columna izquierda - Texto más ancho */}
-          <div style={{ 
-            width: '70%', 
-            display: 'flex', 
-            flexDirection: 'column', 
-            gap: '3rem' 
+          <div className="about-col-left" style={{
+            width: '70%',
+            display: 'flex',
+            flexDirection: 'column',
+            gap: '3rem'
           }}>
             <div className="about-text">
               <h3 className="text-2xl font-semibold text-white mb-12">Descripcion</h3>
@@ -52,13 +52,13 @@ const AboutMe = () => {
               </p>
             </div>
           </div>
-          
+
           {/* Columna derecha - Habilidades en dos columnas */}
-          <div style={{ 
-            width: '30%', 
-            display: 'flex', 
-            flexDirection: 'column', 
-            gap: '3rem' 
+          <div className="about-col-right" style={{
+            width: '30%',
+            display: 'flex',
+            flexDirection: 'column',
+            gap: '3rem'
           }}>
             <h3 className="text-2xl font-semibold text-white mb-12">Habilidades</h3>
             <div style={{ display: 'flex', gap: '2rem', width: '100%' }}>

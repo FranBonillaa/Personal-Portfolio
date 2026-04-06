@@ -1307,21 +1307,23 @@ body {
     margin-top: 1.5rem !important; /* sobreescribe el marginTop: 15rem del JSX */
   }
 
-  /* Cada tarjeta ocupa el ancho completo y se expande al contenido */
+  /* Tarjeta más estrecha y centrada — deja espacio visual a los lados */
   .tech-column {
-    width: 100% !important;
+    width: 85% !important;
+    max-width: 340px !important;
     flex: none !important;
-    padding: 1rem 0.75rem !important;
+    margin: 0 auto !important;         /* centra la tarjeta */
+    padding: 1.25rem 1rem !important;
     box-sizing: border-box !important;
-    aspect-ratio: unset !important;   /* elimina el ratio fijo que recortaba iconos */
-    min-height: unset !important;     /* la tarjeta crece según el contenido */
+    aspect-ratio: unset !important;
+    min-height: unset !important;
     height: auto !important;
   }
 
   /* Título de categoría */
   .column-title {
     font-size: 1.1rem !important;
-    margin-bottom: 1rem !important;
+    margin-bottom: 1.25rem !important;
     text-align: center !important;
   }
 
@@ -1330,10 +1332,11 @@ body {
     margin-bottom: 0.25rem !important;
   }
 
-  /* Grid de iconos: 3 columnas en mobile con más espacio entre filas */
+  /* Grid de iconos: 3 columnas con buen espacio entre ellas */
   .tech-items-grid {
     grid-template-columns: repeat(3, 1fr) !important;
-    gap: 1.25rem 0.5rem !important;   /* más espacio vertical para nombres largos */
+    gap: 1.5rem 1rem !important;      /* más espacio vertical y horizontal */
+    padding: 0 0.25rem !important;    /* pequeño respiro interior */
   }
 
   /* Cada ítem: icono + nombre centrados */
@@ -1342,7 +1345,7 @@ body {
     flex-direction: column !important;
     align-items: center !important;
     justify-content: flex-start !important;
-    gap: 0.35rem !important;
+    gap: 0.4rem !important;
     padding: 0 !important;
     background: transparent !important;
     border-radius: 0 !important;
@@ -1351,8 +1354,8 @@ body {
 
   /* Caja de color con el icono */
   .tech-icon {
-    width: 42px !important;
-    height: 42px !important;
+    width: 44px !important;
+    height: 44px !important;
     border-radius: 10px !important;
   }
 
@@ -1364,7 +1367,7 @@ body {
 
   /* Nombre de la tecnología */
   .tech-name {
-    font-size: 0.62rem !important;
+    font-size: 0.65rem !important;
     text-align: center !important;
     line-height: 1.2 !important;
     word-break: break-word !important;
@@ -1372,21 +1375,31 @@ body {
   }
 }
 
-/* Pantallas muy pequeñas: 2 columnas */
+/* Pantallas muy pequeñas (≤360px): tarjeta más estrecha, 2 columnas */
 @media (max-width: 360px) {
+  .tech-column {
+    width: 88% !important;
+    max-width: 300px !important;
+    padding: 1rem 0.75rem !important;
+  }
+
   .tech-items-grid {
     grid-template-columns: repeat(2, 1fr) !important;
-    gap: 0.6rem 0.4rem !important;
+    gap: 1.25rem 0.75rem !important;
   }
 
   .tech-icon {
-    width: 36px !important;
-    height: 36px !important;
+    width: 38px !important;
+    height: 38px !important;
   }
 
   .tech-real-icon {
-    width: 18px !important;
-    height: 18px !important;
+    width: 19px !important;
+    height: 19px !important;
+  }
+
+  .tech-name {
+    font-size: 0.6rem !important;
   }
 }
 

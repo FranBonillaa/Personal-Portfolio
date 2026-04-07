@@ -38,13 +38,18 @@ body {
   width: 100%;
   height: 100vh;
   overflow-y: scroll;
+  scrollbar-gutter: stable both-edges; /* reserva espacio simétrico para el scrollbar */
 }
 
-/* Contenido principal */
+/* Contenido principal — anula el max-width: 800px de index.css */
 .content {
   position: relative;
   width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 0;
   z-index: 1;
+  pointer-events: auto;
 }
 
 /* Hero Section */
@@ -90,15 +95,26 @@ body {
   align-items: center;
 }
 
+/* Título universal para todas las secciones */
+.section-title {
+  font-size: 3rem;
+  font-weight: 800;
+  color: white;
+  text-align: center;
+  margin-bottom: 4rem;
+  width: 100%;
+}
+
 /* About Me Section */
 .about-me-section {
-  height: 150vh;
+  min-height: 100vh;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   position: relative;
   z-index: 2;
-  padding: 4rem 0;
+  padding: 8rem 2rem 6rem 2rem;
 }
 
 .about-content {
@@ -149,17 +165,18 @@ body {
 /* Technologies Section */
 .technologies-section {
   min-height: 100vh;
-  padding: 10rem 0;
+  padding: 8rem 2rem 6rem 2rem;
   background: transparent;
   width: 100%;
   box-sizing: border-box;
 }
 
 .tech-container {
-  max-width: 1000px;
+  max-width: 960px;       /* ancho máximo del contenido */
   width: 100%;
-  margin: 0 auto;
-  padding: 0 3rem;
+  margin-left: auto;      /* centrado horizontal puro */
+  margin-right: auto;
+  padding: 0 2rem;
   box-sizing: border-box;
 }
 
@@ -171,7 +188,7 @@ body {
 
 .tech-title-text {
   font-size: 3rem;
-  font-weight: bold;
+  font-weight: 800;
   color: white;
   text-shadow: 0 0 20px rgba(74, 222, 128, 0.3);
   position: relative;
@@ -343,8 +360,6 @@ body {
   grid-auto-rows: auto;
   gap: 3rem;
   width: 100%;
-  max-width: 1100px;
-  margin: 0 auto;
   align-items: start;
 }
 
@@ -525,11 +540,12 @@ body {
 .experience-section {
   min-height: 100vh;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   position: relative;
   z-index: 2;
-  padding: 12rem 0;
+  padding: 8rem 2rem 6rem 2rem;
 }
 
 .experience-section .max-w-6xl {
@@ -694,13 +710,14 @@ body {
 
 /* Projects Section */
 .projects-section {
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   position: relative;
   z-index: 2;
-  padding: 4rem 0;
+  padding: 8rem 2rem 6rem 2rem;
 }
 
 .projects-section .max-w-6xl {
@@ -830,13 +847,14 @@ body {
 
 /* Contact Section */
 .contact-section {
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   position: relative;
   z-index: 2;
-  padding: 4rem 0;
+  padding: 8rem 2rem 6rem 2rem;
 }
 
 .contact-section .max-w-4xl {

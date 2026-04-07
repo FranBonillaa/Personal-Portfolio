@@ -1,14 +1,14 @@
 import React from 'react';
-import { 
-  FaReact, 
+import {
+  FaReact,
   FaAngular,
-  FaVuejs, 
-  FaJs, 
-  FaNodeJs, 
-  FaPython, 
+  FaVuejs,
+  FaJs,
+  FaNodeJs,
+  FaPython,
   FaJava,
-  FaDatabase, 
-  FaLinux, 
+  FaDatabase,
+  FaLinux,
   FaWindows,
   FaGit,
   FaGithub,
@@ -18,10 +18,10 @@ import {
   FaGoogle,
   FaFigma
 } from 'react-icons/fa';
-import { 
-  SiTypescript, 
-  SiHtml5, 
-  SiCss3, 
+import {
+  SiTypescript,
+  SiHtml5,
+  SiCss3,
   SiTailwindcss,
   SiBootstrap,
   SiReactos,
@@ -98,7 +98,6 @@ const Technologies = () => {
     { name: "IntelliJ", icon: SiIntellijidea, color: "#000000" },
     { name: "Eclipse", icon: SiEclipseide, color: "#2C2255" },
     { name: "Docker", icon: FaDocker, color: "#2496ED" },
-    { name: "Kubernetes", icon: SiKubernetes, color: "#326CE5" },
     { name: "Postman", icon: SiPostman, color: "#FF6C37" },
     { name: "npm", icon: SiNpm, color: "#CB3837" },
     { name: "Vite", icon: SiVite, color: "#646CFF" },
@@ -132,15 +131,15 @@ const Technologies = () => {
           <span className="tech-title-text">Tecnologías</span>
           <div className="tech-title-decoration"></div>
         </h2>
-        
+
         {/* Un único grid — todas las tarjetas en el mismo contexto */}
         <div className="tech-all-cards-grid">
 
           {[
-            { title: 'Frontend',       items: leftTech      },
-            { title: 'Backend',        items: rightTech     },
+            { title: 'Frontend', items: leftTech },
+            { title: 'Backend', items: rightTech },
             { title: 'Bases de Datos', items: databasesTech },
-            { title: 'Herramientas',   items: toolsTech     },
+            { title: 'Herramientas', items: toolsTech },
           ].map(({ title, items }) => (
             <div key={title} className="tech-column">
               <div className="tech-column-header">

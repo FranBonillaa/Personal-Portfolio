@@ -35,17 +35,7 @@ const Projects = () => {
         zIndex: 500,
       }}
     >
-      <h2
-        style={{
-          fontSize: 'clamp(2rem, 4vw, 2.8rem)',
-          fontWeight: '700',
-          color: '#ffffff',
-          textAlign: 'center',
-          marginBottom: '3rem',
-          position: 'relative',
-          zIndex: 500,
-        }}
-      >
+      <h2 className="section-title" style={{ position: 'relative', zIndex: 500 }}>
         Proyectos
       </h2>
 

@@ -26,8 +26,8 @@ const PhotoGallery = () => {
   ];
 
   return (
-    <section className="photo-gallery-section">
-      <h2 className="gallery-title">Mi Albúm</h2>
+    <section id="mi-albun" className="photo-gallery-section">
+      <h2 className="section-title">Mi Albúm</h2>
       <div className="dome-gallery-container">
         <DomeGallery
           images={images}

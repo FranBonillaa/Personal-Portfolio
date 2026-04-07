@@ -19,9 +19,7 @@ const Experience = () => {
   return (
     <section id="experiencia" className="experience-section">
       <div style={{ width: '95%', maxWidth: 'none', margin: '0 auto', padding: '0 2rem' }}>
-        <h2 className="text-4xl font-bold text-center mb-16 text-white">
-          Experiencia
-        </h2>
+        <h2 className="section-title">Experiencia</h2>
         
         <div className="space-y-8">
           {experiences.map((exp, index) => (

@@ -22,6 +22,7 @@ const InstagramIcon = () => (
 const Contact = () => {
   return (
     <section id="contacto" className="contact-section">
+      <h2 className="section-title">Contacto</h2>
       <div style={{
         display: 'flex',
         flexDirection: 'column',

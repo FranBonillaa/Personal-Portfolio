@@ -3,26 +3,22 @@ import React from 'react';
 const Projects = () => {
   const projects = [
     {
-      title: "E-commerce Platform",
-      description: "Plataforma completa de comercio electrónico con carrito de compras y pasarela de pago",
-      tech: ["React", "Node.js", "MongoDB", "Stripe"],
-      image: "/project1.jpg",
-      seed: "ecommerce42",
+      title: "Portafolio",
+      description: "Diseño y desarrollo de mi espacio personal en la web. Este portafolio ha sido creado para reflejar mi identidad profesional y mostrar mis proyectos más destacados como desarrollador Full Stack. Enfocado en un diseño moderno, rendimiento optimizado y una experiencia de usuario fluida.",
+      image: "/project1.png",
     },
     {
-      title: "Task Management App",
-      description: "Aplicación de gestión de tareas con drag & drop y tiempo real",
-      tech: ["Vue.js", "Express", "Socket.io", "PostgreSQL"],
-      image: "/project2.jpg",
-      seed: "taskapp77",
+      title: "Bonifit",
+      description: "Diseño y desarrollo de mi Trabajo de Fin de Grado, una aplicación Full Stack integral de fitness. Permite explorar una biblioteca de ejercicios, guardar favoritos y crear rutinas personalizadas. Incluye un perfil de usuario detallado y gráficas interactivas para monitorizar la evolución del peso y la grasa corporal.",
+      image: "/project2.png",
     },
-    {
-      title: "Weather Dashboard",
-      description: "Dashboard del tiempo con pronósticos y mapas interactivos",
-      tech: ["JavaScript", "API REST", "Chart.js", "OpenWeather"],
-      image: "/project3.jpg",
-      seed: "weather13",
-    },
+    //{
+    //  title: "Weather Dashboard",
+    //  description: "Dashboard del tiempo con pronósticos y mapas interactivos",
+    //  tech: ["JavaScript", "API REST", "Chart.js", "OpenWeather"],
+    //  image: "/project3.jpg",
+    //  seed: "weather13",
+    //},
   ];
 
   return (
@@ -55,8 +51,8 @@ const Projects = () => {
 
       <div
         style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(3, 1fr)',
+          display: 'grid',            //Numero de proyectos actual, mejor que poner el propio numero
+          gridTemplateColumns: `repeat(${projects.length}, 1fr)`,
           gap: '1.5rem',
           width: '82vw',
           maxWidth: '82vw',

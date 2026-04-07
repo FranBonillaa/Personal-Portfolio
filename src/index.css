@@ -4,7 +4,7 @@
 @tailwind utilities;
 
 :root {
-  --bg-color: #0a4d0a;
+  --bg-color: #0d0020;
   --text-color: #ffffff;
   --accent-color: #646cff;
 }
@@ -61,7 +61,7 @@ html, body, #root {
   border: none;
   outline: none;
   box-shadow: none;
-  background-color: #0a4d0a !important;
+  background-color: #0d0020 !important;
 }
 
 /* Ocultar scrollbar */
@@ -104,7 +104,7 @@ body {
   line-height: 1.5;
   font-weight: 400;
   color: var(--text-color);
-  background-color: #0a4d0a !important;
+  background-color: #0d0020 !important;
   transition: background-color 0.3s ease, color 0.3s ease;
   margin: 0;
   padding: 0;
@@ -217,8 +217,8 @@ body {
 }
 
 .lang-btn.active {
-  background-color: #ef4444;
-  color: #ffffff;
+  background-color: #ccff00;
+  color: #000000;
   box-shadow: 0 4px 15px rgba(239, 68, 68, 0.3);
 }
 

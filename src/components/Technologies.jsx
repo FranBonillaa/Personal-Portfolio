@@ -133,115 +133,38 @@ const Technologies = () => {
           <div className="tech-title-decoration"></div>
         </h2>
         
-        <div className="tech-two-columns">
-          {/* Columna izquierda */}
-          <div className="tech-column">
-            <div className="tech-column-header">
-              <h3 className="column-title">Frontend</h3>
-            </div>
-            <div className="tech-items-grid">
-              {leftTech.map((tech, index) => (
-                <div key={index} className="tech-item">
-                  <div className="tech-icon-container">
-                    <div 
-                      className="tech-icon" 
-                      style={{ backgroundColor: tech.color }}
-                    >
-                      <tech.icon className="tech-real-icon" />
+        {/* Un único grid — todas las tarjetas en el mismo contexto */}
+        <div className="tech-all-cards-grid">
+
+          {[
+            { title: 'Frontend',       items: leftTech      },
+            { title: 'Backend',        items: rightTech     },
+            { title: 'Bases de Datos', items: databasesTech },
+            { title: 'Herramientas',   items: toolsTech     },
+          ].map(({ title, items }) => (
+            <div key={title} className="tech-column">
+              <div className="tech-column-header">
+                <h3 className="column-title">{title}</h3>
+              </div>
+              <div className="tech-items-grid">
+                {items.map((tech, index) => (
+                  <div key={index} className="tech-item">
+                    <div className="tech-icon-container">
+                      <div className="tech-icon" style={{ backgroundColor: tech.color }}>
+                        <tech.icon className="tech-real-icon" />
+                      </div>
+                    </div>
+                    <div className="tech-info">
+                      <h4 className="tech-name">{tech.name}</h4>
                     </div>
                   </div>
-                  <div className="tech-info">
-                    <h4 className="tech-name">{tech.name}</h4>
-                  </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
-          </div>
+          ))}
 
-          {/* Espacio en medio */}
-
-          {/* Columna derecha */}
-          <div className="tech-column">
-            <div className="tech-column-header">
-              <h3 className="column-title">Backend</h3>
-            </div>
-            <div className="tech-items-grid">
-              {rightTech.map((tech, index) => (
-                <div key={index} className="tech-item">
-                  <div className="tech-icon-container">
-                    <div 
-                      className="tech-icon" 
-                      style={{ backgroundColor: tech.color }}
-                    >
-                      <tech.icon className="tech-real-icon" />
-                    </div>
-                  </div>
-                  <div className="tech-info">
-                    <h4 className="tech-name">{tech.name}</h4>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-
-        {/* Segunda fila de contenedores */}
-        <div className="tech-two-columns" style={{ marginTop: '15rem' }}>
-          {/* Contenedor Bases de Datos */}
-          <div className="tech-column">
-            <div className="tech-column-header">
-              <h3 className="column-title">Bases de Datos</h3>
-            </div>
-            <div className="tech-items-grid">
-              {databasesTech.map((tech, index) => (
-                <div key={index} className="tech-item">
-                  <div className="tech-icon-container">
-                    <div 
-                      className="tech-icon" 
-                      style={{ backgroundColor: tech.color }}
-                    >
-                      <tech.icon className="tech-real-icon" />
-                    </div>
-                  </div>
-                  <div className="tech-info">
-                    <h4 className="tech-name">{tech.name}</h4>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Espacio en medio */}
-
-          {/* Contenedor Herramientas */}
-          <div className="tech-column">
-            <div className="tech-column-header">
-              <h3 className="column-title">Herramientas</h3>
-            </div>
-            <div className="tech-items-grid">
-              {toolsTech.map((tech, index) => (
-                <div key={index} className="tech-item">
-                  <div className="tech-icon-container">
-                    <div 
-                      className="tech-icon" 
-                      style={{ backgroundColor: tech.color }}
-                    >
-                      <tech.icon className="tech-real-icon" />
-                    </div>
-                  </div>
-                  <div className="tech-info">
-                    <h4 className="tech-name">{tech.name}</h4>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-
-        {/* Tercera fila de contenedores */}
-        <div className="tech-two-columns" style={{ marginTop: '15rem' }}>
-          {/* Contenedor Sistemas y Redes */}
-          <div className="tech-column">
+          {/* Sistemas y Redes — ocupa las 2 columnas */}
+          <div className="tech-column tech-column-full">
             <div className="tech-column-header">
               <h3 className="column-title">Sistemas y Redes</h3>
             </div>
@@ -249,10 +172,7 @@ const Technologies = () => {
               {systemsTech.map((tech, index) => (
                 <div key={index} className="tech-item">
                   <div className="tech-icon-container">
-                    <div 
-                      className="tech-icon" 
-                      style={{ backgroundColor: tech.color }}
-                    >
+                    <div className="tech-icon" style={{ backgroundColor: tech.color }}>
                       <tech.icon className="tech-real-icon" />
                     </div>
                   </div>
@@ -263,6 +183,7 @@ const Technologies = () => {
               ))}
             </div>
           </div>
+
         </div>
       </div>
     </section>

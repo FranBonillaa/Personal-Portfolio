@@ -16,8 +16,9 @@ function App() {
       <Navbar />
       
       <div style={{ width: '100vw', position: 'fixed', top: 0, left: 0, zIndex: 0, pointerEvents: 'none' }}>
-        <div style={{ width: '100%', height: '100vh', pointerEvents: 'auto' }}>
+        <div style={{ width: '100%', height: '100vh', pointerEvents: 'none' }}>
           <LiquidChrome
+            baseColor={[0.5, 0.0, 0.9]}
             speed={0.2}
             amplitude={0.25}
             frequencyX={4.5}

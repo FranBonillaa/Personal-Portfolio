@@ -1,6 +1,6 @@
 /* Estilos generales */
 :root {
-  --primary-color: #ff4d4d;
+  --primary-color: #ccff00;
   --text-color: #ffffff;
   --text-secondary: #b3b3b3;
   --bg-color: #0a0a0a;
@@ -151,12 +151,16 @@ body {
   min-height: 100vh;
   padding: 10rem 0;
   background: transparent;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .tech-container {
-  max-width: 1200px;
+  max-width: 1000px;
+  width: 100%;
   margin: 0 auto;
-  padding: 0 2rem;
+  padding: 0 3rem;
+  box-sizing: border-box;
 }
 
 .tech-title {
@@ -291,13 +295,13 @@ body {
 .tech-icon-container {
   display: flex;
   justify-content: center;
-  margin-bottom: 1.5rem;
+  margin-bottom: 0.6rem;
 }
 
 .tech-icon {
-  width: 45px;
-  height: 45px;
-  border-radius: 12px;
+  width: 58px;
+  height: 58px;
+  border-radius: 14px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -319,8 +323,8 @@ body {
 }
 
 .tech-real-icon {
-  width: 24px;
-  height: 24px;
+  width: 30px;
+  height: 30px;
   object-fit: contain;
   filter: brightness(0) invert(1);
 }
@@ -332,28 +336,47 @@ body {
   margin-bottom: 0.5rem;
 }
 
-.tech-two-columns {
-  display: flex;
-  gap: 10rem;
-  justify-content: center;
-  align-items: flex-start;
+/* Grid único — todas las cards con el mismo tamaño */
+.tech-all-cards-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-auto-rows: auto;
+  gap: 3rem;
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  align-items: start;
+}
+
+/* Sistemas y Redes ocupa las 2 columnas */
+.tech-column-full {
+  grid-column: 1 / -1;
+  grid-row: auto;         /* altura automática: más contenido */
+}
+
+/* Grid de iconos para Sistemas y Redes: mismas 3 columnas que el resto */
+.tech-column-full .tech-items-grid {
+  grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+  gap: 2rem;
 }
 
 .tech-column {
   flex: 1;
   background: rgba(20, 20, 20, 0.6);
-  border-radius: 6px;
-  padding: 0.8rem;
-  border: 1px solid rgba(74, 222, 128, 0.1);
+  border-radius: 16px;
+  padding: 2.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
   transition: all 0.3s ease;
   position: relative;
   overflow: visible;
-  aspect-ratio: 1.5/1;
-  max-width: 400px;
-  min-height: 450px;
+  aspect-ratio: unset;
+  max-width: 100%;
+  width: 100%;
+  min-height: unset;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
+  text-align: center;
 }
 
 .tech-column-header {
@@ -381,8 +404,8 @@ body {
 
 .tech-items-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1.5rem;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
   width: 100%;
   justify-items: center;
   flex: 1;
@@ -397,13 +420,14 @@ body {
   position: relative;
   overflow: visible;
   text-align: center;
-  aspect-ratio: 1/1;
-  width: 60px;
-  height: 60px;
+  aspect-ratio: unset;
+  width: auto;
+  height: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
+  gap: 0.4rem;
 }
 
 .tech-item:hover {
@@ -1300,20 +1324,37 @@ body {
     font-size: 2rem !important;
   }
 
-  /* Tarjetas apiladas en columna, sin el gap enorme de 10rem */
-  .tech-two-columns {
-    flex-direction: column !important;
+  /* Grid pasa a 1 columna en móvil */
+  .tech-all-cards-grid {
+    grid-template-columns: 1fr !important;
+    grid-auto-rows: auto !important;
     gap: 1.25rem !important;
-    margin-top: 1.5rem !important; /* sobreescribe el marginTop: 15rem del JSX */
   }
 
-  /* Tarjeta más estrecha y centrada — deja espacio visual a los lados */
+  /* Sistemas y Redes deja de abarcar 2 columnas (solo hay 1) */
+  .tech-column-full {
+    grid-column: 1 !important;
+  }
+
+  /* Grid de iconos de Sistemas y Redes: 3 columnas en móvil */
+  .tech-column-full .tech-items-grid {
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 1.5rem 1rem !important;
+  }
+
+  /* Sistemas y Redes en móvil: grid más compacto */
+  .tech-column-full .tech-items-grid {
+    grid-template-columns: repeat(auto-fill, minmax(70px, 1fr)) !important;
+    gap: 1.25rem !important;
+  }
+
+  /* Tarjeta ocupa todo el ancho en móvil */
   .tech-column {
-    width: 85% !important;
-    max-width: 340px !important;
+    width: 100% !important;
+    max-width: 100% !important;
     flex: none !important;
-    margin: 0 auto !important;         /* centra la tarjeta */
-    padding: 1.25rem 1rem !important;
+    margin: 0 !important;
+    padding: 1.5rem 1.25rem !important;
     box-sizing: border-box !important;
     aspect-ratio: unset !important;
     min-height: unset !important;

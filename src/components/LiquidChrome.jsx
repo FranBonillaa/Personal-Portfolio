@@ -4,7 +4,7 @@ import { Renderer, Program, Mesh, Triangle } from 'ogl';
 import './LiquidChrome.css';
 
 export const LiquidChrome = ({
-  baseColor = [0.1, 0.3, 0.1],
+  baseColor = [0.5, 0.0, 0.9],
   speed = 0.2,
   amplitude = 0.3,
   frequencyX = 3,
@@ -20,7 +20,7 @@ export const LiquidChrome = ({
     const container = containerRef.current;
     const renderer = new Renderer({ antialias: true });
     const gl = renderer.gl;
-    gl.clearColor(1, 1, 1, 1);
+    gl.clearColor(0.05, 0.0, 0.15, 1);
 
     const vertexShader = `
       attribute vec2 position;
@@ -59,6 +59,8 @@ export const LiquidChrome = ({
           uv += (diff / (dist + 0.0001)) * ripple * falloff;
 
           vec3 color = uBaseColor / abs(sin(uTime - uv.y - uv.x));
+          // Tone mapping: evita el blanco, los picos se convierten en violeta/magenta
+          color = color / (color + vec3(0.7));
           return vec4(color, 1.0);
       }
 
@@ -127,8 +129,8 @@ export const LiquidChrome = ({
     }
 
     if (interactive) {
-      container.addEventListener('mousemove', handleMouseMove);
-      container.addEventListener('touchmove', handleTouchMove);
+      window.addEventListener('mousemove', handleMouseMove);
+      window.addEventListener('touchmove', handleTouchMove, { passive: true });
     }
 
     let animationId;
@@ -145,8 +147,8 @@ export const LiquidChrome = ({
       cancelAnimationFrame(animationId);
       window.removeEventListener('resize', resize);
       if (interactive) {
-        container.removeEventListener('mousemove', handleMouseMove);
-        container.removeEventListener('touchmove', handleTouchMove);
+        window.removeEventListener('mousemove', handleMouseMove);
+        window.removeEventListener('touchmove', handleTouchMove);
       }
       if (gl.canvas.parentElement) {
         gl.canvas.parentElement.removeChild(gl.canvas);

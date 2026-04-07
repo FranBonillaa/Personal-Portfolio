@@ -8,26 +8,26 @@ const AboutMe = () => {
     { name: 'Redes y hardware', level: 80 },
     { name: 'Bash y PowerShell', level: 85 },
     { name: 'Sistemas y administración', level: 85 },
-    { name: 'Grado Violonchelo', level: 70 },
-    { name: 'Mecanografia intermedia', level: 90 }
+    { name: 'Grado Violonchelo', level: 60 },
+    { name: 'Mecanografia táctil', level: 90 }
   ];
 
   return (
-    <section id="sobre-mi" className="about-me-section" style={{ 
-  paddingTop: '150px', 
-  minHeight: '100vh',
-  paddingBottom: '100px'
- }}>
-      <div style={{ 
-        maxWidth: '1200px', 
-        width: '100%', 
-        margin: '0 auto', 
+    <section id="sobre-mi" className="about-me-section" style={{
+      paddingTop: '150px',
+      minHeight: '100vh',
+      paddingBottom: '100px'
+    }}>
+      <div style={{
+        maxWidth: '1200px',
+        width: '100%',
+        margin: '0 auto',
         padding: '0 2rem'
       }}>
         <h2 className="text-4xl font-bold mb-16 text-white text-center">
           Sobre Mí
         </h2>
-        
+
         <div className="about-main-flex" style={{
           display: 'flex',
           justifyContent: 'space-between',
@@ -69,20 +69,20 @@ const AboutMe = () => {
                       <span className="text-white font-medium">{skill.name}</span>
                       <span className="text-gray-400">{skill.level}%</span>
                     </div>
-                    <div className="skill-bar" style={{ 
-                      width: '120px', 
-                      height: '14px', 
-                      backgroundColor: 'rgba(255, 255, 255, 0.2)', 
+                    <div className="skill-bar" style={{
+                      width: '120px',
+                      height: '14px',
+                      backgroundColor: 'rgba(255, 255, 255, 0.2)',
                       borderRadius: '7px',
                       overflow: 'hidden',
                       flexShrink: 0
                     }}>
-                      <div 
-                        className="skill-progress" 
-                        style={{ 
-                          width: `${skill.level}%`, 
-                          height: '100%', 
-                          backgroundColor: '#ff4d4d',
+                      <div
+                        className="skill-progress"
+                        style={{
+                          width: `${skill.level}%`,
+                          height: '100%',
+                          backgroundColor: '#ccff00',
                           borderRadius: '7px',
                           transition: 'width 1s ease-in-out'
                         }}
@@ -98,20 +98,20 @@ const AboutMe = () => {
                       <span className="text-white font-medium">{skill.name}</span>
                       <span className="text-gray-400">{skill.level}%</span>
                     </div>
-                    <div className="skill-bar" style={{ 
-                      width: '120px', 
-                      height: '14px', 
-                      backgroundColor: 'rgba(255, 255, 255, 0.2)', 
+                    <div className="skill-bar" style={{
+                      width: '120px',
+                      height: '14px',
+                      backgroundColor: 'rgba(255, 255, 255, 0.2)',
                       borderRadius: '7px',
                       overflow: 'hidden',
                       flexShrink: 0
                     }}>
-                      <div 
-                        className="skill-progress" 
-                        style={{ 
-                          width: `${skill.level}%`, 
-                          height: '100%', 
-                          backgroundColor: '#ff4d4d',
+                      <div
+                        className="skill-progress"
+                        style={{
+                          width: `${skill.level}%`,
+                          height: '100%',
+                          backgroundColor: '#ccff00',
                           borderRadius: '7px',
                           transition: 'width 1s ease-in-out'
                         }}

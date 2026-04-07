@@ -25,7 +25,7 @@ const Navbar = () => {
             </a>
           ))}
         </div>
-        
+
         <div className="language-selector">
           {languages.map((lang) => (
             <button

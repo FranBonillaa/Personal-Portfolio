@@ -1,8 +1,6 @@
 import React from 'react';
 import {
   FaReact,
-  FaAngular,
-  FaVuejs,
   FaJs,
   FaNodeJs,
   FaPython,
@@ -16,7 +14,8 @@ import {
   FaDocker,
   FaAws,
   FaGoogle,
-  FaFigma
+  FaFigma,
+  FaCode
 } from 'react-icons/fa';
 import {
   SiTypescript,
@@ -36,6 +35,7 @@ import {
   SiSqlite,
   SiMariadb,
   SiOracle,
+  SiNeo4J,
   SiVscodium,
   SiIntellijidea,
   SiEclipseide,
@@ -64,7 +64,6 @@ const Technologies = () => {
     { name: "JavaScript", icon: FaJs, color: "#F7DF1E" },
     { name: "TypeScript", icon: SiTypescript, color: "#3178C6" },
     { name: "React", icon: FaReact, color: "#61DAFB" },
-    { name: "Angular", icon: FaAngular, color: "#DD0031" },
     { name: "Tailwind", icon: SiTailwindcss, color: "#06B6D4" },
     { name: "Bootstrap", icon: SiBootstrap, color: "#7952B3" },
     { name: "React Native", icon: SiReactos, color: "#61DAFB" }
@@ -78,7 +77,8 @@ const Technologies = () => {
     { name: "Django", icon: SiDjango, color: "#092E20" },
     { name: "Java", icon: FaJava, color: "#007396" },
     { name: "Spring Boot", icon: SiSpringboot, color: "#6DB33F" },
-    { name: "PHP", icon: SiPhp, color: "#777BB4" }
+    { name: "PHP", icon: SiPhp, color: "#777BB4" },
+    { name: "XML", icon: FaCode, color: "#E37933" }
   ];
 
   const databasesTech = [
@@ -87,7 +87,9 @@ const Technologies = () => {
     { name: "MongoDB", icon: SiMongodb, color: "#47A248" },
     { name: "SQLite", icon: SiSqlite, color: "#003B57" },
     { name: "MariaDB", icon: SiMariadb, color: "#003545" },
-    { name: "Oracle DB", icon: SiOracle, color: "#F80000" }
+    { name: "Oracle DB", icon: SiOracle, color: "#F80000" },
+    { name: "Neo4j", icon: SiNeo4J, color: "#018BFF" },
+    { name: "PL/SQL", icon: FaDatabase, color: "#C74634" }
   ];
 
   const toolsTech = [

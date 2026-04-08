@@ -1,6 +1,14 @@
-import React from 'react';
+import { useState, useEffect } from 'react';
 
 const Projects = () => {
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+
+  useEffect(() => {
+    const fn = () => setIsMobile(window.innerWidth < 768);
+    window.addEventListener('resize', fn);
+    return () => window.removeEventListener('resize', fn);
+  }, []);
+
   const projects = [
     {
       title: "Portafolio",
@@ -12,25 +20,18 @@ const Projects = () => {
       description: "Diseño y desarrollo de mi Trabajo de Fin de Grado, una aplicación Full Stack integral de fitness. Permite explorar una biblioteca de ejercicios, guardar favoritos y crear rutinas personalizadas. Incluye un perfil de usuario detallado y gráficas interactivas para monitorizar la evolución del peso y la grasa corporal.",
       image: "/project2.png",
     },
-    //{
-    //  title: "Weather Dashboard",
-    //  description: "Dashboard del tiempo con pronósticos y mapas interactivos",
-    //  tech: ["JavaScript", "API REST", "Chart.js", "OpenWeather"],
-    //  image: "/project3.jpg",
-    //  seed: "weather13",
-    //},
   ];
 
   return (
     <section
       id="proyectos"
       style={{
-        minHeight: '100vh',
+        minHeight: isMobile ? 'auto' : '100vh',
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'center',
-        padding: '6rem 2rem',
+        padding: isMobile ? '3rem 1rem' : '6rem 2rem',
         position: 'relative',
         zIndex: 500,
       }}
@@ -41,11 +42,11 @@ const Projects = () => {
 
       <div
         style={{
-          display: 'grid',            //Numero de proyectos actual, mejor que poner el propio numero
-          gridTemplateColumns: `repeat(${projects.length}, 1fr)`,
-          gap: '1.5rem',
-          width: '82vw',
-          maxWidth: '82vw',
+          display: 'grid',
+          gridTemplateColumns: isMobile ? '1fr' : `repeat(${projects.length}, 1fr)`,
+          gap: isMobile ? '1.25rem' : '1.5rem',
+          width: isMobile ? '92vw' : '82vw',
+          maxWidth: isMobile ? '92vw' : '82vw',
           position: 'relative',
           zIndex: 500,
         }}
@@ -81,15 +82,15 @@ const Projects = () => {
               }}
               style={{
                 width: '100%',
-                height: '340px',
+                height: isMobile ? '180px' : '340px',
                 objectFit: 'cover',
                 display: 'block',
               }}
             />
-            <div style={{ padding: '1.5rem 1.75rem 1.75rem', textAlign: 'center' }}>
+            <div style={{ padding: isMobile ? '1rem 1.25rem' : '1.5rem 1.75rem 1.75rem', textAlign: 'center' }}>
               <h3
                 style={{
-                  fontSize: '1.35rem',
+                  fontSize: isMobile ? '1.1rem' : '1.35rem',
                   fontWeight: '700',
                   color: '#ffffff',
                   marginBottom: '0.6rem',
@@ -99,7 +100,7 @@ const Projects = () => {
               </h3>
               <p
                 style={{
-                  fontSize: '0.95rem',
+                  fontSize: isMobile ? '0.85rem' : '0.95rem',
                   color: 'rgba(255,255,255,0.75)',
                   lineHeight: '1.6',
                   margin: 0,

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 const certifications = [
   {
@@ -15,11 +15,21 @@ const certifications = [
   },
 ];
 
-const VISIBLE = 2;
-
 const Certifications = () => {
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
   const [index, setIndex] = useState(0);
 
+  useEffect(() => {
+    const fn = () => {
+      const mobile = window.innerWidth < 768;
+      setIsMobile(mobile);
+      setIndex(0);
+    };
+    window.addEventListener('resize', fn);
+    return () => window.removeEventListener('resize', fn);
+  }, []);
+
+  const VISIBLE = isMobile ? 1 : 2;
   const canPrev = index > 0;
   const canNext = index + VISIBLE < certifications.length;
 
@@ -28,16 +38,32 @@ const Certifications = () => {
 
   const visible = certifications.slice(index, index + VISIBLE);
 
+  const btnStyle = (enabled) => ({
+    background: enabled ? 'rgba(255,255,255,0.15)' : 'rgba(255,255,255,0.04)',
+    border: '1px solid rgba(255,255,255,0.2)',
+    borderRadius: '50%',
+    width: isMobile ? '36px' : '48px',
+    height: isMobile ? '36px' : '48px',
+    flexShrink: 0,
+    cursor: enabled ? 'pointer' : 'default',
+    color: enabled ? '#fff' : 'rgba(255,255,255,0.25)',
+    fontSize: isMobile ? '1.2rem' : '1.4rem',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    transition: 'background 0.2s',
+  });
+
   return (
     <section
       id="certificaciones"
       style={{
-        minHeight: '100vh',
+        minHeight: isMobile ? 'auto' : '100vh',
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'center',
-        padding: '6rem 2rem',
+        padding: isMobile ? '3rem 1rem' : '6rem 2rem',
         position: 'relative',
         zIndex: 500,
       }}
@@ -46,39 +72,21 @@ const Certifications = () => {
         Licencias y Certificaciones
       </h2>
 
-      <div style={{ display: 'flex', alignItems: 'center', gap: '1.5rem', width: '100%', maxWidth: '900px' }}>
-        {/* Flecha izquierda */}
-        <button
-          onClick={prev}
-          disabled={!canPrev}
-          style={{
-            background: canPrev ? 'rgba(255,255,255,0.15)' : 'rgba(255,255,255,0.04)',
-            border: '1px solid rgba(255,255,255,0.2)',
-            borderRadius: '50%',
-            width: '48px',
-            height: '48px',
-            flexShrink: 0,
-            cursor: canPrev ? 'pointer' : 'default',
-            color: canPrev ? '#fff' : 'rgba(255,255,255,0.25)',
-            fontSize: '1.4rem',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            transition: 'background 0.2s',
-          }}
-        >
-          ‹
-        </button>
+      <div style={{
+        display: 'flex',
+        alignItems: 'center',
+        gap: isMobile ? '0.75rem' : '1.5rem',
+        width: '100%',
+        maxWidth: isMobile ? '95vw' : '900px',
+      }}>
+        <button onClick={prev} disabled={!canPrev} style={btnStyle(canPrev)}>‹</button>
 
-        {/* Cards */}
-        <div
-          style={{
-            display: 'grid',
-            gridTemplateColumns: `repeat(${visible.length}, 1fr)`,
-            gap: '1.5rem',
-            flex: 1,
-          }}
-        >
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: `repeat(${visible.length}, 1fr)`,
+          gap: isMobile ? '0.75rem' : '1.5rem',
+          flex: 1,
+        }}>
           {visible.map((cert, i) => (
             <div
               key={index + i}
@@ -109,14 +117,19 @@ const Certifications = () => {
                   display: 'block',
                 }}
               />
-              <div style={{ padding: '1rem 1.5rem 1.25rem', textAlign: 'center' }}>
-                <h3 style={{ fontSize: '1.1rem', fontWeight: '700', color: '#ffffff', marginBottom: '0.35rem' }}>
+              <div style={{ padding: isMobile ? '0.75rem 1rem' : '1rem 1.5rem 1.25rem', textAlign: 'center' }}>
+                <h3 style={{
+                  fontSize: isMobile ? '0.95rem' : '1.1rem',
+                  fontWeight: '700',
+                  color: '#ffffff',
+                  marginBottom: '0.3rem',
+                }}>
                   {cert.title}
                 </h3>
-                <p style={{ fontSize: '0.88rem', color: 'rgba(255,255,255,0.6)', marginBottom: '0.25rem' }}>
+                <p style={{ fontSize: isMobile ? '0.8rem' : '0.88rem', color: 'rgba(255,255,255,0.6)', marginBottom: '0.2rem' }}>
                   {cert.issuer}
                 </p>
-                <p style={{ fontSize: '0.82rem', color: 'rgba(255,255,255,0.4)', margin: 0 }}>
+                <p style={{ fontSize: isMobile ? '0.75rem' : '0.82rem', color: 'rgba(255,255,255,0.4)', margin: 0 }}>
                   {cert.date}
                 </p>
               </div>
@@ -124,33 +137,11 @@ const Certifications = () => {
           ))}
         </div>
 
-        {/* Flecha derecha */}
-        <button
-          onClick={next}
-          disabled={!canNext}
-          style={{
-            background: canNext ? 'rgba(255,255,255,0.15)' : 'rgba(255,255,255,0.04)',
-            border: '1px solid rgba(255,255,255,0.2)',
-            borderRadius: '50%',
-            width: '48px',
-            height: '48px',
-            flexShrink: 0,
-            cursor: canNext ? 'pointer' : 'default',
-            color: canNext ? '#fff' : 'rgba(255,255,255,0.25)',
-            fontSize: '1.4rem',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            transition: 'background 0.2s',
-          }}
-        >
-          ›
-        </button>
+        <button onClick={next} disabled={!canNext} style={btnStyle(canNext)}>›</button>
       </div>
 
-      {/* Indicador de posición */}
       {certifications.length > VISIBLE && (
-        <div style={{ display: 'flex', gap: '6px', marginTop: '1.5rem' }}>
+        <div style={{ display: 'flex', gap: '6px', marginTop: '1.25rem' }}>
           {Array.from({ length: certifications.length - VISIBLE + 1 }).map((_, i) => (
             <div
               key={i}

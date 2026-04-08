@@ -1498,4 +1498,12 @@ body {
   }
 }
 
+/* Section title mobile override */
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 1.75rem !important;
+    margin-bottom: 1.5rem !important;
+  }
+}
+
 /* Experience mobile — ver bloque principal arriba */

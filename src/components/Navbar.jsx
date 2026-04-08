@@ -5,7 +5,7 @@ const Navbar = () => {
 
   const navItems = [
     { id: 'sobre-mi', label: 'Sobre Mí' },
-    { id: 'mi-albúm', label: 'Mi Albúm' },
+    { id: 'mi-albun', label: 'Mi Albúm' },
     { id: 'tecnologias', label: 'Tecnologias' },
     { id: 'experiencia', label: 'Experiencia' },
     { id: 'proyectos', label: 'Proyectos' },

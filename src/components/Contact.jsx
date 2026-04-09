@@ -52,7 +52,7 @@ const Contact = () => {
             { label: 'LinkedIn', href: 'https://www.linkedin.com/in/francisco-javier-bonilla-varo-08445625a/', Icon: LinkedInIcon },
             { label: 'GitHub', href: 'https://github.com/FranBonillaa', Icon: GitHubIcon },
             { label: 'Instagram', href: 'https://www.instagram.com/_frannbonillaa_/', Icon: InstagramIcon },
-          // eslint-disable-next-line no-unused-vars
+            // eslint-disable-next-line no-unused-vars
           ].map(({ label, href, Icon }) => (
             <a
               key={label}

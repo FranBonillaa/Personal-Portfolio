@@ -101,7 +101,9 @@ const Contact = () => {
 
           <a
             href="/FranciscoJavierBonillaVaro.pdf"
-            download
+            download="FranciscoJavierBonillaVaro.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
             style={{
               display: 'inline-flex', alignItems: 'center', padding: '0.75rem 2rem',
               borderRadius: '9999px', background: 'rgba(255,255,255,0.08)',

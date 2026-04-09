@@ -1506,4 +1506,118 @@ body {
   }
 }
 
+/* =============================================
+   TABLET (769px – 1024px)
+   ============================================= */
+@media (min-width: 769px) and (max-width: 1024px) {
+
+  /* Navbar */
+  .nav-container {
+    max-width: 95vw !important;
+    padding: 0.6rem 1rem !important;
+  }
+  .nav-link {
+    font-size: 0.8rem !important;
+    padding: 0.4rem 0.6rem !important;
+  }
+  .lang-btn {
+    font-size: 0.8rem !important;
+    padding: 0.4rem 0.7rem !important;
+  }
+
+  /* Títulos de sección */
+  .section-title {
+    font-size: 2.25rem !important;
+    margin-bottom: 2.5rem !important;
+  }
+
+  /* Hero */
+  .hero-content {
+    gap: 2rem !important;
+    padding: 0 1.5rem !important;
+  }
+  .hero-text h1 {
+    font-size: 2.8rem !important;
+  }
+
+  /* Sobre Mí */
+  .about-me-section {
+    padding: 8rem 2rem 4rem !important;
+  }
+  .about-main-flex {
+    gap: 2.5rem !important;
+  }
+  .about-col-left,
+  .about-col-right {
+    width: 50% !important;
+  }
+
+  /* Foto Gallery */
+  .photo-gallery-section {
+    padding: 8rem 1.5rem 4rem !important;
+  }
+  .dome-gallery-container {
+    max-width: 700px !important;
+    height: 450px !important;
+  }
+
+  /* Technologies */
+  .technologies-section {
+    padding: 8rem 1.5rem 4rem !important;
+  }
+  .tech-container {
+    max-width: 95% !important;
+    padding: 0 1.5rem !important;
+  }
+  .tech-all-cards-grid {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 1.75rem !important;
+  }
+  .tech-column {
+    padding: 1.5rem !important;
+  }
+  .tech-items-grid {
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 1.25rem !important;
+  }
+  .tech-column-full .tech-items-grid {
+    grid-template-columns: repeat(auto-fill, minmax(75px, 1fr)) !important;
+    gap: 1.25rem !important;
+  }
+  .tech-icon {
+    width: 48px !important;
+    height: 48px !important;
+  }
+  .tech-real-icon {
+    width: 24px !important;
+    height: 24px !important;
+  }
+
+  /* Experiencia */
+  .experience-section {
+    padding: 8rem 2rem 4rem !important;
+  }
+  .experience-section .max-w-6xl {
+    max-width: 100% !important;
+    padding: 0 1rem !important;
+  }
+
+  /* Proyectos */
+  .projects-section {
+    padding: 8rem 1.5rem 4rem !important;
+  }
+  .projects-section .max-w-6xl {
+    width: 100% !important;
+    padding: 0 1rem !important;
+  }
+
+  /* Contacto */
+  .contact-section {
+    padding: 8rem 2rem 4rem !important;
+  }
+  .contact-section .max-w-4xl {
+    max-width: 95% !important;
+  }
+}
+
 /* Experience mobile — ver bloque principal arriba */

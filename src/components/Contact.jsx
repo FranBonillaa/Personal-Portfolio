@@ -100,7 +100,7 @@ const Contact = () => {
           </a>
 
           <a
-            href="/cv.pdf"
+            href="/FranciscoJavierBonillaVaro.pdf"
             download
             style={{
               display: 'inline-flex', alignItems: 'center', padding: '0.75rem 2rem',

@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { useLanguage, translations } from '@/context/LanguageContext';
 
 const certifications = [
   {
@@ -8,7 +9,7 @@ const certifications = [
     image: "/cert_google_ai.jpg",
   },
   {
-    title: "Iniciación al Desarrollo con IA",
+    title: "Introduction to AI Development",
     issuer: "BIG School · Midudev",
     date: "Mar 2026",
     image: "/cert_bigschool_ia.jpg",
@@ -16,13 +17,15 @@ const certifications = [
 ];
 
 const Certifications = () => {
+  const { language } = useLanguage();
+  const t = translations[language].certifications;
+
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
   const [index, setIndex] = useState(0);
 
   useEffect(() => {
     const fn = () => {
-      const mobile = window.innerWidth < 768;
-      setIsMobile(mobile);
+      setIsMobile(window.innerWidth < 768);
       setIndex(0);
     };
     window.addEventListener('resize', fn);
@@ -69,24 +72,13 @@ const Certifications = () => {
       }}
     >
       <h2 className="section-title" style={{ position: 'relative', zIndex: 500 }}>
-        Licencias y Certificaciones
+        {t.title}
       </h2>
 
-      <div style={{
-        display: 'flex',
-        alignItems: 'center',
-        gap: isMobile ? '0.75rem' : '1.5rem',
-        width: '100%',
-        maxWidth: isMobile ? '95vw' : '900px',
-      }}>
+      <div style={{ display: 'flex', alignItems: 'center', gap: isMobile ? '0.75rem' : '1.5rem', width: '100%', maxWidth: isMobile ? '95vw' : '900px' }}>
         <button onClick={prev} disabled={!canPrev} style={btnStyle(canPrev)}>‹</button>
 
-        <div style={{
-          display: 'grid',
-          gridTemplateColumns: `repeat(${visible.length}, 1fr)`,
-          gap: isMobile ? '0.75rem' : '1.5rem',
-          flex: 1,
-        }}>
+        <div style={{ display: 'grid', gridTemplateColumns: `repeat(${visible.length}, 1fr)`, gap: isMobile ? '0.75rem' : '1.5rem', flex: 1 }}>
           {visible.map((cert, i) => (
             <div
               key={index + i}
@@ -107,23 +99,9 @@ const Certifications = () => {
                 e.currentTarget.style.boxShadow = 'none';
               }}
             >
-              <img
-                src={cert.image}
-                alt={cert.title}
-                style={{
-                  width: '100%',
-                  aspectRatio: '4/3',
-                  objectFit: 'cover',
-                  display: 'block',
-                }}
-              />
+              <img src={cert.image} alt={cert.title} style={{ width: '100%', aspectRatio: '4/3', objectFit: 'cover', display: 'block' }} />
               <div style={{ padding: isMobile ? '0.75rem 1rem' : '1rem 1.5rem 1.25rem', textAlign: 'center' }}>
-                <h3 style={{
-                  fontSize: isMobile ? '0.95rem' : '1.1rem',
-                  fontWeight: '700',
-                  color: '#ffffff',
-                  marginBottom: '0.3rem',
-                }}>
+                <h3 style={{ fontSize: isMobile ? '0.95rem' : '1.1rem', fontWeight: '700', color: '#ffffff', marginBottom: '0.3rem' }}>
                   {cert.title}
                 </h3>
                 <p style={{ fontSize: isMobile ? '0.8rem' : '0.88rem', color: 'rgba(255,255,255,0.6)', marginBottom: '0.2rem' }}>
@@ -147,12 +125,9 @@ const Certifications = () => {
               key={i}
               onClick={() => setIndex(i)}
               style={{
-                width: '8px',
-                height: '8px',
-                borderRadius: '50%',
+                width: '8px', height: '8px', borderRadius: '50%',
                 background: i === index ? '#fff' : 'rgba(255,255,255,0.3)',
-                cursor: 'pointer',
-                transition: 'background 0.2s',
+                cursor: 'pointer', transition: 'background 0.2s',
               }}
             />
           ))}

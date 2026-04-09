@@ -1,8 +1,10 @@
-import React from 'react';
 import DomeGallery from './DomeGallery';
+import { useLanguage, translations } from '@/context/LanguageContext';
 import './PhotoGallery.css';
 
 const PhotoGallery = () => {
+  const { language } = useLanguage();
+  const t = translations[language].album;
   // Usar las imágenes del usuario
   const images = [
     "/fotoFran_1.jpeg",
@@ -27,12 +29,12 @@ const PhotoGallery = () => {
 
   return (
     <section id="mi-albun" className="photo-gallery-section">
-      <h2 className="section-title">Mi Albúm</h2>
+      <h2 className="section-title">{t.title}</h2>
       <div className="dome-gallery-container">
         <DomeGallery
           images={images}
-          fit={0.55}
-          minRadius={550}
+          fit={0.65}
+          minRadius={700}
           maxVerticalRotationDeg={15}
           segments={35}
           dragDampening={1.5}

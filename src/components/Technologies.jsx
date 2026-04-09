@@ -1,4 +1,4 @@
-import React from 'react';
+import { useLanguage, translations } from '@/context/LanguageContext';
 import {
   FaReact,
   FaJs,
@@ -58,6 +58,8 @@ import {
 } from 'react-icons/si';
 
 const Technologies = () => {
+  const { language } = useLanguage();
+  const t = translations[language].technologies;
   const leftTech = [
     { name: "HTML5", icon: SiHtml5, color: "#E34C26" },
     { name: "CSS3", icon: SiCss3, color: "#1572B6" },
@@ -130,7 +132,7 @@ const Technologies = () => {
     <section id="tecnologias" className="technologies-section">
       <div className="tech-container">
         <h2 className="tech-title">
-          <span className="tech-title-text">Tecnologías</span>
+          <span className="tech-title-text">{t.title}</span>
           <div className="tech-title-decoration"></div>
         </h2>
 
@@ -140,8 +142,8 @@ const Technologies = () => {
           {[
             { title: 'Frontend', items: leftTech },
             { title: 'Backend', items: rightTech },
-            { title: 'Bases de Datos', items: databasesTech },
-            { title: 'Herramientas', items: toolsTech },
+            { title: t.databases, items: databasesTech },
+            { title: t.tools, items: toolsTech },
           ].map(({ title, items }) => (
             <div key={title} className="tech-column">
               <div className="tech-column-header">
@@ -167,7 +169,7 @@ const Technologies = () => {
           {/* Sistemas y Redes — ocupa las 2 columnas */}
           <div className="tech-column tech-column-full">
             <div className="tech-column-header">
-              <h3 className="column-title">Sistemas y Redes</h3>
+              <h3 className="column-title">{t.systems}</h3>
             </div>
             <div className="tech-items-grid">
               {systemsTech.map((tech, index) => (

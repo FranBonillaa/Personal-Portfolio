@@ -1,20 +1,22 @@
-import { useState } from 'react';
+import { useLanguage, translations } from '@/context/LanguageContext';
 
 const Navbar = () => {
-  const [language, setLanguage] = useState('ES');
+  const { language, setLanguage } = useLanguage();
+  const t = translations[language].navbar;
 
   const navItems = [
-    { id: 'sobre-mi', label: 'Sobre Mí' },
-    { id: 'mi-albun', label: 'Mi Albúm' },
-    { id: 'tecnologias', label: 'Tecnologias' },
-    { id: 'experiencia', label: 'Experiencia' },
-    { id: 'proyectos', label: 'Proyectos' },
-    { id: 'certificaciones', label: 'Certificaciones' },
-    { id: 'contacto', label: 'Contacto' },
+    { id: 'sobre-mi',        label: t.sobreMi },
+    { id: 'mi-albun',        label: t.miAlbum },
+    { id: 'tecnologias',     label: t.tecnologias },
+    { id: 'experiencia',     label: t.experiencia },
+    { id: 'proyectos',       label: t.proyectos },
+    { id: 'certificaciones', label: t.certificaciones },
+    { id: 'contacto',        label: t.contacto },
   ];
+
   const languages = [
     { code: 'ES', label: 'Español' },
-    { code: 'EN', label: 'English' }
+    { code: 'EN', label: 'English' },
   ];
 
   return (

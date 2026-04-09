@@ -1,4 +1,5 @@
 import React from 'react';
+import { LanguageProvider } from '@/context/LanguageContext';
 import { LiquidChrome } from '@/components/LiquidChrome';
 import Navbar from '@/components/Navbar';
 import PixelToPhoto from '@/components/PixelToPhoto';
@@ -13,6 +14,7 @@ import './App.css';
 
 function App() {
   return (
+    <LanguageProvider>
     <div className="app dark">
       <Navbar />
       
@@ -55,6 +57,7 @@ function App() {
         <Contact />
       </main>
     </div>
+    </LanguageProvider>
   );
 }
 

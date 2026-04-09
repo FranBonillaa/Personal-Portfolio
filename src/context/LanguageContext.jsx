@@ -19,7 +19,7 @@ export const translations = {
       title: 'Sobre Mí',
       descriptionLabel: 'Descripción',
       skillsLabel: 'Habilidades',
-      p1: 'Soy Fran, un chico de Dos Hermanas apasionado por la informática y siempre curioso por seguir aprendiendo cosas nuevas. Me considero una persona muy activa, trabajadora y resolutiva; me involucro al máximo en lo que hago y siempre busco la forma de solucionar los retos que se me ponen por delante.',
+      p1: 'Soy Fran, apasionado por la informática y siempre dispuesto a seguir aprendiendo cosas nuevas. Me considero una persona muy activa, trabajadora y resolutiva; me involucro al máximo en lo que hago y siempre busco la forma de solucionar los retos que se presentan.',
       p2: 'Fuera de la pantalla, el deporte es clave en mi rutina diaria desde hace años, y guardo un gran cariño a mi etapa en el conservatorio de música. Para desconectar, mi plan ideal es organizar un buen viaje, descubrir sitios nuevos y exprimir al máximo el tiempo con mi familia y mis amigos.',
       skills: [
         { name: 'Lenguajes de programación', level: 85 },
@@ -107,7 +107,7 @@ export const translations = {
       title: 'About Me',
       descriptionLabel: 'Description',
       skillsLabel: 'Skills',
-      p1: "I'm Fran, a guy from Dos Hermanas passionate about technology and always curious to keep learning new things. I consider myself a very active, hardworking and resourceful person; I give my all in everything I do and always look for ways to solve the challenges in front of me.",
+      p1: "I'm Fran, passionate about technology and always eager to keep learning new things. I consider myself a very active, hardworking and resourceful person; I give my all in everything I do and always look for ways to solve the challenges that arise.",
       p2: 'Outside the screen, sport has been a key part of my daily routine for years, and I have great fondness for my time at the music conservatory. To unwind, my ideal plan is to organise a good trip, discover new places and make the most of the time with my family and friends.',
       skills: [
         { name: 'Programming languages', level: 85 },

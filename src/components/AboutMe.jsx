@@ -37,7 +37,7 @@ const AboutMe = () => {
                         <span style={{ color: 'rgba(255,255,255,0.5)', fontSize: '0.8rem' }}>{skill.level}%</span>
                       </div>
                       <div style={{ width: '100%', height: '8px', backgroundColor: 'rgba(255,255,255,0.15)', borderRadius: '4px', overflow: 'hidden' }}>
-                        <div style={{ width: `${skill.level}%`, height: '100%', backgroundColor: '#ccff00', borderRadius: '4px', transition: 'width 1s ease-in-out' }} />
+                        <div style={{ width: `${skill.level}%`, height: '100%', backgroundColor: '#22d3ee', borderRadius: '4px', transition: 'width 1s ease-in-out' }} />
                       </div>
                     </div>
                   ))}

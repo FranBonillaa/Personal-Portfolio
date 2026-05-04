@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { LanguageProvider } from '@/context/LanguageContext';
 import { LiquidChrome } from '@/components/LiquidChrome';
 import Navbar from '@/components/Navbar';
@@ -13,6 +13,13 @@ import Contact from '@/components/Contact';
 import './App.css';
 
 function App() {
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+  useEffect(() => {
+    const fn = () => setIsMobile(window.innerWidth < 768);
+    window.addEventListener('resize', fn);
+    return () => window.removeEventListener('resize', fn);
+  }, []);
+
   return (
     <LanguageProvider>
     <div className="app dark">
@@ -26,7 +33,7 @@ function App() {
             amplitude={0.25}
             frequencyX={4.5}
             frequencyY={3.5}
-            interactive
+            interactive={!isMobile}
           />
         </div>
       </div>

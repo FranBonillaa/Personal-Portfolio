@@ -1620,4 +1620,158 @@ body {
   }
 }
 
+/* =============================================
+   SMALL LAPTOP / TABLET LANDSCAPE (1025px – 1279px)
+   ============================================= */
+@media (min-width: 1025px) and (max-width: 1279px) {
+
+  /* Navbar */
+  .nav-container {
+    max-width: 98vw !important;
+    padding: 0.6rem 1.25rem !important;
+  }
+  .nav-link {
+    font-size: 0.85rem !important;
+    padding: 0.4rem 0.7rem !important;
+  }
+  .lang-btn {
+    font-size: 0.85rem !important;
+    padding: 0.4rem 0.75rem !important;
+  }
+
+  /* Títulos */
+  .section-title {
+    font-size: 2.5rem !important;
+    margin-bottom: 2.75rem !important;
+  }
+
+  /* Hero */
+  .hero-content {
+    gap: 2.5rem !important;
+    padding: 0 2rem !important;
+  }
+  .hero-text h1 {
+    font-size: 3.2rem !important;
+  }
+
+  /* Sobre Mí */
+  .about-me-section {
+    padding: 8rem 2.5rem 4rem !important;
+  }
+  .about-main-flex {
+    gap: 3rem !important;
+  }
+
+  /* Foto Gallery */
+  .photo-gallery-section {
+    padding: 8rem 2rem 4rem !important;
+  }
+  .dome-gallery-container {
+    max-width: 850px !important;
+    height: 550px !important;
+  }
+
+  /* Technologies */
+  .tech-container {
+    max-width: 95% !important;
+  }
+  .tech-all-cards-grid {
+    gap: 1.75rem !important;
+  }
+  .tech-items-grid {
+    grid-template-columns: repeat(3, 1fr) !important;
+  }
+
+  /* Experiencia */
+  .experience-section {
+    padding: 8rem 2.5rem 4rem !important;
+  }
+
+  /* Proyectos */
+  .projects-section {
+    padding: 8rem 2rem 4rem !important;
+  }
+
+  /* Contacto */
+  .contact-section {
+    padding: 8rem 2.5rem 4rem !important;
+  }
+}
+
+/* =============================================
+   LARGE SCREENS / SMALL TVs (≥1440px)
+   ============================================= */
+@media (min-width: 1440px) {
+
+  /* Títulos */
+  .section-title {
+    font-size: 3.5rem !important;
+    margin-bottom: 3.5rem !important;
+  }
+
+  /* Navbar */
+  .nav-container {
+    max-width: 1300px !important;
+    padding: 0.75rem 2rem !important;
+  }
+  .nav-link {
+    font-size: 1rem !important;
+    padding: 0.5rem 1rem !important;
+  }
+
+  /* Hero */
+  .hero-text h1 {
+    font-size: 5rem !important;
+  }
+
+  /* Sobre Mí */
+  .about-me-section {
+    padding: 10rem 4rem 5rem !important;
+  }
+
+  /* Foto Gallery */
+  .photo-gallery-section {
+    padding: 10rem 2rem 5rem !important;
+  }
+  .dome-gallery-container {
+    max-width: 1400px !important;
+    height: 850px !important;
+  }
+
+  /* Technologies */
+  .tech-container {
+    max-width: 1400px !important;
+  }
+  .tech-items-grid {
+    grid-template-columns: repeat(4, 1fr) !important;
+    gap: 1.75rem !important;
+  }
+  .tech-icon {
+    width: 62px !important;
+    height: 62px !important;
+  }
+  .tech-real-icon {
+    width: 32px !important;
+    height: 32px !important;
+  }
+  .tech-name {
+    font-size: 0.9rem !important;
+  }
+
+  /* Experiencia */
+  .experience-section {
+    padding: 10rem 4rem 5rem !important;
+  }
+
+  /* Proyectos */
+  .projects-section {
+    padding: 10rem 4rem 5rem !important;
+  }
+
+  /* Contacto */
+  .contact-section {
+    padding: 10rem 4rem 5rem !important;
+  }
+}
+
 /* Experience mobile — ver bloque principal arriba */

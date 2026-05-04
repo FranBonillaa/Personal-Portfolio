@@ -20,12 +20,19 @@ const Certifications = () => {
   const { language } = useLanguage();
   const t = translations[language].certifications;
 
-  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+  const getSize = () => {
+    const w = window.innerWidth;
+    if (w < 768) return 'mobile';
+    if (w < 1025) return 'tablet';
+    return 'desktop';
+  };
+  const [size, setSize] = useState(getSize);
+  const isMobile = size === 'mobile';
   const [index, setIndex] = useState(0);
 
   useEffect(() => {
     const fn = () => {
-      setIsMobile(window.innerWidth < 768);
+      setSize(getSize());
       setIndex(0);
     };
     window.addEventListener('resize', fn);
@@ -66,7 +73,7 @@ const Certifications = () => {
         flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'center',
-        padding: isMobile ? '3rem 1rem' : '6rem 2rem',
+        padding: isMobile ? '3rem 1rem' : size === 'tablet' ? '4rem 1.5rem' : '6rem 2rem',
         position: 'relative',
         zIndex: 500,
       }}
@@ -75,7 +82,7 @@ const Certifications = () => {
         {t.title}
       </h2>
 
-      <div style={{ display: 'flex', alignItems: 'center', gap: isMobile ? '0.75rem' : '1.5rem', width: '100%', maxWidth: isMobile ? '95vw' : '900px' }}>
+      <div style={{ display: 'flex', alignItems: 'center', gap: isMobile ? '0.75rem' : '1.5rem', width: '100%', maxWidth: isMobile ? '95vw' : size === 'tablet' ? '760px' : '900px' }}>
         <button onClick={prev} disabled={!canPrev} style={btnStyle(canPrev)}>‹</button>
 
         <div style={{ display: 'grid', gridTemplateColumns: `repeat(${visible.length}, 1fr)`, gap: isMobile ? '0.75rem' : '1.5rem', flex: 1 }}>

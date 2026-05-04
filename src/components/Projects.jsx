@@ -5,9 +5,17 @@ const Projects = () => {
   const { language } = useLanguage();
   const t = translations[language].projects;
 
-  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+  const getSize = () => {
+    const w = window.innerWidth;
+    if (w < 768) return 'mobile';
+    if (w < 1025) return 'tablet';
+    return 'desktop';
+  };
+  const [size, setSize] = useState(getSize);
+  const isMobile = size === 'mobile';
+  const isTablet = size === 'tablet';
   useEffect(() => {
-    const fn = () => setIsMobile(window.innerWidth < 768);
+    const fn = () => setSize(getSize());
     window.addEventListener('resize', fn);
     return () => window.removeEventListener('resize', fn);
   }, []);
@@ -21,7 +29,7 @@ const Projects = () => {
         flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'center',
-        padding: isMobile ? '3rem 1rem' : '6rem 2rem',
+        padding: isMobile ? '3rem 1rem' : isTablet ? '4rem 1.5rem' : '6rem 2rem',
         position: 'relative',
         zIndex: 500,
       }}
@@ -35,8 +43,8 @@ const Projects = () => {
           display: 'grid',
           gridTemplateColumns: isMobile ? '1fr' : `repeat(${t.items.length}, 1fr)`,
           gap: isMobile ? '1.25rem' : '1.5rem',
-          width: isMobile ? '92vw' : '82vw',
-          maxWidth: isMobile ? '92vw' : '82vw',
+          width: isMobile ? '92vw' : isTablet ? '90vw' : '82vw',
+          maxWidth: isMobile ? '92vw' : isTablet ? '90vw' : '82vw',
           position: 'relative',
           zIndex: 500,
         }}
@@ -68,7 +76,7 @@ const Projects = () => {
               alt={project.title}
               style={{
                 width: '100%',
-                height: isMobile ? '180px' : '340px',
+                height: isMobile ? '180px' : isTablet ? '240px' : '340px',
                 objectFit: 'cover',
                 display: 'block',
               }}

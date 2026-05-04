@@ -225,9 +225,9 @@ body {
 }
 
 .lang-btn.active {
-  background-color: #ccff00;
+  background-color: #22d3ee;
   color: #000000;
-  box-shadow: 0 4px 15px rgba(239, 68, 68, 0.3);
+  box-shadow: 0 4px 15px rgba(34, 211, 238, 0.4);
 }
 
 .lang-btn:hover:not(.active) {

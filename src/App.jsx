@@ -35,8 +35,8 @@ function App() {
         <div className="hero-section">
           <div style={{ width: '100%', maxWidth: '960px', margin: '0 auto', padding: '0 2rem' }} className="hero-content gap-4">
             <div className="hero-text">
-              <h1 style={{ fontSize: '3.5rem', fontWeight: '800', lineHeight: '1.3', marginBottom: '2rem', textAlign: 'center', whiteSpace: 'nowrap' }}>Fran Bonilla</h1>
-              <p className="hero-subtitle" style={{ fontSize: '1.5rem', fontWeight: '500', lineHeight: '1.2', color: '#00ff00', marginBottom: '2rem', textAlign: 'center' }}>Full Stack Software Developer</p>
+              <h1 style={{ fontSize: '3.5rem', fontWeight: '800', lineHeight: '1.3', marginBottom: '2rem', textAlign: 'center', whiteSpace: 'nowrap', color: '#ffffff' }}>Fran Bonilla</h1>
+              <p className="hero-subtitle" style={{ fontSize: '1.5rem', fontWeight: '500', lineHeight: '1.2', color: '#86efac', marginBottom: '2rem', textAlign: 'center' }}>Full Stack Software Developer</p>
             </div>
             <div className="hero-image"> 
               <PixelToPhoto

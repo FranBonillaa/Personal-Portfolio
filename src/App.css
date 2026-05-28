@@ -357,6 +357,8 @@ body {
   grid-auto-rows: auto;
   gap: 3rem;
   width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
   align-items: start;
 }
 
@@ -1669,9 +1671,6 @@ body {
   }
 
   /* Technologies */
-  .tech-container {
-    max-width: 95% !important;
-  }
   .tech-all-cards-grid {
     gap: 1.75rem !important;
   }
@@ -1736,9 +1735,6 @@ body {
   }
 
   /* Technologies */
-  .tech-container {
-    max-width: 1400px !important;
-  }
   .tech-items-grid {
     grid-template-columns: repeat(4, 1fr) !important;
     gap: 1.75rem !important;

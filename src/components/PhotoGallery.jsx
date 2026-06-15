@@ -1,11 +1,11 @@
 import DomeGallery from './DomeGallery';
 import { useLanguage, translations } from '@/context/LanguageContext';
+import FadeIn from '@/components/FadeIn';
 import './PhotoGallery.css';
 
 const PhotoGallery = () => {
   const { language } = useLanguage();
   const t = translations[language].album;
-  // Usar las imágenes del usuario
   const images = [
     "/fotoFran_1.jpeg",
     "/fotoFran_2.jpeg",
@@ -29,7 +29,9 @@ const PhotoGallery = () => {
 
   return (
     <section id="mi-albun" className="photo-gallery-section">
-      <h2 className="section-title">{t.title}</h2>
+      <FadeIn direction="up" duration={0.6}>
+        <h2 className="section-title">{t.title}</h2>
+      </FadeIn>
       <div className="dome-gallery-container">
         <DomeGallery
           images={images}

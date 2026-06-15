@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useLanguage, translations } from '@/context/LanguageContext';
+import FadeIn from '@/components/FadeIn';
 
 const certifications = [
   {
@@ -78,10 +79,13 @@ const Certifications = () => {
         zIndex: 500,
       }}
     >
-      <h2 className="section-title" style={{ position: 'relative', zIndex: 500 }}>
-        {t.title}
-      </h2>
+      <FadeIn direction="up" duration={0.6}>
+        <h2 className="section-title" style={{ position: 'relative', zIndex: 500 }}>
+          {t.title}
+        </h2>
+      </FadeIn>
 
+      <FadeIn direction="up" delay={0.15} duration={0.7}>
       <div style={{ display: 'flex', alignItems: 'center', gap: isMobile ? '0.75rem' : '1.5rem', width: '100%', maxWidth: isMobile ? '95vw' : size === 'tablet' ? '760px' : '900px' }}>
         <button onClick={prev} disabled={!canPrev} style={btnStyle(canPrev)}>‹</button>
 
@@ -124,6 +128,8 @@ const Certifications = () => {
 
         <button onClick={next} disabled={!canNext} style={btnStyle(canNext)}>›</button>
       </div>
+
+      </FadeIn>
 
       {certifications.length > VISIBLE && (
         <div style={{ display: 'flex', gap: '6px', marginTop: '1.25rem' }}>

@@ -1,4 +1,5 @@
 import { useLanguage, translations } from '@/context/LanguageContext';
+import FadeIn from '@/components/FadeIn';
 import {
   FaReact,
   FaJs,
@@ -131,12 +132,14 @@ const Technologies = () => {
   return (
     <section id="tecnologias" className="technologies-section" style={{ width: '100%', boxSizing: 'border-box' }}>
       <div style={{ width: '960px', maxWidth: 'calc(100% - 4rem)', margin: '0 auto', boxSizing: 'border-box' }}>
-        <h2 className="tech-title">
-          <span className="tech-title-text">{t.title}</span>
-          <div className="tech-title-decoration"></div>
-        </h2>
+        <FadeIn direction="up" duration={0.6}>
+          <h2 className="tech-title">
+            <span className="tech-title-text">{t.title}</span>
+            <div className="tech-title-decoration"></div>
+          </h2>
+        </FadeIn>
 
-        {/* Un único grid — todas las tarjetas en el mismo contexto */}
+        <FadeIn direction="up" delay={0.15} duration={0.7}>
         <div className="tech-all-cards-grid">
 
           {[
@@ -188,6 +191,7 @@ const Technologies = () => {
           </div>
 
         </div>
+        </FadeIn>
       </div>
     </section>
   );

@@ -1,4 +1,5 @@
 import { useLanguage, translations } from '@/context/LanguageContext';
+import FadeIn from '@/components/FadeIn';
 
 const AboutMe = () => {
   const { language } = useLanguage();
@@ -7,12 +8,15 @@ const AboutMe = () => {
   return (
     <section id="sobre-mi" className="about-me-section">
       <div style={{ maxWidth: '1200px', width: '100%', margin: '0 auto', padding: '0 2rem' }}>
-        <h2 className="section-title">{t.title}</h2>
+        <FadeIn direction="up" duration={0.6}>
+          <h2 className="section-title">{t.title}</h2>
+        </FadeIn>
 
         <div className="about-main-flex" style={{ display: 'flex', justifyContent: 'center', gap: '4rem', width: '100%', marginBottom: '100px' }}>
 
           {/* Columna izquierda */}
-          <div className="about-col-left" style={{ width: '50%', display: 'flex', flexDirection: 'column', gap: '3rem' }}>
+          <FadeIn direction="right" duration={0.7} delay={0.1} style={{ width: '50%' }}>
+          <div className="about-col-left" style={{ width: '100%', display: 'flex', flexDirection: 'column', gap: '3rem' }}>
             <div className="about-text">
               <h3 className="text-2xl font-semibold text-white mb-12">{t.descriptionLabel}</h3>
               <p className="text-lg text-white mb-8" style={{ lineHeight: '2.4', maxWidth: '420px', margin: '0 auto' }}>
@@ -23,9 +27,11 @@ const AboutMe = () => {
               </p>
             </div>
           </div>
+          </FadeIn>
 
           {/* Columna derecha */}
-          <div className="about-col-right" style={{ width: '50%', display: 'flex', flexDirection: 'column', gap: '3rem' }}>
+          <FadeIn direction="left" duration={0.7} delay={0.2} style={{ width: '50%' }}>
+          <div className="about-col-right" style={{ width: '100%', display: 'flex', flexDirection: 'column', gap: '3rem' }}>
             <h3 className="text-2xl font-semibold text-white mb-12">{t.skillsLabel}</h3>
             <div style={{ display: 'flex', gap: '2.5rem', width: '100%' }}>
               {[t.skills.slice(0, 7), t.skills.slice(7)].map((group, gi) => (
@@ -45,6 +51,7 @@ const AboutMe = () => {
               ))}
             </div>
           </div>
+          </FadeIn>
 
         </div>
       </div>

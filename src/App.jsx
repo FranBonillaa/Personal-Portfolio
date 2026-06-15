@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { LanguageProvider } from '@/context/LanguageContext';
 import { LiquidChrome } from '@/components/LiquidChrome';
 import Navbar from '@/components/Navbar';
+import FadeIn from '@/components/FadeIn';
 import PixelToPhoto from '@/components/PixelToPhoto';
 import AboutMe from '@/components/AboutMe';
 import PhotoGallery from '@/components/PhotoGallery';
@@ -41,17 +42,21 @@ function App() {
       <main className="content">
         <div className="hero-section">
           <div style={{ width: '100%', maxWidth: '960px', margin: '0 auto', padding: '0 2rem' }} className="hero-content gap-4">
-            <div className="hero-text">
-              <h1 style={{ fontSize: '3.5rem', fontWeight: '800', lineHeight: '1.3', marginBottom: '2rem', textAlign: 'center', whiteSpace: 'nowrap', color: '#ffffff' }}>Fran Bonilla</h1>
-              <p className="hero-subtitle" style={{ fontSize: '1.5rem', fontWeight: '500', lineHeight: '1.2', color: '#86efac', marginBottom: '2rem', textAlign: 'center' }}>Full Stack Software Developer</p>
-            </div>
-            <div className="hero-image"> 
-              <PixelToPhoto
-                pixelImage="/yo_pixel.png"
-                normalImage="/yo_normal.jpg"
-                alt="Fran Bonilla"
-              />
-            </div>
+            <FadeIn direction="right" duration={0.8}>
+              <div className="hero-text">
+                <h1 style={{ fontSize: '3.5rem', fontWeight: '800', lineHeight: '1.3', marginBottom: '2rem', textAlign: 'center', whiteSpace: 'nowrap', color: '#ffffff' }}>Fran Bonilla</h1>
+                <p className="hero-subtitle" style={{ fontSize: '1.5rem', fontWeight: '500', lineHeight: '1.2', color: '#86efac', marginBottom: '2rem', textAlign: 'center' }}>Full Stack Software Developer</p>
+              </div>
+            </FadeIn>
+            <FadeIn direction="left" duration={0.8} delay={0.2}>
+              <div className="hero-image">
+                <PixelToPhoto
+                  pixelImage="/yo_pixel.png"
+                  normalImage="/yo_normal.jpg"
+                  alt="Fran Bonilla"
+                />
+              </div>
+            </FadeIn>
           </div>
         </div>
         

@@ -1,4 +1,5 @@
 import { useLanguage, translations } from '@/context/LanguageContext';
+import FadeIn from '@/components/FadeIn';
 
 const LinkedInIcon = () => (
   <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
@@ -24,7 +25,10 @@ const Contact = () => {
 
   return (
     <section id="contacto" className="contact-section">
-      <h2 className="section-title">{t.title}</h2>
+      <FadeIn direction="up" duration={0.6}>
+        <h2 className="section-title">{t.title}</h2>
+      </FadeIn>
+      <FadeIn direction="up" delay={0.15} duration={0.7}>
       <div style={{
         display: 'flex', flexDirection: 'column', alignItems: 'center',
         justifyContent: 'center', textAlign: 'center', width: '90%',
@@ -118,6 +122,7 @@ const Contact = () => {
           </a>
         </div>
       </div>
+      </FadeIn>
     </section>
   );
 };

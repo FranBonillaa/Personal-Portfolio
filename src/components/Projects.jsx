@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useLanguage, translations } from '@/context/LanguageContext';
+import FadeIn from '@/components/FadeIn';
 
 const Projects = () => {
   const { language } = useLanguage();
@@ -34,9 +35,11 @@ const Projects = () => {
         zIndex: 500,
       }}
     >
-      <h2 className="section-title" style={{ position: 'relative', zIndex: 500 }}>
-        {t.title}
-      </h2>
+      <FadeIn direction="up" duration={0.6}>
+        <h2 className="section-title" style={{ position: 'relative', zIndex: 500 }}>
+          {t.title}
+        </h2>
+      </FadeIn>
 
       <div
         style={{
@@ -50,8 +53,8 @@ const Projects = () => {
         }}
       >
         {t.items.map((project, index) => (
+          <FadeIn key={index} direction="up" delay={index * 0.15} duration={0.6}>
           <div
-            key={index}
             style={{
               background: 'rgba(10, 30, 10, 0.72)',
               backdropFilter: 'blur(12px)',
@@ -123,6 +126,7 @@ const Projects = () => {
               </a>
             </div>
           </div>
+          </FadeIn>
         ))}
       </div>
     </section>

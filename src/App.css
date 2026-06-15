@@ -162,19 +162,19 @@ body {
 /* Technologies Section */
 .technologies-section {
   min-height: 100vh;
-  padding: 8rem 2rem 6rem 2rem;
+  padding: 8rem 0 6rem 0;
   background: transparent;
   width: 100%;
   box-sizing: border-box;
 }
 
 .tech-container {
-  max-width: 960px;       /* ancho máximo del contenido */
+  max-width: 960px;
   width: 100%;
-  margin-left: auto;      /* centrado horizontal puro */
-  margin-right: auto;
+  margin: 0 auto;
   padding: 0 2rem;
   box-sizing: border-box;
+  text-align: center;
 }
 
 .tech-title {
@@ -357,8 +357,7 @@ body {
   grid-auto-rows: auto;
   gap: 3rem;
   width: 100%;
-  max-width: 960px;
-  margin: 0 auto;
+  margin: 0;
   align-items: start;
 }
 

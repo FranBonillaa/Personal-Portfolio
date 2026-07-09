@@ -40,7 +40,7 @@ import {
   SiVscodium,
   SiIntellijidea,
   SiEclipseide,
-  SiKubernetes,
+
   SiPostman,
   SiNpm,
   SiVite,
@@ -55,7 +55,8 @@ import {
   SiGnu,
   SiDebian,
   SiUbuntu,
-  SiKalilinux
+  SiKalilinux,
+  SiAngular
 } from 'react-icons/si';
 
 const Technologies = () => {
@@ -69,7 +70,8 @@ const Technologies = () => {
     { name: "React", icon: FaReact, color: "#61DAFB" },
     { name: "Tailwind", icon: SiTailwindcss, color: "#06B6D4" },
     { name: "Bootstrap", icon: SiBootstrap, color: "#7952B3" },
-    { name: "React Native", icon: SiReactos, color: "#61DAFB" }
+    { name: "React Native", icon: SiReactos, color: "#61DAFB" },
+    { name: "Angular", icon: SiAngular, color: "#DD0031" }
   ];
 
   const rightTech = [

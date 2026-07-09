@@ -15,6 +15,18 @@ const certifications = [
     date: "Mar 2026",
     image: "/cert_bigschool_ia.jpg",
   },
+  {
+    title: "Fundamentos de Angular",
+    issuer: "OpenWebinars",
+    date: "2025",
+    image: "/cert_angular.jpg",
+  },
+  {
+    title: "Iniciación al Desarrollo con IA",
+    issuer: "BIG School · Midudev",
+    date: "Mar 2026",
+    image: "/cert_ia_desarrollo.jpg",
+  },
 ];
 
 const Certifications = () => {

@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react';
 import { useLanguage, translations } from '@/context/LanguageContext';
 import FadeIn from '@/components/FadeIn';
 
@@ -22,6 +23,12 @@ const InstagramIcon = () => (
 const Contact = () => {
   const { language } = useLanguage();
   const t = translations[language].contact;
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+  useEffect(() => {
+    const fn = () => setIsMobile(window.innerWidth < 768);
+    window.addEventListener('resize', fn);
+    return () => window.removeEventListener('resize', fn);
+  }, []);
 
   return (
     <section id="contacto" className="contact-section">
@@ -51,12 +58,12 @@ const Contact = () => {
           fbonillavaro@gmail.com
         </a>
 
-        <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', justifyContent: 'center' }}>
+        {/* Redes sociales — siempre en fila */}
+        <div style={{ display: 'flex', gap: '0.75rem', justifyContent: 'center', flexWrap: 'nowrap' }}>
           {[
             { label: 'LinkedIn', href: 'https://www.linkedin.com/in/francisco-javier-bonilla-varo-08445625a/', Icon: LinkedInIcon },
             { label: 'GitHub', href: 'https://github.com/FranBonillaa', Icon: GitHubIcon },
             { label: 'Instagram', href: 'https://www.instagram.com/_frannbonillaa_/', Icon: InstagramIcon },
-            // eslint-disable-next-line no-unused-vars
           ].map(({ label, href, Icon }) => (
             <a
               key={label}
@@ -64,21 +71,16 @@ const Contact = () => {
               target="_blank"
               rel="noopener noreferrer"
               style={{
-                display: 'flex', alignItems: 'center', gap: '0.5rem',
-                padding: '0.65rem 1.4rem', borderRadius: '9999px',
+                display: 'flex', alignItems: 'center', gap: '0.4rem',
+                padding: isMobile ? '0.6rem 1rem' : '0.65rem 1.4rem',
+                borderRadius: '9999px',
                 background: 'rgba(10, 10, 10, 0.75)', border: '1px solid rgba(255,255,255,0.15)',
-                color: '#ffffff', fontSize: '0.95rem', fontWeight: '500',
+                color: '#ffffff', fontSize: isMobile ? '0.85rem' : '0.95rem', fontWeight: '500',
                 textDecoration: 'none', backdropFilter: 'blur(8px)',
                 transition: 'background 0.2s ease, border-color 0.2s ease',
               }}
-              onMouseEnter={e => {
-                e.currentTarget.style.background = 'rgba(30,30,30,0.9)';
-                e.currentTarget.style.borderColor = 'rgba(255,255,255,0.35)';
-              }}
-              onMouseLeave={e => {
-                e.currentTarget.style.background = 'rgba(10,10,10,0.75)';
-                e.currentTarget.style.borderColor = 'rgba(255,255,255,0.15)';
-              }}
+              onMouseEnter={e => { e.currentTarget.style.background = 'rgba(30,30,30,0.9)'; e.currentTarget.style.borderColor = 'rgba(255,255,255,0.35)'; }}
+              onMouseLeave={e => { e.currentTarget.style.background = 'rgba(10,10,10,0.75)'; e.currentTarget.style.borderColor = 'rgba(255,255,255,0.15)'; }}
             >
               <Icon />
               {label}
@@ -86,19 +88,22 @@ const Contact = () => {
           ))}
         </div>
 
-        <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', justifyContent: 'center' }}>
+        {/* Botones de acción */}
+        <div style={{ display: 'flex', flexDirection: isMobile ? 'column' : 'row', gap: '1rem', width: isMobile ? '100%' : 'auto', alignItems: 'center' }}>
           <a
             href="https://mail.google.com/mail/?view=cm&to=fbonillavaro@gmail.com"
             target="_blank"
             rel="noopener noreferrer"
             style={{
-              display: 'inline-flex', alignItems: 'center', padding: '0.75rem 2rem',
-              borderRadius: '9999px', background: '#ccff00', color: '#000000',
+              display: 'inline-flex', alignItems: 'center', justifyContent: 'center',
+              padding: '0.75rem 2rem', borderRadius: '9999px',
+              background: '#22d3ee', color: '#000000',
               fontSize: '1rem', fontWeight: '700', textDecoration: 'none',
+              width: isMobile ? '100%' : 'auto',
               transition: 'background 0.2s ease, transform 0.2s ease',
             }}
-            onMouseEnter={e => { e.currentTarget.style.background = '#d4ff00'; e.currentTarget.style.transform = 'translateY(-2px)'; }}
-            onMouseLeave={e => { e.currentTarget.style.background = '#ccff00'; e.currentTarget.style.transform = 'translateY(0)'; }}
+            onMouseEnter={e => { e.currentTarget.style.background = '#67e8f9'; e.currentTarget.style.transform = 'translateY(-2px)'; }}
+            onMouseLeave={e => { e.currentTarget.style.background = '#22d3ee'; e.currentTarget.style.transform = 'translateY(0)'; }}
           >
             {t.sendMessage}
           </a>
@@ -109,11 +114,13 @@ const Contact = () => {
             target="_blank"
             rel="noopener noreferrer"
             style={{
-              display: 'inline-flex', alignItems: 'center', padding: '0.75rem 2rem',
-              borderRadius: '9999px', background: 'rgba(255,255,255,0.08)',
-              color: '#ffffff', fontSize: '1rem', fontWeight: '500',
-              textDecoration: 'none', border: '1px solid rgba(255,255,255,0.3)',
-              backdropFilter: 'blur(8px)', transition: 'background 0.2s ease, border-color 0.2s ease, transform 0.2s ease',
+              display: 'inline-flex', alignItems: 'center', justifyContent: 'center',
+              padding: '0.75rem 2rem', borderRadius: '9999px',
+              background: 'rgba(255,255,255,0.08)', color: '#ffffff',
+              fontSize: '1rem', fontWeight: '500', textDecoration: 'none',
+              border: '1px solid rgba(255,255,255,0.3)', backdropFilter: 'blur(8px)',
+              width: isMobile ? '100%' : 'auto',
+              transition: 'background 0.2s ease, border-color 0.2s ease, transform 0.2s ease',
             }}
             onMouseEnter={e => { e.currentTarget.style.background = 'rgba(255,255,255,0.15)'; e.currentTarget.style.borderColor = 'rgba(255,255,255,0.5)'; e.currentTarget.style.transform = 'translateY(-2px)'; }}
             onMouseLeave={e => { e.currentTarget.style.background = 'rgba(255,255,255,0.08)'; e.currentTarget.style.borderColor = 'rgba(255,255,255,0.3)'; e.currentTarget.style.transform = 'translateY(0)'; }}

@@ -29,14 +29,13 @@
   }
 
   .photo-gallery-section {
-    padding: 60px 16px;   /* 16px lateral para separar del borde de pantalla */
+    padding: 60px 16px;
     box-sizing: border-box;
     width: 100%;
-    overflow-x: hidden;
   }
 
   .dome-gallery-container {
-    height: 400px;
+    height: 550px;
     width: 100%;
     box-sizing: border-box;
   }

@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react';
 import DomeGallery from './DomeGallery';
 import { useLanguage, translations } from '@/context/LanguageContext';
 import FadeIn from '@/components/FadeIn';
@@ -6,6 +7,14 @@ import './PhotoGallery.css';
 const PhotoGallery = () => {
   const { language } = useLanguage();
   const t = translations[language].album;
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+
+  useEffect(() => {
+    const fn = () => setIsMobile(window.innerWidth < 768);
+    window.addEventListener('resize', fn);
+    return () => window.removeEventListener('resize', fn);
+  }, []);
+
   const images = [
     "/fotoFran_1.jpeg",
     "/fotoFran_2.jpeg",
@@ -35,8 +44,8 @@ const PhotoGallery = () => {
       <div className="dome-gallery-container">
         <DomeGallery
           images={images}
-          fit={0.65}
-          minRadius={700}
+          fit={isMobile ? 0.58 : 0.65}
+          minRadius={isMobile ? 500 : 700}
           maxVerticalRotationDeg={15}
           segments={35}
           dragDampening={1.5}

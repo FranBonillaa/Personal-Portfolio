@@ -52,7 +52,7 @@ import {
   SiApache,
   SiGooglecloud,
   SiWireshark,
-  SiGnu,
+  SiGnubash,
   SiDebian,
   SiUbuntu,
   SiKalilinux,
@@ -118,7 +118,7 @@ const Technologies = () => {
     { name: "Debian", icon: SiDebian, color: "#A81D33" },
     { name: "Kali Linux", icon: SiKalilinux, color: "#557C94" },
     { name: "Windows Server", icon: FaWindows, color: "#0078D4" },
-    { name: "Bash", icon: SiGnu, color: "#000000" },
+    { name: "Bash", icon: SiGnubash, color: "#4EAA25" },
     { name: "PowerShell", icon: FaWindows, color: "#5391FE" },
     { name: "Cisco", icon: SiCisco, color: "#1BA0D7" },
     { name: "VirtualBox", icon: SiVirtualbox, color: "#183A61" },
@@ -128,7 +128,7 @@ const Technologies = () => {
     { name: "AWS", icon: FaAws, color: "#FF9900" },
     { name: "Google Cloud", icon: FaGoogle, color: "#4285F4" },
     { name: "Wireshark", icon: SiWireshark, color: "#1679A7" },
-    { name: "Nmap", icon: FaGit, color: "#000000" }
+    { name: "Nmap", icon: FaCode, color: "#000000" }
   ];
 
   return (

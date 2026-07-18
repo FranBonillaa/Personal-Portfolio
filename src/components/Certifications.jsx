@@ -122,7 +122,7 @@ const Certifications = () => {
                 e.currentTarget.style.boxShadow = 'none';
               }}
             >
-              <img src={cert.image} alt={cert.title} style={{ width: '100%', aspectRatio: '4/3', objectFit: 'cover', display: 'block' }} />
+              <img src={cert.image} alt={cert.title} style={{ width: '100%', aspectRatio: '4/3', objectFit: 'contain', background: '#0a0a0a', display: 'block' }} />
               <div style={{ padding: isMobile ? '0.75rem 1rem' : '1rem 1.5rem 1.25rem', textAlign: 'center' }}>
                 <h3 style={{ fontSize: isMobile ? '0.95rem' : '1.1rem', fontWeight: '700', color: '#ffffff', marginBottom: '0.3rem' }}>
                   {cert.title}

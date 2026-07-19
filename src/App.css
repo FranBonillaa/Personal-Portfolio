@@ -1656,6 +1656,10 @@ body {
   .tech-items-grid {
     grid-template-columns: repeat(3, 1fr) !important;
   }
+  .tech-column-full .tech-items-grid {
+    grid-template-columns: repeat(6, 1fr) !important;
+    gap: 1.25rem !important;
+  }
 
   /* Experiencia */
   .experience-section {
@@ -1717,6 +1721,10 @@ body {
   .tech-items-grid {
     grid-template-columns: repeat(4, 1fr) !important;
     gap: 1.75rem !important;
+  }
+  .tech-column-full .tech-items-grid {
+    grid-template-columns: repeat(6, 1fr) !important;
+    gap: 1.25rem !important;
   }
   .tech-icon {
     width: 62px !important;

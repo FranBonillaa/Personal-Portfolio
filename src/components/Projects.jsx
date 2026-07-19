@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useLanguage, translations } from '@/context/LanguageContext';
 import FadeIn from '@/components/FadeIn';
+import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 
 const Projects = () => {
   const { language } = useLanguage();
@@ -82,7 +83,7 @@ const Projects = () => {
         position: 'relative',
         zIndex: 500,
       }}>
-        <button onClick={prev} disabled={!canPrev} style={btnStyle(canPrev)}>‹</button>
+        <button onClick={prev} disabled={!canPrev} style={btnStyle(canPrev)} aria-label="Proyecto anterior"><FaChevronLeft /></button>
 
         <div style={{
           display: 'grid',
@@ -167,7 +168,7 @@ const Projects = () => {
           ))}
         </div>
 
-        <button onClick={next} disabled={!canNext} style={btnStyle(canNext)}>›</button>
+        <button onClick={next} disabled={!canNext} style={btnStyle(canNext)} aria-label="Proyecto siguiente"><FaChevronRight /></button>
       </div>
       </FadeIn>
 

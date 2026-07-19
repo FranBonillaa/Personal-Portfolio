@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useLanguage, translations } from '@/context/LanguageContext';
 import FadeIn from '@/components/FadeIn';
+import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 
 const certifications = [
   {
@@ -99,7 +100,7 @@ const Certifications = () => {
 
       <FadeIn direction="up" delay={0.15} duration={0.7}>
       <div style={{ display: 'flex', alignItems: 'center', gap: isMobile ? '0.75rem' : '1.5rem', width: '100%', maxWidth: isMobile ? '95vw' : size === 'tablet' ? '760px' : '900px' }}>
-        <button onClick={prev} disabled={!canPrev} style={btnStyle(canPrev)}>‹</button>
+        <button onClick={prev} disabled={!canPrev} style={btnStyle(canPrev)} aria-label="Certificado anterior"><FaChevronLeft /></button>
 
         <div style={{ display: 'grid', gridTemplateColumns: `repeat(${visible.length}, 1fr)`, gap: isMobile ? '0.75rem' : '1.5rem', flex: 1 }}>
           {visible.map((cert, i) => (
@@ -138,7 +139,7 @@ const Certifications = () => {
           ))}
         </div>
 
-        <button onClick={next} disabled={!canNext} style={btnStyle(canNext)}>›</button>
+        <button onClick={next} disabled={!canNext} style={btnStyle(canNext)} aria-label="Certificado siguiente"><FaChevronRight /></button>
       </div>
 
       </FadeIn>

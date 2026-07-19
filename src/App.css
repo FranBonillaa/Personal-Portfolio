@@ -347,10 +347,10 @@ body {
   grid-row: auto;         /* altura automática: más contenido */
 }
 
-/* Grid de iconos para Sistemas y Redes: mismas 3 columnas que el resto */
+/* Grid de iconos para Sistemas y Redes: 6 columnas para aprovechar el ancho completo */
 .tech-column-full .tech-items-grid {
-  grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 1.25rem;
 }
 
 .tech-column {

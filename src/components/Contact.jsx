@@ -1,4 +1,5 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
+import emailjs from '@emailjs/browser';
 import { useLanguage, translations } from '@/context/LanguageContext';
 import FadeIn from '@/components/FadeIn';
 
@@ -20,15 +21,40 @@ const InstagramIcon = () => (
   </svg>
 );
 
+const SERVICE_ID = 'service_dd441wl';
+const TEMPLATE_ID = 'template_zn9i17c';
+const PUBLIC_KEY = 'loWD2GwlOjh79Q66a';
+
 const Contact = () => {
   const { language } = useLanguage();
   const t = translations[language].contact;
+  const formRef = useRef();
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+  const [status, setStatus] = useState('idle'); // idle | sending | success | error
+
   useEffect(() => {
     const fn = () => setIsMobile(window.innerWidth < 768);
     window.addEventListener('resize', fn);
     return () => window.removeEventListener('resize', fn);
   }, []);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setStatus('sending');
+    emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, formRef.current, PUBLIC_KEY)
+      .then(() => {
+        setStatus('success');
+        formRef.current.reset();
+      })
+      .catch(() => setStatus('error'));
+  };
+
+  const inputStyle = {
+    width: '100%', padding: '0.75rem 1rem', borderRadius: '10px',
+    background: 'rgba(255,255,255,0.07)', border: '1px solid rgba(255,255,255,0.15)',
+    color: '#ffffff', fontSize: '0.95rem', outline: 'none',
+    transition: 'border-color 0.2s ease', boxSizing: 'border-box',
+  };
 
   return (
     <section id="contacto" className="contact-section">
@@ -49,16 +75,67 @@ const Contact = () => {
           {t.subheading}
         </p>
 
+        {/* Formulario EmailJS */}
+        <form ref={formRef} onSubmit={handleSubmit} style={{ width: '100%', display: 'flex', flexDirection: 'column', gap: '1rem', textAlign: 'left' }}>
+          <input
+            type="text"
+            name="name"
+            placeholder={t.formName}
+            required
+            style={inputStyle}
+            onFocus={e => e.target.style.borderColor = '#22d3ee'}
+            onBlur={e => e.target.style.borderColor = 'rgba(255,255,255,0.15)'}
+          />
+          <input
+            type="email"
+            name="email"
+            placeholder={t.formEmail}
+            required
+            style={inputStyle}
+            onFocus={e => e.target.style.borderColor = '#22d3ee'}
+            onBlur={e => e.target.style.borderColor = 'rgba(255,255,255,0.15)'}
+          />
+          <textarea
+            name="message"
+            placeholder={t.formMessage}
+            required
+            rows={5}
+            style={{ ...inputStyle, resize: 'vertical' }}
+            onFocus={e => e.target.style.borderColor = '#22d3ee'}
+            onBlur={e => e.target.style.borderColor = 'rgba(255,255,255,0.15)'}
+          />
+          <button
+            type="submit"
+            disabled={status === 'sending'}
+            style={{
+              padding: '0.75rem 2rem', borderRadius: '9999px',
+              background: status === 'sending' ? 'rgba(34,211,238,0.5)' : '#22d3ee',
+              color: '#000000', fontSize: '1rem', fontWeight: '700',
+              cursor: status === 'sending' ? 'not-allowed' : 'pointer',
+              transition: 'background 0.2s ease', width: '100%',
+            }}
+          >
+            {status === 'sending' ? t.formSending : t.sendMessage}
+          </button>
+
+          {status === 'success' && (
+            <p style={{ color: '#86efac', textAlign: 'center', fontWeight: '500' }}>{t.formSuccess}</p>
+          )}
+          {status === 'error' && (
+            <p style={{ color: '#f87171', textAlign: 'center', fontWeight: '500' }}>{t.formError}</p>
+          )}
+        </form>
+
         <a
           href="mailto:fbonillavaro@gmail.com"
-          style={{ color: '#22d3ee', fontSize: '1.1rem', fontWeight: '500', textDecoration: 'underline', textUnderlineOffset: '4px', transition: 'color 0.2s ease' }}
+          style={{ color: '#22d3ee', fontSize: '1rem', fontWeight: '500', textDecoration: 'underline', textUnderlineOffset: '4px', transition: 'color 0.2s ease' }}
           onMouseEnter={e => e.currentTarget.style.color = '#67e8f9'}
           onMouseLeave={e => e.currentTarget.style.color = '#22d3ee'}
         >
           fbonillavaro@gmail.com
         </a>
 
-        {/* Redes sociales — siempre en fila */}
+        {/* Redes sociales */}
         <div style={{ display: 'flex', gap: '0.75rem', justifyContent: 'center', flexWrap: 'nowrap' }}>
           {[
             { label: 'LinkedIn', href: 'https://www.linkedin.com/in/francisco-javier-bonilla-varo-08445625a/', Icon: LinkedInIcon },
@@ -88,46 +165,26 @@ const Contact = () => {
           ))}
         </div>
 
-        {/* Botones de acción */}
-        <div style={{ display: 'flex', flexDirection: isMobile ? 'column' : 'row', gap: '1rem', width: isMobile ? '100%' : 'auto', alignItems: 'center' }}>
-          <a
-            href="https://mail.google.com/mail/?view=cm&to=fbonillavaro@gmail.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{
-              display: 'inline-flex', alignItems: 'center', justifyContent: 'center',
-              padding: '0.75rem 2rem', borderRadius: '9999px',
-              background: '#22d3ee', color: '#000000',
-              fontSize: '1rem', fontWeight: '700', textDecoration: 'none',
-              width: isMobile ? '100%' : 'auto',
-              transition: 'background 0.2s ease, transform 0.2s ease',
-            }}
-            onMouseEnter={e => { e.currentTarget.style.background = '#67e8f9'; e.currentTarget.style.transform = 'translateY(-2px)'; }}
-            onMouseLeave={e => { e.currentTarget.style.background = '#22d3ee'; e.currentTarget.style.transform = 'translateY(0)'; }}
-          >
-            {t.sendMessage}
-          </a>
-
-          <a
-            href="/FranciscoJavierBonillaVaro.pdf"
-            download="FranciscoJavierBonillaVaro.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{
-              display: 'inline-flex', alignItems: 'center', justifyContent: 'center',
-              padding: '0.75rem 2rem', borderRadius: '9999px',
-              background: 'rgba(255,255,255,0.08)', color: '#ffffff',
-              fontSize: '1rem', fontWeight: '500', textDecoration: 'none',
-              border: '1px solid rgba(255,255,255,0.3)', backdropFilter: 'blur(8px)',
-              width: isMobile ? '100%' : 'auto',
-              transition: 'background 0.2s ease, border-color 0.2s ease, transform 0.2s ease',
-            }}
-            onMouseEnter={e => { e.currentTarget.style.background = 'rgba(255,255,255,0.15)'; e.currentTarget.style.borderColor = 'rgba(255,255,255,0.5)'; e.currentTarget.style.transform = 'translateY(-2px)'; }}
-            onMouseLeave={e => { e.currentTarget.style.background = 'rgba(255,255,255,0.08)'; e.currentTarget.style.borderColor = 'rgba(255,255,255,0.3)'; e.currentTarget.style.transform = 'translateY(0)'; }}
-          >
-            {t.downloadCV}
-          </a>
-        </div>
+        {/* Descargar CV */}
+        <a
+          href="/FranciscoJavierBonillaVaro.pdf"
+          download="FranciscoJavierBonillaVaro.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{
+            display: 'inline-flex', alignItems: 'center', justifyContent: 'center',
+            padding: '0.75rem 2rem', borderRadius: '9999px',
+            background: 'rgba(255,255,255,0.08)', color: '#ffffff',
+            fontSize: '1rem', fontWeight: '500', textDecoration: 'none',
+            border: '1px solid rgba(255,255,255,0.3)', backdropFilter: 'blur(8px)',
+            width: isMobile ? '100%' : 'auto',
+            transition: 'background 0.2s ease, border-color 0.2s ease, transform 0.2s ease',
+          }}
+          onMouseEnter={e => { e.currentTarget.style.background = 'rgba(255,255,255,0.15)'; e.currentTarget.style.borderColor = 'rgba(255,255,255,0.5)'; e.currentTarget.style.transform = 'translateY(-2px)'; }}
+          onMouseLeave={e => { e.currentTarget.style.background = 'rgba(255,255,255,0.08)'; e.currentTarget.style.borderColor = 'rgba(255,255,255,0.3)'; e.currentTarget.style.transform = 'translateY(0)'; }}
+        >
+          {t.downloadCV}
+        </a>
       </div>
       </FadeIn>
     </section>

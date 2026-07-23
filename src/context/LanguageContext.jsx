@@ -57,24 +57,28 @@ export const translations = {
     projects: {
       title: 'Proyectos',
       githubBtn: 'Ver en GitHub',
+      demoBtn: 'Ver demo',
       items: [
         {
           title: 'Portfolio',
           description: 'Diseño y desarrollo de mi espacio personal en la web. Este portafolio ha sido creado para reflejar mi identidad profesional y mostrar mis proyectos más destacados como desarrollador Full Stack. Enfocado en un diseño moderno, rendimiento optimizado y una experiencia de usuario fluida.',
           image: '/project1.png',
           github: 'https://github.com/FranBonillaa/Personal-Portfolio',
+          demo: 'https://franbonilla-dev.vercel.app',
         },
         {
           title: 'Bonifit',
           description: 'Diseño y desarrollo de mi Trabajo de Fin de Grado, una aplicación Full Stack integral de fitness. Permite explorar una biblioteca de ejercicios, guardar favoritos y crear rutinas personalizadas. Incluye un perfil de usuario detallado y gráficas interactivas para monitorizar la evolución del peso y la grasa corporal.',
           image: '/project2.png',
           github: 'https://github.com/FranBonillaa/BoniFit',
+          demo: null,
         },
         {
           title: 'María Fornet Centro de Estética',
           description: 'Diseño y desarrollo de una web profesional para un centro de estética real en Dos Hermanas (Sevilla). Incluye catálogo completo de servicios con precios, paquetes y bonos, carrusel de fotos del centro, reservas directas por WhatsApp, reseñas de Google integradas y diseño responsive para todos los dispositivos.',
           image: '/project3.png',
           github: 'https://github.com/FranBonillaa/mariafornetestetica-crm',
+          demo: 'https://mariafornetestetica.com',
         },
       ],
     },
@@ -157,24 +161,28 @@ export const translations = {
     projects: {
       title: 'Projects',
       githubBtn: 'View on GitHub',
+      demoBtn: 'Live Demo',
       items: [
         {
           title: 'Portfolio',
           description: 'Design and development of my personal web space. This portfolio was created to reflect my professional identity and showcase my most notable projects as a Full Stack developer. Focused on modern design, optimised performance and a smooth user experience.',
           image: '/project1.png',
           github: 'https://github.com/FranBonillaa/Personal-Portfolio',
+          demo: 'https://franbonilla-dev.vercel.app',
         },
         {
           title: 'Bonifit',
           description: 'Design and development of my Final Degree Project, a comprehensive Full Stack fitness application. It allows users to explore an exercise library, save favourites and create personalised routines. Includes a detailed user profile and interactive charts to track weight and body fat evolution.',
           image: '/project2.png',
           github: 'https://github.com/FranBonillaa/BoniFit',
+          demo: null,
         },
         {
           title: 'María Fornet Beauty Centre',
           description: 'Design and development of a professional website for a real beauty centre in Dos Hermanas (Seville). Features a full service catalogue with prices, packages and vouchers, a photo carousel of the centre, direct WhatsApp bookings, integrated Google reviews and responsive design for all devices.',
           image: '/project3.png',
           github: 'https://github.com/FranBonillaa/mariafornetestetica-crm',
+          demo: 'https://mariafornetestetica.com',
         },
       ],
     },

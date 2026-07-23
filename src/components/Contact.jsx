@@ -21,9 +21,9 @@ const InstagramIcon = () => (
   </svg>
 );
 
-const SERVICE_ID = 'service_dd441wl';
-const TEMPLATE_ID = 'template_zn9i17c';
-const PUBLIC_KEY = 'loWD2GwlOjh79Q66a';
+const SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+const TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+const PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
 const Contact = () => {
   const { language } = useLanguage();

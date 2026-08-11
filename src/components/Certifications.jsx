@@ -82,6 +82,24 @@ const certifications = [
     date: "2026",
     image: "/cert_dominando_bootstrap_5__desarrollo_de_sitios_web_responsive.jpg",
   },
+  {
+    title: "ChatGPT API",
+    issuer: "OpenAI",
+    date: "2026",
+    image: "/cert_dominando_chatgpt_con_la_api_de_openai.jpg",
+  },
+  {
+    title: "Fundamentos JS",
+    issuer: "Cursos online",
+    date: "2026",
+    image: "/cert_fundamentos_de_javascript.jpg",
+  },
+  {
+    title: "IA Fundamentals",
+    issuer: "Cursos online",
+    date: "2026",
+    image: "/cert_fundamentos_de_la_inteligencia_artificial.jpg",
+  },
 ];
 
 const Certifications = () => {

@@ -100,6 +100,24 @@ const certifications = [
     date: "2026",
     image: "/cert_fundamentos_de_la_inteligencia_artificial.jpg",
   },
+  {
+    title: "Prompt Engineering",
+    issuer: "Cursos online",
+    date: "2026",
+    image: "/cert_introduccion_al_prompt_engineering.jpg",
+  },
+  {
+    title: "IA Office",
+    issuer: "Cursos online",
+    date: "2026",
+    image: "/cert_introduccion_a_la_ia_en_la_oficina.jpg",
+  },
+  {
+    title: "Docker",
+    issuer: "Cursos online",
+    date: "2026",
+    image: "/cert_introduccion_a_docker.jpg",
+  },
 ];
 
 const Certifications = () => {

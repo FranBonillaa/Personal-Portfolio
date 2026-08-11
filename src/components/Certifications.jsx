@@ -28,95 +28,99 @@ const certifications = [
     date: "Mar 2026",
     image: "/cert_ia_desarrollo.jpg",
   },
+];
+
+/*
+const certifications = [
   {
     title: "ChatGPT",
     issuer: "OpenAI",
     date: "2026",
-    image: "/cert_chatgpt__generacion_de_texto_conversacional.jpg",
+    image: "/certificado_chatgpt__generación_de_texto_conversacional.pdf.jpg",
   },
   {
     title: "Bootstrap 4",
     issuer: "Responsive Layout",
     date: "2026",
-    image: "/cert_bootstrap_4__maquetacion_responsive_y_layout.jpg",
+    image: "/certificado_bootstrap_4__maquetación_responsive_y_layout-imágenes-0.jpg",
   },
   {
     title: "Android App",
     issuer: "Android",
     date: "2026",
-    image: "/cert_curso_crea_tu_primera_aplicacion_en_android.jpg",
+    image: "/certificado_curso_crea_tu_primera_aplicación_en_android.pdf.jpg",
   },
   {
     title: "Git",
     issuer: "Cursos online",
     date: "2026",
-    image: "/cert_curso_de_git.jpg",
+    image: "/certificado_curso_de_git.pdf.jpg",
   },
   {
     title: "HTML5 y CSS3",
     issuer: "Cursos online",
     date: "2026",
-    image: "/cert_curso_de_html5_y_css3.jpg",
+    image: "/certificado_curso_de_html5_y_css3.pdf.jpg",
   },
   {
     title: "JUnit 5",
     issuer: "Pruebas automáticas",
     date: "2026",
-    image: "/cert_curso_de_introduccion_a_pruebas_automaticas_con_junit_5.jpg",
+    image: "/certificado_curso_de_introducción_a_pruebas_automáticas_con_junit_5.pdf.jpg",
   },
   {
     title: "Kotlin",
     issuer: "Cursos online",
     date: "2026",
-    image: "/cert_curso_de_kotlin.jpg",
+    image: "/certificado_curso_de_kotlin.pdf.jpg",
   },
   {
     title: "JavaScript",
     issuer: "Cursos online",
     date: "2026",
-    image: "/cert_fundamentos_de_javascript.jpg",
+    image: "/certificado_fundamentos_de_javascript.pdf.jpg",
   },
   {
     title: "Bootstrap 5",
     issuer: "Cursos online",
     date: "2026",
-    image: "/cert_dominando_bootstrap_5__desarrollo_de_sitios_web_responsive.jpg",
+    image: "/certificado_dominando_bootstrap_5__desarrollo_de_sitios_web_responsive.pdf.jpg",
   },
   {
     title: "ChatGPT API",
     issuer: "OpenAI",
     date: "2026",
-    image: "/cert_dominando_chatgpt_con_la_api_de_openai.jpg",
+    image: "/certificado_dominando_chatgpt_con_la_api_de_openai.pdf.jpg",
   },
   {
     title: "Fundamentos JS",
     issuer: "Cursos online",
     date: "2026",
-    image: "/cert_fundamentos_de_javascript.jpg",
+    image: "/certificado_fundamentos_de_javascript.pdf.jpg",
   },
   {
     title: "IA Fundamentals",
     issuer: "Cursos online",
     date: "2026",
-    image: "/cert_fundamentos_de_la_inteligencia_artificial.jpg",
+    image: "/certificado_fundamentos_de_la_inteligencia_artificial.pdf.jpg",
   },
   {
     title: "Prompt Engineering",
     issuer: "Cursos online",
     date: "2026",
-    image: "/cert_introduccion_al_prompt_engineering.jpg",
+    image: "/certificado_introducción_al_prompt_engineering.pdf.jpg",
   },
   {
     title: "IA Office",
     issuer: "Cursos online",
     date: "2026",
-    image: "/cert_introduccion_a_la_ia_en_la_oficina.jpg",
+    image: "/certificado_introducción_a_la_ia_en_la_oficina.pdf.jpg",
   },
   {
     title: "Docker",
     issuer: "Cursos online",
     date: "2026",
-    image: "/cert_introduccion_a_docker.jpg",
+    image: "/certificado_introducción_a_docker.pdf.jpg",
   },
   {
     title: "Python desde cero",
@@ -149,6 +153,7 @@ const certifications = [
     image: "/1.jpg",
   },
 ];
+*/
 
 const Certifications = () => {
   const { language } = useLanguage();

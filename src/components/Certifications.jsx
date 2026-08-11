@@ -46,6 +46,24 @@ const certifications = [
     date: "2026",
     image: "/cert_curso_crea_tu_primera_aplicacion_en_android.jpg",
   },
+  {
+    title: "Git",
+    issuer: "Cursos online",
+    date: "2026",
+    image: "/cert_curso_de_git.jpg",
+  },
+  {
+    title: "HTML5 y CSS3",
+    issuer: "Cursos online",
+    date: "2026",
+    image: "/cert_curso_de_html5_y_css3.jpg",
+  },
+  {
+    title: "JUnit 5",
+    issuer: "Pruebas automáticas",
+    date: "2026",
+    image: "/cert_curso_de_introduccion_a_pruebas_automaticas_con_junit_5.jpg",
+  },
 ];
 
 const Certifications = () => {

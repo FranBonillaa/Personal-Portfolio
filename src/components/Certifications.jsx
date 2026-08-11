@@ -142,6 +142,12 @@ const certifications = [
     date: "2026",
     image: "/certificado_sql_desde_cero.pdf.jpg",
   },
+  {
+    title: "Aptis ESOL B1",
+    issuer: "British Council",
+    date: "30.07.2026",
+    image: "/1.jpg",
+  },
 ];
 
 const Certifications = () => {

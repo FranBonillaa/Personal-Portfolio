@@ -118,6 +118,24 @@ const certifications = [
     date: "2026",
     image: "/cert_introduccion_a_docker.jpg",
   },
+  {
+    title: "Python desde cero",
+    issuer: "Cursos online",
+    date: "2026",
+    image: "/certificado_python_desde_cero.pdf.jpg",
+  },
+  {
+    title: "NotebookLM para empresas",
+    issuer: "Cursos online",
+    date: "2026",
+    image: "/certificado_notebooklm_para_empresas.pdf.jpg",
+  },
+  {
+    title: "Java desde 0: Records, Genéricos y Colecciones",
+    issuer: "Cursos online",
+    date: "2026",
+    image: "/certificado_java_desde_0__records_genéricos_y_colecciones.pdf.jpg",
+  },
 ];
 
 const Certifications = () => {

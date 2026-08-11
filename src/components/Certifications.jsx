@@ -136,6 +136,12 @@ const certifications = [
     date: "2026",
     image: "/certificado_java_desde_0__records_genéricos_y_colecciones.pdf.jpg",
   },
+  {
+    title: "SQL desde cero",
+    issuer: "Cursos online",
+    date: "2026",
+    image: "/certificado_sql_desde_cero.pdf.jpg",
+  },
 ];
 
 const Certifications = () => {

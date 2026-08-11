@@ -64,6 +64,24 @@ const certifications = [
     date: "2026",
     image: "/cert_curso_de_introduccion_a_pruebas_automaticas_con_junit_5.jpg",
   },
+  {
+    title: "Kotlin",
+    issuer: "Cursos online",
+    date: "2026",
+    image: "/cert_curso_de_kotlin.jpg",
+  },
+  {
+    title: "JavaScript",
+    issuer: "Cursos online",
+    date: "2026",
+    image: "/cert_fundamentos_de_javascript.jpg",
+  },
+  {
+    title: "Bootstrap 5",
+    issuer: "Cursos online",
+    date: "2026",
+    image: "/cert_dominando_bootstrap_5__desarrollo_de_sitios_web_responsive.jpg",
+  },
 ];
 
 const Certifications = () => {

@@ -29,142 +29,22 @@ const certifications = [
     image: "/cert_ia_desarrollo.jpg",
   },
   {
-    title: "Certificado Coursera IA",
-    issuer: "Coursera",
-    date: "2026",
-    image: "/cert_certificado_coursera_ia.jpg",
-  },
-  {
-    title: "Certificado de IA / Desarrollo",
-    issuer: "BIG School · Midudev",
-    date: "2026",
-    image: "/cert_francisco_javier_bonilla_varo_bfbfticp.jpg",
-  },
-  {
-    title: "Certificado de IA / Evaluación",
-    issuer: "BIG School · Midudev",
-    date: "2026",
-    image: "/cert_francisco_javier_bonilla_varo_c0uiafl6.jpg",
-  },
-  {
-    title: "Bootstrap 4 · Maquetación Responsive y Layout",
-    issuer: "Cursos online",
-    date: "2026",
-    image: "/cert_bootstrap_4__maquetacion_responsive_y_layout.jpg",
-  },
-  {
-    title: "ChatGPT · Generación de Texto Conversacional",
-    issuer: "Cursos online",
+    title: "ChatGPT",
+    issuer: "OpenAI",
     date: "2026",
     image: "/cert_chatgpt__generacion_de_texto_conversacional.jpg",
   },
   {
-    title: "Crea tu primera aplicación en Android",
-    issuer: "Cursos online",
+    title: "Bootstrap 4",
+    issuer: "Responsive Layout",
+    date: "2026",
+    image: "/cert_bootstrap_4__maquetacion_responsive_y_layout.jpg",
+  },
+  {
+    title: "Android App",
+    issuer: "Android",
     date: "2026",
     image: "/cert_curso_crea_tu_primera_aplicacion_en_android.jpg",
-  },
-  {
-    title: "Fundamentos de PL/SQL",
-    issuer: "Cursos online",
-    date: "2026",
-    image: "/cert_curso_de_fundamentos_de_pl_sql.jpg",
-  },
-  {
-    title: "Curso de Git",
-    issuer: "Cursos online",
-    date: "2026",
-    image: "/cert_curso_de_git.jpg",
-  },
-  {
-    title: "HTML5 y CSS3",
-    issuer: "Cursos online",
-    date: "2026",
-    image: "/cert_curso_de_html5_y_css3.jpg",
-  },
-  {
-    title: "Introducción a pruebas automáticas con JUnit 5",
-    issuer: "Cursos online",
-    date: "2026",
-    image: "/cert_curso_de_introduccion_a_pruebas_automaticas_con_junit_5.jpg",
-  },
-  {
-    title: "Curso de Kotlin",
-    issuer: "Cursos online",
-    date: "2026",
-    image: "/cert_curso_de_kotlin.jpg",
-  },
-  {
-    title: "Manipulación del DOM desde JavaScript",
-    issuer: "Cursos online",
-    date: "2026",
-    image: "/cert_curso_de_manipulacion_del_dom_desde_javascript.jpg",
-  },
-  {
-    title: "Dominando Bootstrap 5 · Desarrollo de sitios web responsive",
-    issuer: "Cursos online",
-    date: "2026",
-    image: "/cert_dominando_bootstrap_5__desarrollo_de_sitios_web_responsive.jpg",
-  },
-  {
-    title: "Dominando ChatGPT con la API de OpenAI",
-    issuer: "Cursos online",
-    date: "2026",
-    image: "/cert_dominando_chatgpt_con_la_api_de_openai.jpg",
-  },
-  {
-    title: "Fundamentos de JavaScript",
-    issuer: "Cursos online",
-    date: "2026",
-    image: "/cert_fundamentos_de_javascript.jpg",
-  },
-  {
-    title: "Fundamentos de la Inteligencia Artificial",
-    issuer: "Cursos online",
-    date: "2026",
-    image: "/cert_fundamentos_de_la_inteligencia_artificial.jpg",
-  },
-  {
-    title: "Introducción al Prompt Engineering",
-    issuer: "Cursos online",
-    date: "2026",
-    image: "/cert_introduccion_al_prompt_engineering.jpg",
-  },
-  {
-    title: "Introducción a Docker",
-    issuer: "Cursos online",
-    date: "2026",
-    image: "/cert_introduccion_a_docker.jpg",
-  },
-  {
-    title: "Introducción a la IA en la oficina",
-    issuer: "Cursos online",
-    date: "2026",
-    image: "/cert_introduccion_a_la_ia_en_la_oficina.jpg",
-  },
-  {
-    title: "Java desde 0 · Records, genéricos y colecciones",
-    issuer: "Cursos online",
-    date: "2026",
-    image: "/cert_java_desde_0__records_genericos_y_colecciones.jpg",
-  },
-  {
-    title: "NotebookLM para empresas",
-    issuer: "Cursos online",
-    date: "2026",
-    image: "/cert_notebooklm_para_empresas.jpg",
-  },
-  {
-    title: "Python desde cero",
-    issuer: "Cursos online",
-    date: "2026",
-    image: "/cert_python_desde_cero.jpg",
-  },
-  {
-    title: "SQL desde cero",
-    issuer: "Cursos online",
-    date: "2026",
-    image: "/cert_sql_desde_cero.jpg",
   },
 ];
 
@@ -237,48 +117,48 @@ const Certifications = () => {
       </FadeIn>
 
       <FadeIn direction="up" delay={0.15} duration={0.7}>
-      <div style={{ display: 'flex', alignItems: 'center', gap: isMobile ? '0.75rem' : '1.5rem', width: '100%', maxWidth: isMobile ? '95vw' : size === 'tablet' ? '760px' : '900px' }}>
-        <button onClick={prev} disabled={!canPrev} style={btnStyle(canPrev)} aria-label="Certificado anterior"><FaChevronLeft /></button>
+        <div style={{ display: 'flex', alignItems: 'center', gap: isMobile ? '0.75rem' : '1.5rem', width: '100%', maxWidth: isMobile ? '95vw' : size === 'tablet' ? '760px' : '900px' }}>
+          <button onClick={prev} disabled={!canPrev} style={btnStyle(canPrev)} aria-label="Certificado anterior"><FaChevronLeft /></button>
 
-        <div style={{ display: 'grid', gridTemplateColumns: `repeat(${visible.length}, 1fr)`, gap: isMobile ? '0.75rem' : '1.5rem', flex: 1 }}>
-          {visible.map((cert, i) => (
-            <div
-              key={index + i}
-              style={{
-                background: 'rgba(10, 30, 10, 0.72)',
-                backdropFilter: 'blur(12px)',
-                borderRadius: '16px',
-                border: '1px solid rgba(255,255,255,0.12)',
-                overflow: 'hidden',
-                transition: 'transform 0.3s ease, box-shadow 0.3s ease',
-              }}
-              onMouseEnter={e => {
-                e.currentTarget.style.transform = 'translateY(-6px)';
-                e.currentTarget.style.boxShadow = '0 20px 50px rgba(0,0,0,0.5)';
-              }}
-              onMouseLeave={e => {
-                e.currentTarget.style.transform = 'translateY(0)';
-                e.currentTarget.style.boxShadow = 'none';
-              }}
-            >
-              <img src={cert.image} alt={cert.title} style={{ width: '100%', aspectRatio: '4/3', objectFit: 'contain', background: '#0a0a0a', display: 'block' }} />
-              <div style={{ padding: isMobile ? '0.75rem 1rem' : '1rem 1.5rem 1.25rem', textAlign: 'center' }}>
-                <h3 style={{ fontSize: isMobile ? '0.95rem' : '1.1rem', fontWeight: '700', color: '#ffffff', marginBottom: '0.3rem' }}>
-                  {cert.title}
-                </h3>
-                <p style={{ fontSize: isMobile ? '0.8rem' : '0.88rem', color: 'rgba(255,255,255,0.6)', marginBottom: '0.2rem' }}>
-                  {cert.issuer}
-                </p>
-                <p style={{ fontSize: isMobile ? '0.75rem' : '0.82rem', color: 'rgba(255,255,255,0.4)', margin: 0 }}>
-                  {cert.date}
-                </p>
+          <div style={{ display: 'grid', gridTemplateColumns: `repeat(${visible.length}, 1fr)`, gap: isMobile ? '0.75rem' : '1.5rem', flex: 1 }}>
+            {visible.map((cert, i) => (
+              <div
+                key={index + i}
+                style={{
+                  background: 'rgba(10, 30, 10, 0.72)',
+                  backdropFilter: 'blur(12px)',
+                  borderRadius: '16px',
+                  border: '1px solid rgba(255,255,255,0.12)',
+                  overflow: 'hidden',
+                  transition: 'transform 0.3s ease, box-shadow 0.3s ease',
+                }}
+                onMouseEnter={e => {
+                  e.currentTarget.style.transform = 'translateY(-6px)';
+                  e.currentTarget.style.boxShadow = '0 20px 50px rgba(0,0,0,0.5)';
+                }}
+                onMouseLeave={e => {
+                  e.currentTarget.style.transform = 'translateY(0)';
+                  e.currentTarget.style.boxShadow = 'none';
+                }}
+              >
+                <img src={cert.image} alt={cert.title} style={{ width: '100%', aspectRatio: '4/3', objectFit: 'contain', background: '#0a0a0a', display: 'block' }} />
+                <div style={{ padding: isMobile ? '0.75rem 1rem' : '1rem 1.5rem 1.25rem', textAlign: 'center' }}>
+                  <h3 style={{ fontSize: isMobile ? '0.95rem' : '1.1rem', fontWeight: '700', color: '#ffffff', marginBottom: '0.3rem' }}>
+                    {cert.title}
+                  </h3>
+                  <p style={{ fontSize: isMobile ? '0.8rem' : '0.88rem', color: 'rgba(255,255,255,0.6)', marginBottom: '0.2rem' }}>
+                    {cert.issuer}
+                  </p>
+                  <p style={{ fontSize: isMobile ? '0.75rem' : '0.82rem', color: 'rgba(255,255,255,0.4)', margin: 0 }}>
+                    {cert.date}
+                  </p>
+                </div>
               </div>
-            </div>
-          ))}
-        </div>
+            ))}
+          </div>
 
-        <button onClick={next} disabled={!canNext} style={btnStyle(canNext)} aria-label="Certificado siguiente"><FaChevronRight /></button>
-      </div>
+          <button onClick={next} disabled={!canNext} style={btnStyle(canNext)} aria-label="Certificado siguiente"><FaChevronRight /></button>
+        </div>
 
       </FadeIn>
 

@@ -65,7 +65,7 @@ function buildItems(pool, seg) {
   }
   if (pool.length > totalSlots) {
     console.warn(
-      `[DomeGallery] Provided image count (${pool.length}) exceeds available tiles (${totalSlots}). Some images will not be shown.` 
+      `[DomeGallery] Provided image count (${pool.length}) exceeds available tiles (${totalSlots}). Some images will not be shown.`
     );
   }
 

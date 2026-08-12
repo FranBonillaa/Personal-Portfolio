@@ -179,11 +179,12 @@ const Certifications = () => {
   }, []);
 
   const VISIBLE = isMobile ? 1 : 2;
+  const maxIndex = Math.max(0, certifications.length - VISIBLE);
   const canPrev = index > 0;
-  const canNext = index + VISIBLE < certifications.length;
+  const canNext = index < maxIndex;
 
-  const prev = () => { if (canPrev) setIndex(i => i - 1); };
-  const next = () => { if (canNext) setIndex(i => i + 1); };
+  const prev = () => { setIndex(i => Math.max(0, i - 1)); };
+  const next = () => { setIndex(i => Math.min(maxIndex, i + 1)); };
 
   const visible = certifications.slice(index, index + VISIBLE);
 

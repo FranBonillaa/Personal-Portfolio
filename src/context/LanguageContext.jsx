@@ -108,19 +108,16 @@ export const translations = {
       formError: 'Algo salió mal. Inténtalo de nuevo.',
     },
     footer: {
-      navigation: 'Navegación',
-      navItems: {
-        aboutMe: 'Sobre Mí',
-        projects: 'Proyectos',
-        experience: 'Experiencia',
-        contact: 'Contacto',
-      },
-      social: 'Redes Sociales',
+      stats: [
+        { value: '3', label: 'Proyectos Destacados' },
+        { value: '2+', label: 'Años de Experiencia' },
+        { value: '15+', label: 'Tecnologías' },
+      ],
+      techStackLabel: 'Tech Stack',
+      techStack: ['React', 'JavaScript', 'Node.js', 'Python', 'SQL', 'Tailwind', 'Vite'],
       backToTop: 'Volver al inicio',
       copyrightName: 'Fran Bonilla',
       copyrightText: 'Todos los derechos reservados.',
-      designedWith: 'Diseñado',
-      designedBy: 'con React, Vite y Tailwind CSS',
     },
   },
 
@@ -227,19 +224,16 @@ export const translations = {
       formError: 'Something went wrong. Please try again.',
     },
     footer: {
-      navigation: 'Navigation',
-      navItems: {
-        aboutMe: 'About Me',
-        projects: 'Projects',
-        experience: 'Experience',
-        contact: 'Contact',
-      },
-      social: 'Social Networks',
+      stats: [
+        { value: '3', label: 'Featured Projects' },
+        { value: '2+', label: 'Years of Experience' },
+        { value: '15+', label: 'Technologies' },
+      ],
+      techStackLabel: 'Tech Stack',
+      techStack: ['React', 'JavaScript', 'Node.js', 'Python', 'SQL', 'Tailwind', 'Vite'],
       backToTop: 'Back to Top',
       copyrightName: 'Fran Bonilla',
       copyrightText: 'All rights reserved.',
-      designedWith: 'Designed',
-      designedBy: 'with React, Vite and Tailwind CSS',
     },
   },
 };

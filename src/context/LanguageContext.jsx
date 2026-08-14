@@ -107,6 +107,21 @@ export const translations = {
       formSuccess: '¡Mensaje enviado! Te responderé pronto.',
       formError: 'Algo salió mal. Inténtalo de nuevo.',
     },
+    footer: {
+      navigation: 'Navegación',
+      navItems: {
+        aboutMe: 'Sobre Mí',
+        projects: 'Proyectos',
+        experience: 'Experiencia',
+        contact: 'Contacto',
+      },
+      social: 'Redes Sociales',
+      backToTop: 'Volver al inicio',
+      copyrightName: 'Fran Bonilla',
+      copyrightText: 'Todos los derechos reservados.',
+      designedWith: 'Diseñado',
+      designedBy: 'con React, Vite y Tailwind CSS',
+    },
   },
 
   EN: {
@@ -210,6 +225,21 @@ export const translations = {
       formSending: 'Sending...',
       formSuccess: 'Message sent! I\'ll get back to you soon.',
       formError: 'Something went wrong. Please try again.',
+    },
+    footer: {
+      navigation: 'Navigation',
+      navItems: {
+        aboutMe: 'About Me',
+        projects: 'Projects',
+        experience: 'Experience',
+        contact: 'Contact',
+      },
+      social: 'Social Networks',
+      backToTop: 'Back to Top',
+      copyrightName: 'Fran Bonilla',
+      copyrightText: 'All rights reserved.',
+      designedWith: 'Designed',
+      designedBy: 'with React, Vite and Tailwind CSS',
     },
   },
 };

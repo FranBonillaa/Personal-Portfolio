@@ -10,6 +10,15 @@ export default function Navbar() {
     setIsOpen(!isOpen);
   };
 
+  const handleScrollToSection = (sectionId) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      setActiveSection(sectionId);
+      setIsOpen(false);
+    }
+  };
+
   const navItems = [
     { id: 'sobre-mi', label: 'Sobre Mí' },
     { id: 'mi-albúm', label: 'Mi Albúm' },
@@ -24,29 +33,29 @@ export default function Navbar() {
     <nav className={`navbar ${isOpen ? 'active' : ''}`}>
       <div className="navbar-container">
         <div className="logo">
-          <Link to="/" onClick={() => setActiveSection('inicio')}>
+          <button
+            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+            style={{ background: 'none', border: 'none', cursor: 'pointer', color: 'inherit', fontSize: 'inherit' }}
+          >
             MiPortafolio
-          </Link>
+          </button>
         </div>
-        
+
         <div className={`nav-links ${isOpen ? 'active' : ''}`}>
           {navItems.map((item) => (
-            <Link
+            <button
               key={item.id}
-              to={`#${item.id}`}
               className={`nav-link ${activeSection === item.id ? 'active' : ''}`}
-              onClick={() => {
-                setActiveSection(item.id);
-                setIsOpen(false);
-              }}
+              onClick={() => handleScrollToSection(item.id)}
+              style={{ background: 'none', border: 'none', cursor: 'pointer', color: 'inherit', font: 'inherit' }}
             >
               {item.label}
-            </Link>
+            </button>
           ))}
         </div>
-        
-        <div 
-          className={`hamburger ${isOpen ? 'active' : ''}`} 
+
+        <div
+          className={`hamburger ${isOpen ? 'active' : ''}`}
           onClick={toggleMenu}
           aria-label="Menú de navegación"
         >

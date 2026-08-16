@@ -34,6 +34,7 @@ html {
   border: none !important;
   border-top: none !important;
   outline: none !important;
+  scroll-behavior: smooth;
 }
 
 body {

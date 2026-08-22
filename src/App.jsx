@@ -47,9 +47,6 @@ function App() {
                 <div className="hero-text">
                   <h1 style={{ fontSize: '3.5rem', fontWeight: '800', lineHeight: '1.3', marginBottom: '1.25rem', textAlign: 'center', whiteSpace: 'nowrap', color: '#ffffff' }}>Fran Bonilla</h1>
                   <p className="hero-subtitle" style={{ fontSize: '1.5rem', fontWeight: '500', lineHeight: '1.2', color: '#86efac', marginBottom: '1rem', textAlign: 'center' }}>Full Stack Software Developer</p>
-                  <p style={{ fontSize: '1.05rem', fontWeight: '400', lineHeight: '1.7', color: 'rgba(255,255,255,0.82)', marginBottom: '2rem', textAlign: 'center', maxWidth: '680px', marginLeft: 'auto', marginRight: 'auto' }}>
-                    Desarrollo aplicaciones web modernas, rápidas y escalables con React, JavaScript, Node.js y soluciones impulsadas por IA.
-                  </p>
                   <div style={{ display: 'flex', justifyContent: 'center', gap: '1rem', flexWrap: 'wrap' }}>
                     <a href="#proyectos" style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', padding: '0.8rem 1.5rem', borderRadius: '9999px', background: '#22d3ee', color: '#000000', fontWeight: '700', textDecoration: 'none', boxShadow: '0 10px 25px rgba(34,211,238,0.3)' }}>Ver proyectos</a>
                     <a href="#contacto" style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', padding: '0.8rem 1.5rem', borderRadius: '9999px', background: 'rgba(255,255,255,0.08)', color: '#ffffff', fontWeight: '600', border: '1px solid rgba(255,255,255,0.25)', textDecoration: 'none' }}>Contactar</a>
